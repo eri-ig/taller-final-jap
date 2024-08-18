@@ -188,3 +188,12 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.welcome-message {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;  
+  margin-left: 0px;  
+  text-align: left;  
+  margin-top: 20px;
+  margin-right: 20px;
+}
