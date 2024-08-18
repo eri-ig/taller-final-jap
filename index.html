@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-</head>
+  
+</head> 
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
@@ -34,7 +35,31 @@
         </ul>
       </div>
     </div>
-  </nav>
+    </nav>
+    <div class="welcome-message">
+      <script>
+      // Verifica si hay un usuario guardado en sessionStorage//
+      const username = sessionStorage.getItem("username");
+    
+    // Si no hay un usuario guardado, redirigir al formulario de inicio de sesión//
+      if (!username) {
+          window.location.href = "login.html"; 
+      } else {
+    // Si hay un usuario guardado, mostrar un mensaje de bienvenida
+       const welcomeMessage = document.createElement("p");
+       welcomeMessage.innerText = `¡Hola, ${username}! Bienvenido de nuevo a eMercado.`;
+    
+    
+       welcomeMessage.classList.add("welcome-message");
+    
+    // Insertar el mensaje en la parte superior del contenedor//
+       document.querySelector(".container").prepend(welcomeMessage);
+      }
+    
+    </script>
+    </div>
+
+
   <main>
     <div class="jumbotron text-center"></div>
     <div class="album py-5 bg-light">
