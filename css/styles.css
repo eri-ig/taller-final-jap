@@ -1,6 +1,21 @@
 .jumbotron,
 .card-body,
+.mt-5,
 .container,
+
+
+label{
+  position: relative;
+  color: black;
+  font-size: 22px;
+}
+
+input,
+
+.contenedor-input{
+  position: relative;
+  margin-bottom: 40px;
+}
 .site-header {
   font-family: 'Verdana', serif !important;
 }
