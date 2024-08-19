@@ -35,6 +35,28 @@
       </div>
     </div>
   </nav>
+  <div class=".welcome-message ">
+  <script>
+  // verifica si hay un usuario guardado en sessionStorage//
+  const username = sessionStorage.getItem("username");
+
+  // si no hay un usuario guardado, redirigir al formulario de inicio de sesión//
+  if (!username) {
+      window.location.href = "login.html"; // asegúrate de que este sea el nombre del archivo HTML de inicio de sesión//
+  } else {
+      // si hay un usuario guardado, mostrar un mensaje de bienvenida//
+      const welcomeMessage = document.createElement("p");
+      welcomeMessage.innerText = `¡Hola, ${username}! Bienvenido de nuevo a eMercado.`;
+
+      // añade la clase para los estilos desde el CSS//
+      welcomeMessage.classList.add("welcome-message");
+
+      // insertar el mensaje en la parte superior del contenedor//
+      document.querySelector(".container").prepend(welcomeMessage);
+  }
+
+</script>
+</div>
   <main>
     <div class="jumbotron text-center"></div>
     <div class="album py-5 bg-light">
@@ -88,6 +110,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/init.js"></script>
+ 
 </body>
 
 </html>
