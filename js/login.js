@@ -1,3 +1,4 @@
+
 window.onload = function() {
     const form = document.querySelector("form");
 
@@ -22,7 +23,7 @@ window.onload = function() {
 
     // si no hay un usuario guardado, redirigir al formulario de inicio de sesión//
     if (!username) {
-        window.location.href = "login.html"; // asegúrate de que este sea el nombre del archivo HTML de inicio de sesión//
+        window.location.href = "login.html";
     } else {
         // si hay un usuario guardado, mostrar un mensaje de bienvenida//
         const welcomeMessage = document.createElement("p");
