@@ -2,92 +2,121 @@
 <html lang="es">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-commerce</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="productoscss.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <main>
-    <div class="jumbotron text-center"></div>
-    <div class="album py-5 bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm custom-card cursor-active" id="autos">
-              <img class="bd-placeholder-img card-img-top" src="img/cars_index.jpg"
-                alt="Imgagen representativa de la categoría 'Autos'">
-              <h3 class="m-3">Autos</h3>
-              <div class="card-body">
-                <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
-              </div>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sell.html">Vender</a>
+                    </li>
+                </ul>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm custom-card cursor-active" id="juguetes">
-              <img class="bd-placeholder-img card-img-top" src="img/toys_index.jpg"
-                alt="Imgagen representativa de la categoría 'Juguetes'">
-              <h3 class="m-3">Juguetes</h3>
-              <div class="card-body">
-                <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm custom-card cursor-active" id="muebles">
-              <img class="bd-placeholder-img card-img-top" src="img/furniture_index.jpg"
-                alt="Imgagen representativa de la categoría 'Muebles'">
-              <h3 class="m-3">Muebles</h3>
-              <div class="card-body">
-                <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="row">
-          <a class="btn btn-light btn-lg btn-block" href="categories.html">Y mucho más!</a>
+    </nav>
+
+    <!-- Encabezado con carrito -->
+    <header class="d-flex justify-content-between align-items-center my-4 px-4">
+        <h1 class="mb-0">e-commerce</h1>
+        <div class="d-flex align-items-center">
+            <div class="carrito-ic">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icono-carrito" style="width: 40px; height: 40px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+            </div>
+            <div class="carrito ml-3">
+                <h3 class="mb-0">Total:</h3>
+                <span class="Total-a-pagar">$0</span>
+            </div>
         </div>
-      </div>
-    </div>
-  </main>
-  <footer class="text-muted">
+    </header>
+
+    <!-- Productos -->
     <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+        <div class="row">
+          
+            <!-- Producto 1 -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/cars_index.jpg" alt="producto1" class="card-img-top"> 
+                    <div class="card-body">
+                        <h2 class="card-title">Autos</h2>
+                        <p class="card-text">Los mejores autos 0km de media y alta gama, a una gran variedad de precios!</p>
+                        <p class="card-text">Cantidad de vendidos:</p>
+                        <div class="text-center">
+                            <button class="btn btn-primary">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/toys_index.jpg" alt="producto2" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">Juguetes</h2>
+                        <p class="card-text">Los mejores juguetes y precios para niños de todas las edades!</p>
+                        <p class="card-text">Cantidad de vendidos:</p>
+                        <div class="text-center">
+                            <button class="btn btn-primary">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/furniture_index.jpg" alt="producto3" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">Muebles</h2>
+                        <p class="card-text">Gran variedad de muebles; nuevos, antiguos y para armar uno mismo!</p>
+                        <p class="card-text">Cantidad de vendidos:</p>
+                        <div class="text-center">
+                            <button class="btn btn-primary">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </footer>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/index.js"></script>
-  <script src="js/init.js"></script>
+
+    <!-- Pie de página -->
+    <footer class="text-muted py-3 bg-dark">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Volver arriba</a>
+            </p>
+            <p><a>Este sitio fue creado por el subgrupo 3!</a></p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
