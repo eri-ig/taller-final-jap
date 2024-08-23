@@ -12,7 +12,7 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="custom-body"> 
 
    <!-- Barra de navegación -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
@@ -37,7 +37,7 @@
 </nav>
 
 <!-- Encabezado con carrito -->
-<header class="d-flex justify-content-between align-items-center my-4 px-4">
+<header class="d-flex justify-content-between align-items-center my-4 px-4 custom-header">
     <h1 class="mb-0">e-commerce</h1>
     <div class="d-flex align-items-center">
         <div class="carrito-ic">
@@ -52,22 +52,16 @@
     </div>
 </header>
 
+<!-- Producto1 -->
+<div class="product-item custom-product-item">
+    <img src="img/prod50921_1.jpg" alt="Chevrolet Onix Joy" class="product-image">
+    <h2 class="product-name">Chevrolet Onix Joy</h2>
+    <p class="product-description">Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.</p>
+    <p class="product-price">Precio: USD 13,500</p>
+    <p class="product-sold">Cantidad Vendidos: 14</p>
+</div>
 
-    <!-- Producto1 -->
-
-      <div class="product-item">
-        <img src="img/prod50921_1.jpg" alt="Chevrolet Onix Joy" class="product-image">
-        <h2 class="product-name">Chevrolet Onix Joy</h2>
-        <p class="product-description">Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.</p>
-        <p class="product-price">Precio: USD 13,500</p>
-        <p class="product-sold">Cantidad Vendidos: 14</p>
-    </div>
-    
-    </div>
-
-  </main>
-
-  <footer class="text-muted py-3 bg-dark">
+<footer class="text-muted py-3 bg-dark">
     <div class="container d-flex justify-content-between align-items-center">
       <p class="footer-left mb-0">
         Este sitio fue creado por el subgrupo 3!
@@ -76,19 +70,19 @@
         <a href="#" class="text-light">Volver arriba</a>
       </p>
     </div>
-  </footer>
+</footer>
   
-  <div id="spinner-wrapper">
+<div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
       <div></div>
       <div></div>
       <div></div>
     </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/products.js"></script>
+</div>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/init.js"></script>
+<script src="js/products.js"></script>
 </body>
 
 </html>
