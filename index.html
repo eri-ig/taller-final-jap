@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -33,31 +35,28 @@
           </li>
         </ul>
       </div>
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a href="#" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <div style="display: inline-flex; align-items: center;">
+                <img src="./img/account_circle.png" width="35" height="35" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
+                  viewBox="0 0 24 24">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                <circle cx="12" cy="13" r="4" />
+                <div class="welcome-message" id="welcome-message"></div>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="login.html">Cerrar Sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
-  <div class="welcome-message ">
-  <script>// supuestamente este script deberia ir en el archivo index.js, pero al solo pedirnos que tocaramos el js de productos decidi dejarlo aqui
-  
-  // verifica si hay un usuario guardado en sessionStorage//
-  const username = sessionStorage.getItem("username");
 
-  // si no hay un usuario guardado, redirigir al formulario de inicio de sesión//
-  if (!username) {
-      window.location.href = "login.html"; // asegúrate de que este sea el nombre del archivo HTML de inicio de sesión//
-  } else {
-      // si hay un usuario guardado, mostrar un mensaje de bienvenida//
-      const welcomeMessage = document.createElement("p");
-      welcomeMessage.innerText = `¡Hola, ${username}! Bienvenido de nuevo a eMercado.`;
-
-      // añade la clase para los estilos desde el CSS//
-      welcomeMessage.classList.add("welcome-message");
-
-      // insertar el mensaje en la parte superior del contenedor//
-      document.querySelector(".container").prepend(welcomeMessage);
-  }
-
-  </script>
-</div>
   <main>
     <div class="jumbotron text-center"></div>
     <div class="album py-5 bg-light">
@@ -105,13 +104,14 @@
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/init.js"></script>
- 
+
 </body>
 
 </html>
