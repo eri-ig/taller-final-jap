@@ -60,9 +60,15 @@ nav.navbar {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
+<<<<<<< HEAD
   background-color: #fbb253;
   background: url('../img/cover_back.png'); 
   background-size: cover; 
+=======
+  background-color: #53C0FB;
+  background: url('../img/bannerWeb.png');
+  background-size: cover;
+>>>>>>> a4e338db7b8e101ab8d92eaea198f3ca338d3bc8
   background-position: center;
   background-repeat: no-repeat;
   color: black;
@@ -216,6 +222,7 @@ a.custom-card:hover {
   color: orange;
 }
 
+<<<<<<< HEAD
 .header-container {
   display: flex;
   justify-content: space-between; 
@@ -315,4 +322,14 @@ footer a:hover {
 
 .product-image:hover {
   transform: scale(1.05); 
+=======
+.welcome-message {
+  color: rgba(218, 214, 214, 0.65);
+  font-size: 15px;  
+  margin-left: 0px;  
+  text-align:center;  
+  margin-top: 20px;
+  margin-right: 20px;
+  margin: 0 auto;
+>>>>>>> a4e338db7b8e101ab8d92eaea198f3ca338d3bc8
 }
