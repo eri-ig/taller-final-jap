@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const categoriaActual = localStorage.getItem("catID");/* se guarda el id actual */
   const PRODUCTOS_URL = `https://japceibal.github.io/emercado-api/cats_products/${categoriaActual}.json`/* se busca el json con el id actual */
+  
   fetch(PRODUCTOS_URL)
     .then(response => {
       if (!response.ok) {
@@ -15,30 +16,34 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log("Datos recibidos: ", data);//para ver en consola si me cargaron bien los datos(paranoia en todo su esplendor)
 
       cards(products, data.catName);
+
+      implementSearch(products);
     })
-    .catch(error => {
-      console.error(error)
-    })
+  .catch(error => {
+    console.error(error)
+  });
 });
+
 /* Se comienza con las categorias */
 function cards(products, catName) {
 
   /*Segun la categoria se le asigna un titulo y una descripción */
   const pageTitle = document.getElementById('productTitle')
   const pageDescription = document.getElementById('description')
+  const productGrid = document.getElementById('containerDiv')
+
   pageTitle.innerHTML = catName;
   if (catName == "Autos") {
-    pageDescription.innerHTML = `Descubre los autos más vendidos del año, conocidos por su calidad y
-            seguridad. Encuentra el tuyo hoy.`
-  }
-  else if (catName == "Juguetes") {
+    pageDescription.innerHTML = `Descubre los autos más vendidos del año, conocidos por su calidad y seguridad. Encuentra el tuyo hoy.`
+  } else if (catName == "Juguetes") {
     pageDescription.innerHTML = `Descubre los juguetes más vendidos del año, reconocidos por su calidad. ¡Encuentra el perfecto para ti hoy!`
   } else {
     pageDescription.innerHTML = `Explora los muebles más vendidos del año, famosos por su durabilidad y estilo. ¡Encuentra el ideal para tu hogar hoy!`
   };
 
+  productGrid.innerHTML = '';
+
   /* comienzan las tarjetas de productos */
-  const productGrid = document.getElementById('containerDiv');
 
   products.forEach(products => {
     const productCard = `
@@ -61,5 +66,23 @@ function cards(products, catName) {
         </div>
             `;
     productGrid.innerHTML += productCard;
+  });
+}
+
+/* Función para hacer la búsqueda en tiempo real */
+function implementSearch(products) {
+  const searchInput = document.getElementById('search');
+  
+  searchInput.addEventListener('input', function () {
+    const searchText = this.value.toLowerCase();
+
+    // Filtrar productos según el título o descripción
+    const filteredProducts = products.filter(product => {
+      return product.name.toLowerCase().includes(searchText) ||
+              product.description.toLowerCase().includes(searchText);
+    });
+
+    // Mostrar solo los productos filtrados
+    cards(filteredProducts, document.getElementById('productTitle').innerHTML);
   });
 }
