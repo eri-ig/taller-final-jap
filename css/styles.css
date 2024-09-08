@@ -3,6 +3,9 @@
 .mt-5,
 .container,
 
+body{
+  padding-bottom: 30px;
+}
 
 label{
   position: relative;
@@ -80,15 +83,6 @@ nav a {
 
 .jumbotron .lead {
   font-size: 38px;
-}
-
-footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-footer p {
-  margin-bottom: .25rem;
 }
 
 .site-header a {
@@ -212,4 +206,23 @@ a.custom-card:hover {
   margin-top: 20px;
   margin-right: 20px;
   margin: 0 auto;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 15px 15px;
+  height: 60px;
+}
+
+.container-2 p a{
+  color: rgb(255, 186, 122);
+  text-decoration: none;
+}
+
+.container-2 a:hover {
+  text-decoration: underline;
 }
