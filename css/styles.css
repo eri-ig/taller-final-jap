@@ -199,7 +199,7 @@ a.custom-card:hover {
 }
 
 .welcome-message {
-  color: rgba(218, 214, 214, 0.65);
+  color:#0087F7(218, 214, 214, 0.65);
   font-size: 15px;  
   margin-left: 0px;  
   text-align:center;  
@@ -226,3 +226,7 @@ footer{
 .container-2 a:hover {
   text-decoration: underline;
 }
+.thumbnail {
+  cursor: pointer;
+}
+
