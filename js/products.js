@@ -47,7 +47,7 @@ function cards(products, catName) {
 
   products.forEach(products => {
     const productCard = `
-        <div class="col">
+        <div class="col" id="product${products.id}">
           <div class="card shadow-sm">
           <img src="${products.image}" alt="${products.name}" class="productImage">
             <div class="card-body">
@@ -67,7 +67,9 @@ function cards(products, catName) {
             `;
     productGrid.innerHTML += productCard;
   });
+  setProductOnClickListener();
 }
+
 
 /* Función para hacer la búsqueda en tiempo real */
 function implementSearch(products) {
@@ -85,4 +87,16 @@ function implementSearch(products) {
     // Mostrar solo los productos filtrados
     cards(filteredProducts, document.getElementById('productTitle').innerHTML);
   });
+}
+/* funcion para que al clickear un producto se guarde el id del producto */
+function setProductOnClickListener(){
+
+  const productDivs = document.querySelectorAll('div[id^="product"]');/* guarde en la constante una lista de div que su id inicie con product */
+
+productDivs.forEach(div => {/* para cada div se le añade un escuchador para que al hacer click cada id se guarde en el localStorage,se utiliza substring para acceder correctamente al ID proporcionado por el Json */
+   div.addEventListener("click",function(){ 
+    localStorage.setItem("productId",div.id.substring(7));
+    document.location = "product-info.html" /* te envia directamente a la pagina product-info */
+   })
+});
 }
