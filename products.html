@@ -67,6 +67,50 @@
       </div>
     </section>
     <!--Fin de banner-->
+
+  <!--Filtros-->
+
+  <section>
+    <div class="row justify-content-end">
+      <div class="col-md-3">
+        <h5>Filtrar por Precio</h5>
+        <input type="number" id="minPrice" class="form-control form-control-sm mb-2" placeholder="Precio mínimo">
+        <input type="number" id="maxPrice" class="form-control form-control-sm mb-2" placeholder="Precio máximo">
+      </div>
+  
+      <div class="col-md-3">
+        <h5>Ordenar Productos</h5>
+        <select id="sortOrder" class="form-control form-control-sm mb-2">
+          <option value="asc">Precio Ascendente</option>
+          <option value="desc">Precio Descendente</option>
+          <option value="sold">Más Vendidos</option>
+        </select>
+        <div class="d-flex justify-content-end">
+          <button id="applyFilter" class="btn btn-sm btn-primary">Aplicar Filtros</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+      <!--Agrego el estilo del botón de "Aplicar Filtros" acá-->
+  
+  <style>
+    #applyFilter {
+      background-color: white;
+      color: rgba(0, 0, 0, 0.945);
+      border: 1px solid rgba(0, 0, 0, 0.945);
+    }
+  
+    #applyFilter:hover {
+      background-color: #f8f9fa; 
+    }
+  </style>
+  
+    <!--Fin de agregación (?ponele) de estilo-->
+
+  <!--Fin de filtros-->
+
+
     <!--Inicio de tarjetas-->
     <section>
       <div class="album py-5 bg-body-tertiary">
