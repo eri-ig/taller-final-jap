@@ -13,7 +13,9 @@ label{
   font-size: 22px;
 }
 
+
 input,
+
 
 .contenedor-input{
   position: relative;
@@ -23,13 +25,16 @@ input,
   font-family: 'Verdana', serif !important;
 }
 
+
 .jumbotron .display-4 {
   font-weight: bold;
 }
 
+
 nav a {
   text-decoration: none;
 }
+
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -40,11 +45,13 @@ nav a {
   user-select: none;
 }
 
+
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
 }
+
 
 .jumbotron {
   height: 50vh;
@@ -59,6 +66,7 @@ nav a {
   font-weight: bold;
 }
 
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
@@ -66,13 +74,16 @@ nav a {
   }
 }
 
+
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
 
+
 .jumbotron-heading {
   font-weight: 300;
 }
+
 
 .jumbotron .container {
   max-width: 40rem;
@@ -81,18 +92,22 @@ nav a {
   text-shadow: 1px 1px 2px grey;
 }
 
+
 .jumbotron .lead {
   font-size: 38px;
 }
+
 
 .site-header a {
   color: white;
   transition: ease-in-out color .15s;
 }
 
+
 .site-header .dropdown-menu a {
   color: black;
 }
+
 
 .dropzone {
   border: 2px dashed #0087F7;
@@ -100,9 +115,11 @@ nav a {
   background: white;
 }
 
+
 .img-fit {
   max-height: 100%;
 }
+
 
 .alert {
   position: fixed;
@@ -111,6 +128,7 @@ nav a {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 
 .lds-ring {
   display: inline-block;
@@ -121,6 +139,7 @@ nav a {
   left: 50%;
 }
 
+
 .cursor-active {
   cursor:pointer;
 }
@@ -130,6 +149,7 @@ nav a {
   padding: 4px;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
 
 .lds-ring div {
   box-sizing: border-box;
@@ -144,27 +164,33 @@ nav a {
   border-color: #fff transparent transparent transparent;
 }
 
+
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
 }
+
 
 .lds-ring div:nth-child(2) {
   animation-delay: -0.3s;
 }
 
+
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
 
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
   }
 
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 
 .signin {
   width: 100%;
@@ -172,6 +198,7 @@ nav a {
   padding: 15px;
   margin: auto;
 }
+
 
 #spinner-wrapper {
   position: fixed;
@@ -184,9 +211,11 @@ nav a {
   display: none;
 }
 
+
 main {
   min-height: calc(100vh - 210px);
 }
+
 
 a.custom-card,
 a.custom-card:hover {
@@ -194,9 +223,11 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
+
 .checked {
   color: orange;
 }
+
 
 .welcome-message {
   color: rgba(218, 214, 214, 0.65);
@@ -208,6 +239,7 @@ a.custom-card:hover {
   margin: 0 auto;
 }
 
+
 footer{
   position: fixed;
   bottom: 0;
@@ -218,80 +250,225 @@ footer{
   height: 60px;
 }
 
+
 .container-2 p a{
   color: rgb(255, 186, 122);
   text-decoration: none;
 }
 
+
 .container-2 a:hover {
   text-decoration: underline;
 }
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.thumbnail {
+  cursor: pointer;
+  width: 200px !important; /* Ancho mediano forzado */
+  height: 150px !important; /* Altura mediana forzada */
+  object-fit: cover; /* Ajusta para que la imagen no se deforme */
 }
 
-/* Estilo para el logo SHIGIERICATEVA */
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Alinea los elementos a los extremos */
-  align-items: center; /* Alinea verticalmente al centro */
-  padding: 10px 50px; /* Ajusta el espaciado */
-  background-color: #f2f2f2;
-  width: 100%;
+/* Ajustes pag */
+.hero {
+  padding: 20px 0;
 }
 
-/* Estilo para el logo SHIGIRICATEVA */
-.navbar-logo {
-  font-size: 24px;
-  color:#fd7e14;
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /* Ajusta la imagen para que no se deforme */
+}
+
+.product-details {
+  text-align: left;
+}
+
+.product-title {
+  font-size: 28px;
   font-weight: bold;
-}
-
-/* Menú de navegación */
-.nav-menu {
-  display: flex; /* Alinea los elementos horizontalmente */
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  list-style:none;
-  margin-left: auto;
-}
-
-.nav-item {
-  margin-right: 20px; /* Espaciado entre los ítems */
-}
-
-.nav-link {
-  text-decoration: none;
-  color:rgba(0, 0, 0, .55);
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.nav-link:hover {
-  color:#4f4c4c; /* Cambia de color al pasar el mouse */
-}
-
-/* Carrito de compras */
-.navbar-cart-container {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-cart {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
   color: #333;
 }
 
-.navbar-cart img {
-  margin-right: 5px; /* Espaciado entre la imagen y el texto */
+.product-price {
+  font-size: 36px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.navbar-cart small {
-  font-size: 14px;
+.badge {
+  background-color: #f5c518;
+  color: #000;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.product-description h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-description p {
+  color: #666;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Estilo del botón "COMPRAR" */
+.btn-warning {
+  background-color:#fd7e14; 
+    color: rgb(0, 0, 0); 
+    text-decoration: none;
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; 
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold;
+    text-align: center; /* Centra el texto dentro del botón */
+    display: inline-block; /* Hace que el botón respete el tamaño del contenido */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    width: 100%; /* Hace que ocupe todo el ancho disponible */
+    transition: background-color 0.3s ease; /* Animación para el hover pasar el mouse */
+    margin-top: 50px;
+
+}
+
+.btn-warning:hover {
+  background-color:#f0862f ;
+}
+
+.descripcion-producto {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #f1ad85;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+}
+
+
+
+/* Ajustes para las medianas de abajo */
+.thumbnail {
+  width: 180px; /* Tamaño mediano para las imágenes */
+  height: 180px; /* Ajuste de altura */
+  object-fit: cover; /* Asegura que las imágenes no se deformen */
+  margin: 0 10px; /* Espaciado entre las imágenes */
+  border-radius: 8px; /* Bordes imagenes */
+  border: 2px solid #fd7e14;
+}
+
+
+.thumbnail {
+  cursor: pointer;
+  width: 200px !important; /* Ancho mediano forzado */
+  height: 150px !important; /* Altura mediana forzada */
+  object-fit: cover; /* Ajusta para que la imagen no se deforme */
+}
+
+/* Ajuste del contenedor de la imagen principal */
+.col-lg-7.mb-4 {
+  margin-left: 50px;
+  overflow: visible;
+}
+
+.col-12.mb-3.h-100 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea todo el contenido a la izquierda */
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  padding-left: 0px; /* Ajusta este valor para mover más la imagen a la derecha */
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+}
+
+#imagenPrincipal {
+  width: auto; /* Mantén la proporción de la imagen */
+  max-width: 100%; /* Limita el ancho para que no se salga del contenedor */
+  height: 450px; /* Permite que la altura se ajuste automáticamente */
+  transform: translateX(0); /* Remueve el desplazamiento para centrar mejor la imagen */
+}
+
+/* Ajustes para las miniaturas */
+.thumbnail {
+  width: 180px; /* Ajuste imagenes de abajo */
+  height: 180px;
+  object-fit: cover;
+  margin: 0 10px;
+  border-radius: 8px;
+  border: 2px solid #fd7e14;
+}
+
+#thumbnailsList {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-left: 170px; /* Desplaza cada imagen hacia la derecha */
+}
+
+
+/* Alineacion de los detalles del producto */
+.col-lg-5.mb-5 {
+  position: absolute;
+  right: 150px; /* Posición en el lado izquierdo */
+  top: 10;  /* Posición en la parte superior */
+  width: 30%; /* Controla el ancho */
+  
+  
+}
+
+.item-title {
+  font-size: 35px; /* Tamaño ajustado del título */
+  font-weight: bold; 
+  color: #333333; 
+  margin: 0; /* Sin margen para que no se desplace mucho hacia abajo */
+  display: block; /* Hace que ocupe todo el ancho disponible */
+  margin-top: 50px; /* Margen inferior para separar del precio */
+  margin-bottom: 60px;
+}
+
+.item-price {
+  font-size: 40px; /* Tamaño para el precio */
+  font-weight: bold; 
+  color: #000000; 
+  margin:0 ; /* Sin margen superior ni inferior */
+  display: block; /* Hace que ocupe todo el ancho disponible */
+  margin-top: 1px; /* Espacio por encima para separar del título */
+}
+
+
+.item-brand {
+  background-color: #FDE6A7; 
+  color: #B26A00; 
+  padding: 5px 10px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 12px; /* Tamaño de la fuente */
+  display: inline-block; /* Asegura que respete el ancho del contenido */
+  text-align: center; /* Alinea el texto al centro */
+  margin-top: 1px; /* Espacio debajo para separar del título */
+}
+
+/* tarjeta del producto */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.row.justify-content-between {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.prueba{
+  margin-left: 100px;
 }
