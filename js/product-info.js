@@ -34,7 +34,7 @@ function infoCard(producto) { //Se le cambia los parametros a la tarjeta de info
     });
     document.getElementById("imagenPrincipal").src = producto.images[0];// se le pone una imagen principal predeterminada 
     showPrincipalImage();
-    relatedProducts(producto.relatedProducts);
+    /*relatedProducts(producto.relatedProducts);*/
 };
 
 function showPrincipalImage() { // se le cambia el src de la imagen principal por el de el thumbnail clickeado
@@ -46,7 +46,7 @@ function showPrincipalImage() { // se le cambia el src de la imagen principal po
     });
 };
 
-function relatedProducts(productosRelacionados) { // se crean las tarjetas de los productos relacionados
+/*function relatedProducts(productosRelacionados) { // se crean las tarjetas de los productos relacionados
     const relatedCard = document.getElementById('relatedProductss');
     productosRelacionados.forEach(related => {
         relatedCard.innerHTML += `
@@ -63,12 +63,12 @@ function relatedProducts(productosRelacionados) { // se crean las tarjetas de lo
 
 function setProductOnClickListener() { // se recicla la funcion que permite hacer click en un producto y mediante su id se actualiza la pagina con los datos de ese producto.
 
-    const productDivs = document.querySelectorAll('div[id^="product"]');/* guarde en la constante una lista de div que su id inicie con product */
+    const productDivs = document.querySelectorAll('div[id^="product"]');// guarde en la constante una lista de div que su id inicie con product
 
-    productDivs.forEach(div => {/* para cada div se le añade un escuchador para que al hacer click cada id se guarde en el localStorage,se utiliza substring para acceder correctamente al ID proporcionado por el Json */
+    productDivs.forEach(div => {// para cada div se le añade un escuchador para que al hacer click cada id se guarde en el localStorage,se utiliza substring para acceder correctamente al ID proporcionado por el Json
         div.addEventListener("click", function () {
             localStorage.setItem("productId", div.id.substring(7));
-            document.location = "product-info.html" /* te envia directamente a la pagina product-info */
+            document.location = "product-info.html" // te envia directamente a la pagina product-info
         })
     });
-}
+}*/
