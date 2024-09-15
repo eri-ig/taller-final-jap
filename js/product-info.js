@@ -26,6 +26,7 @@ function infoCard(producto) { //Se le cambia los parametros a la tarjeta de info
     document.getElementById("brand").innerHTML = producto.name;
     document.getElementById("price").innerHTML = producto.cost + " " + producto.currency;
     document.getElementById("description").innerHTML = producto.description;
+    document.getElementById("ventas").innerHTML = "Cantidad vendida "+ producto.soldCount;
     const thumbnails = document.getElementById("thumbnailsList") // se añade los thumbnails
     producto.images.forEach(imagen => {
         thumbnails.innerHTML += `
