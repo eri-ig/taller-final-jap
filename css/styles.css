@@ -4,7 +4,7 @@
 .container,
 
 body{
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 label{
@@ -13,7 +13,9 @@ label{
   font-size: 22px;
 }
 
+
 input,
+
 
 .contenedor-input{
   position: relative;
@@ -23,13 +25,16 @@ input,
   font-family: 'Verdana', serif !important;
 }
 
+
 .jumbotron .display-4 {
   font-weight: bold;
 }
 
+
 nav a {
   text-decoration: none;
 }
+
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -40,11 +45,13 @@ nav a {
   user-select: none;
 }
 
+
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
 }
+
 
 .jumbotron {
   height: 50vh;
@@ -59,6 +66,7 @@ nav a {
   font-weight: bold;
 }
 
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
@@ -66,13 +74,16 @@ nav a {
   }
 }
 
+
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
 
+
 .jumbotron-heading {
   font-weight: 300;
 }
+
 
 .jumbotron .container {
   max-width: 40rem;
@@ -81,18 +92,22 @@ nav a {
   text-shadow: 1px 1px 2px grey;
 }
 
+
 .jumbotron .lead {
   font-size: 38px;
 }
+
 
 .site-header a {
   color: white;
   transition: ease-in-out color .15s;
 }
 
+
 .site-header .dropdown-menu a {
   color: black;
 }
+
 
 .dropzone {
   border: 2px dashed #0087F7;
@@ -100,9 +115,11 @@ nav a {
   background: white;
 }
 
+
 .img-fit {
   max-height: 100%;
 }
+
 
 .alert {
   position: fixed;
@@ -111,6 +128,7 @@ nav a {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 
 .lds-ring {
   display: inline-block;
@@ -121,6 +139,7 @@ nav a {
   left: 50%;
 }
 
+
 .cursor-active {
   cursor:pointer;
 }
@@ -130,6 +149,7 @@ nav a {
   padding: 4px;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
 
 .lds-ring div {
   box-sizing: border-box;
@@ -144,27 +164,33 @@ nav a {
   border-color: #fff transparent transparent transparent;
 }
 
+
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
 }
+
 
 .lds-ring div:nth-child(2) {
   animation-delay: -0.3s;
 }
 
+
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
 
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
   }
 
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 
 .signin {
   width: 100%;
@@ -172,6 +198,7 @@ nav a {
   padding: 15px;
   margin: auto;
 }
+
 
 #spinner-wrapper {
   position: fixed;
@@ -184,9 +211,11 @@ nav a {
   display: none;
 }
 
+
 main {
   min-height: calc(100vh - 210px);
 }
+
 
 a.custom-card,
 a.custom-card:hover {
@@ -194,9 +223,11 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
+
 .checked {
   color: orange;
 }
+
 
 .welcome-message {
   color: rgba(218, 214, 214, 0.65);
@@ -208,6 +239,7 @@ a.custom-card:hover {
   margin: 0 auto;
 }
 
+
 footer{
   position: fixed;
   bottom: 0;
@@ -218,10 +250,12 @@ footer{
   height: 60px;
 }
 
+
 .container-2 p a{
   color: rgb(255, 186, 122);
   text-decoration: none;
 }
+
 
 .container-2 a:hover {
   text-decoration: underline;
