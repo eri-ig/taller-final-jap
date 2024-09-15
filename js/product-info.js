@@ -34,7 +34,7 @@ function infoCard(producto) { //Se le cambia los parametros a la tarjeta de info
     });
     document.getElementById("imagenPrincipal").src = producto.images[0];// se le pone una imagen principal predeterminada 
     showPrincipalImage();
-    relatedProducts(producto.relatedProducts);
+    /*relatedProducts(producto.relatedProducts);*/
 };
 
 function showPrincipalImage() { // se le cambia el src de la imagen principal por el de el thumbnail clickeado
