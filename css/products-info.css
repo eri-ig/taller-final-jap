@@ -412,8 +412,10 @@
   
   /* Ajuste del contenedor de la imagen principal */
   .col-lg-7.mb-4 {
-    margin-left: 50px;
+    margin-left: 200px;
+    margin-right: auto;
     overflow: visible;
+    max-width: 800px;
   }
   
   .col-12.mb-3.h-100 {
@@ -424,14 +426,13 @@
     padding-left: 0px; /* Ajusta este valor para mover más la imagen a la derecha */
     width: 100%;
     height: auto;
-    max-width: 800px;
   }
   
   #imagenPrincipal {
     width: auto; /* Mantén la proporción de la imagen */
     max-width: 100%; /* Limita el ancho para que no se salga del contenedor */
     height: 450px; /* Permite que la altura se ajuste automáticamente */
-    transform: translateX(0); /* Remueve el desplazamiento para centrar mejor la imagen */
+    transform: 0 auto; /* Remueve el desplazamiento para centrar mejor la imagen */
   }
   
   /* Ajustes para las miniaturas */
@@ -449,7 +450,7 @@
     justify-content: center;
     margin-bottom: 60px;
     margin-top: 20px;
-    margin-left: 170px; /* Desplaza cada imagen hacia la derecha */
+    margin-left: 30px; /* Desplaza cada imagen hacia la derecha */
   }
   
   
