@@ -63,12 +63,12 @@ function showPrincipalImage() { // se le cambia el src de la imagen principal po
 
 function setProductOnClickListener() { // se recicla la funcion que permite hacer click en un producto y mediante su id se actualiza la pagina con los datos de ese producto.
 
-    const productDivs = document.querySelectorAll('div[id^="product"]');// guarde en la constante una lista de div que su id inicie con product 
+    const productDivs = document.querySelectorAll('div[id^="product"]');// guarde en la constante una lista de div que su id inicie con product
 
-    productDivs.forEach(div => {// para cada div se le añade un escuchador para que al hacer click cada id se guarde en el localStorage,se utiliza substring para acceder correctamente al ID proporcionado por el Json 
+    productDivs.forEach(div => {// para cada div se le añade un escuchador para que al hacer click cada id se guarde en el localStorage,se utiliza substring para acceder correctamente al ID proporcionado por el Json
         div.addEventListener("click", function () {
             localStorage.setItem("productId", div.id.substring(7));
-            document.location = "product-info.html" // te envia directamente a la pagina product-info 
+            document.location = "product-info.html" // te envia directamente a la pagina product-info
         })
     });
 }*/
