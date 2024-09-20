@@ -67,10 +67,21 @@ nav a {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1279px) {
   .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    min-height: 30vh;
+    padding: 2em 1em;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .jumbotron {
+    min-height: 20vh;
+    padding: 1em 0.5em;
+    background-position: 91% center;
+    background-size: cover;
   }
 }
 
