@@ -122,6 +122,8 @@ stars.forEach(function(star, index) {
 // Función para que se cumplan requisitos al enviar una opinión
 document.getElementById("submitBtn").addEventListener("click", function() {
     const commentText = document.getElementById("commentText").value;
+    const username = sessionStorage.getItem("username");
+
     
     if (commentText === "" || selectedRating === 0) {
         alert("Por favor, escribe un comentario y selecciona una calificación.");
@@ -153,7 +155,7 @@ document.getElementById("submitBtn").addEventListener("click", function() {
     const formattedDate = `${day}/${month}/${year} ${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
     
     newComment.innerHTML = `
-        <h3>Calificación:</h3>
+        <h3>${username}:</h3>
         <div class="stars">${starHTML}</div>
         <p>${commentText}</p>
         <span class="date">Fecha: ${formattedDate}</span>
