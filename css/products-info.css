@@ -269,7 +269,7 @@ a.custom-card:hover {
 }
 
 footer{
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   background-color: #f1f1f1;
@@ -447,4 +447,20 @@ footer{
 
 .prueba{
   margin-left: 100px;
+}
+
+/*Estilo de las estrellas*/
+.star {
+  font-size: 32px;
+  color: #bbb;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.star:hover {
+  color: goldenrod;
+}
+
+.star.checked {
+  color: goldenrod;
 }

@@ -101,3 +101,69 @@ function setProductOnClickListener() { // se recicla la funcion que permite hace
         })
     });
 }*/
+
+//Funcionalidades para la calificacion de los productos
+let stars = document.querySelectorAll(".star");
+let selectedRating = 0;
+
+// Función para darle color a las estrellas y actualizar la calificación
+stars.forEach(function(star, index) {
+    star.addEventListener("click", function() {
+        selectedRating = index + 1; // Actualiza la calificación seleccionada
+        for (let i = 0; i <= index; i++) {
+            stars[i].classList.add("checked");
+        }
+        for (let i = index + 1; i < stars.length; i++) {
+            stars[i].classList.remove("checked");
+        }
+    });
+});
+
+// Función para que se cumplan requisitos al enviar una opinión
+document.getElementById("submitBtn").addEventListener("click", function() {
+    const commentText = document.getElementById("commentText").value;
+    
+    if (commentText === "" || selectedRating === 0) {
+        alert("Por favor, escribe un comentario y selecciona una calificación.");
+        return;
+    }
+
+    // Se escribe el comentario
+    let commentList = document.getElementById("commentList");
+    let newComment = document.createElement("div");
+    newComment.classList.add("comment");
+
+    // Esto nos permite ver las estrellas que seleccionamos
+    let starHTML = "";
+    for (let i = 0; i < selectedRating; i++) {
+        starHTML += '<i class="bi bi-star-fill star checked"></i>';
+    }
+    for (let i = selectedRating; i < 5; i++) {
+        starHTML += '<i class="bi bi-star-fill star"></i>';
+    }
+
+    // Para obtener la fecha en que se realiza el comentario
+    let fecha = new Date();
+    let day = fecha.getDate();
+    let month = fecha.getMonth() + 1;
+    let year = fecha.getFullYear();
+    let hours = fecha.getHours();
+    let minutes = fecha.getMinutes();
+
+    const formattedDate = `${day}/${month}/${year} ${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+    
+    newComment.innerHTML = `
+        <h3>Calificación:</h3>
+        <div class="stars">${starHTML}</div>
+        <p>${commentText}</p>
+        <span class="date">Fecha: ${formattedDate}</span>
+    `;
+
+    // Agregamos el comentario a la lista
+    commentList.appendChild(newComment);
+
+    // Limpia el formulario
+    document.getElementById("commentText").value = "";
+    stars.forEach(star => star.classList.remove("checked"));
+    selectedRating = 0;
+});
