@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const productoActual = localStorage.getItem("productId")//se busca del localStorage el ID
     const PRODUCTO_URL = `https://japceibal.github.io/emercado-api/products/${productoActual}.json` // se busca el json segun el id del producto
-
+    let box_comments = document.getElementById("comentarios")
+    let products_commentUrl = `https://japceibal.github.io/emercado-api/products_comments/${productoActual}.json`
 
     fetch(PRODUCTO_URL)
         .then(response => {
@@ -18,6 +19,33 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
             console.error(error)
         });
+
+
+    
+        //╰༼⇀︿⇀༽つ-]═── fetch de comentarios //
+
+        fetch(products_commentUrl)
+        .then(res => res.json())
+        .then (datos =>{
+            information = datos
+             
+            console.log (information)
+
+             for ( comment of information){
+                console.log(comment.user)
+                
+                box_comments.innerHTML += `
+                <div class="comment">
+                <div > <p> <b> ${comment.user} </b> - ${comment.dateTime} -  ${comment.score} </p> </div>
+                <div > <p> ${comment.description} </p> </div>
+                </div>`
+                
+                
+             }
+        
+
+             
+        });   
 
 })
 
