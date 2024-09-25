@@ -66,18 +66,6 @@
   font-size: 14px;
 }
 
-label{
-  position: relative;
-  color: black;
-  font-size: 22px;
-}
-
-input,
-
-.contenedor-input{
-  position: relative;
-  margin-bottom: 40px;
-}
 .site-header {
   font-family: 'Verdana', serif !important;
 }
@@ -105,45 +93,6 @@ nav a {
   }
 }
 
-.jumbotron {
-  height: 50vh;
-  padding: 5em inherit;
-  margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/bannerWeb.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: black;
-  font-weight: bold;
-}
-
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
-.jumbotron-heading {
-  font-weight: 300;
-}
-
-.jumbotron .container {
-  max-width: 40rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  text-shadow: 1px 1px 2px grey;
-}
-
-.jumbotron .lead {
-  font-size: 38px;
-}
-
 .site-header a {
   color: white;
   transition: ease-in-out color .15s;
@@ -153,22 +102,8 @@ nav a {
   color: black;
 }
 
-.dropzone {
-  border: 2px dashed #0087F7;
-  border-radius: 5px;
-  background: white;
-}
-
 .img-fit {
   max-height: 100%;
-}
-
-.alert {
-  position: fixed;
-  top: 80px;
-  width: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
 }
 
 .lds-ring {
@@ -224,13 +159,6 @@ nav a {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
 }
 
 #spinner-wrapper {
