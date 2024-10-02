@@ -34,7 +34,7 @@ function infoCard(producto) { //Se le cambia los parametros a la tarjeta de info
     });
     document.getElementById("imagenPrincipal").src = producto.images[0];// se le pone una imagen principal predeterminada 
     showPrincipalImage();
-    /*relatedProducts(producto.relatedProducts);*/
+    relatedProducts(producto.relatedProducts);
 };
 
 function showPrincipalImage() { // se le cambia el src de la imagen principal por el de el thumbnail clickeado
@@ -104,8 +104,8 @@ btn.onclick = (event) => {
     let commentText = textArea.value.trim();
     let rating = getSelectedRating();
 
-//Obtengo el nombre de usuario del sessionStorage -.-
-const username = sessionStorage.getItem("username");
+//Obtengo el nombre de usuario del sessionStorage -.- o asignar el nickname de Anónimo para no dejar un vacio.
+const username = sessionStorage.getItem("username") || "Anónimo";
 
 //Verifica que se cumpla que haya un comentario y una puntuacion
     if (commentText && rating) {
@@ -139,17 +139,16 @@ editBtn.onclick = () => {
     loadComments();
 
 });
-/*function relatedProducts(productosRelacionados) { // se crean las tarjetas de los productos relacionados
+function relatedProducts(productosRelacionados) { // se crean las tarjetas de los productos relacionados
     const relatedCard = document.getElementById('relatedProductss');
     productosRelacionados.forEach(related => {
         relatedCard.innerHTML += `
-<div class="col-md-3 col-sm-6" id="product${related.id}">
-            <div class="card">
-                <img src="${related.image}" class="card-img-top" alt="Producto 1">
-                <div class="card-body">
-                    <h5 class="card-title">${related.name}</h5>
-                </div>
-            </div> `
+ <div class="card" id="product${related.id}">
+            <img src="${related.image}" class="small-image" alt="Producto ${related.name}">
+            <div class="card-body">
+                <h5 class="card-title">${related.name}</h5>
+            </div>
+        </div>`
     })
     setProductOnClickListener();
 };
@@ -164,4 +163,4 @@ function setProductOnClickListener() { // se recicla la funcion que permite hace
             document.location = "product-info.html" // te envia directamente a la pagina product-info
         })
     });
-}*/
+}

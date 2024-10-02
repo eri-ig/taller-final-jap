@@ -514,3 +514,34 @@ form .btn button:hover {
   background: #1b1b1b;
 
 }
+.related-products {
+  display: flex;               
+  flex-wrap:nowrap;            
+  gap: 15px;                   
+  justify-content: flex-start; 
+}
+.card {
+  flex: 0 0 auto;
+  width: 200px;                
+  border: 1px solid #fd7e14;      
+  border-radius: 10px;         
+  overflow: hidden;            
+  background-color: #fff;      
+  text-align: center;          
+  transition: transform 0.3s ease;  
+  margin: 10px;
+}
+.card:hover {
+  transform: translateY(-3px);  /* Mueve la tarjeta hacia arriba ligeramente al pasar el mouse */
+}
+.small-image {
+  width: 100%;                 /* La imagen ocupa todo el ancho de la tarjeta */
+  height: 150px;               /* Alto fijo para las imágenes */
+  object-fit: cover;           /* Ajusta la imagen sin distorsionarla */
+  border-bottom: 1px solid #ccc;  /* Línea divisoria entre la imagen y el contenido */
+}
+.card-title {
+  font-size: 1.1em;
+  margin: 10px 0;
+  font-weight: bold;
+}
