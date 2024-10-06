@@ -234,7 +234,7 @@ footer{
 }
 
 .product-image img {
-  max-width: 100%;
+  max-width: 100%; 
   height: auto;
   object-fit: cover; 
 }
@@ -392,3 +392,37 @@ footer{
 .star.checked {
   color: goldenrod;
 }
+
+/* Apartado de comentarios */
+
+.comment-section-container {
+  border: 2px solid #cc8400; /* Borde negro */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+
+.comment-section {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombreado suave */
+}
+
+
+#commentText {
+  width: 100%;
+  border: 2px solid #cc8400; /* Borde anaranjado más oscuro */
+  background-color: #c9b58f;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+
+/* Estilo para los nombres de usuario en los comentarios */
+.comment-user-name {
+  font-weight: bold; /* Negrita para el nombre del usuario */
+
+/* fin Apartado de comentarios */
