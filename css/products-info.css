@@ -396,33 +396,29 @@ footer{
 /* Apartado de comentarios */
 
 .comment-section-container {
-  border: 2px solid #cc8400; /* Borde negro */
+  border: 2px solid #cc8400; 
   padding: 20px;
   margin-top: 20px;
-  border-radius: 10px; /* Bordes redondeados */
+  border-radius: 10px; 
 }
-
 
 .comment-section {
   background-color: #ffffff;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombreado suave */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
-
 
 #commentText {
   width: 100%;
-  border: 2px solid #cc8400; /* Borde anaranjado más oscuro */
+  border: 2px solid #cc8400; 
   background-color: #c9b58f;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-
-/* Estilo para los nombres de usuario en los comentarios */
 .comment-user-name {
-  font-weight: bold; /* Negrita para el nombre del usuario */
+  font-weight: bold; 
 
 /* fin Apartado de comentarios */
