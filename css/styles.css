@@ -274,3 +274,67 @@ footer{
 .filtos-link {
   color: #2d2d2d !important; 
 }
+
+/*Estilo para Product.HTML*/
+h1#productTitle {
+  font-weight: bold !important;
+  font-size: 30px;
+  color: rgb(255, 186, 122);                  
+  -webkit-text-stroke: 1px rgb(15, 10, 0);  /* Borde alrededor del texto */
+  text-stroke: 1px rgb(15, 10, 0); 
+}
+
+button {
+  border: 1px solid orange;
+  background-color: rgb(255, 186, 122); 
+  padding: 8px 15px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5%;
+  margin-bottom: 10px;
+}
+
+button a {
+  text-decoration: none; 
+  color: rgb(255, 186, 122);
+}
+
+button:hover {
+  background: orange;
+}
+
+input {
+  margin-bottom: 18px;
+}
+
+.form-control {
+  border: 1px solid orange;
+}
+
+.form-control::placeholder {
+  color: rgba(0, 0, 0, 0.945);
+}
+
+/*Agrego el estilo del botón de "Aplicar Filtros" acá*/
+#applyFilter {
+  background-color: rgb(255, 186, 122);
+  color: rgba(0, 0, 0, 0.945);
+  border: 1px solid orange;
+}
+
+#applyFilter:hover {
+  background-color: orange;
+}
+
+/*Tarjetas*/
+#containerDiv .card {
+  border: 2px solid orange;
+}
+
+#containerDiv .card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave al hacer hover */
+  transform: scale(1.02); /* Efecto de agrandamiento */
+}
+
+/*Fin de estilos para Products.HTML*/
