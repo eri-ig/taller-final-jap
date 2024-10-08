@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/my-profile.css" rel="stylesheet">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -50,12 +51,71 @@
       </div>
     </div>
   </nav>
+
+
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+            <div class="col-xl-8 col-md-12">
+                <!-- Switch de modo claro/oscuro -->
+                <div class="d-flex justify-content-end mb-3">
+                    <label class="mr-2">Modo oscuro</label>
+                    <input type="checkbox" id="darkModeSwitch">
+                </div>
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <!-- Perfil de Usuario -->
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-25">
+                                    <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
+                                </div>
+                                <h6 class="f-w-600">NOMBRE DE USUARIO</h6>
+                                <i class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> <!--icono-->
+
+                                <!-- Botón de Editar Foto -->
+                                <button class="btn btn-primary btn-custom-small mt-3">Editar Foto</button>
+                            </div>
+                        </div>
+
+                        <!-- Información del Usuario -->
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">CONFIGURACIÓN DE PERFIL</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre*">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="segundoNombre" placeholder="Segundo Nombre">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="apellido" placeholder="Apellido*">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="segundoApellido" placeholder="Segundo Apellido">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" class="form-control" id="email" placeholder="Email*">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="tel" class="form-control" id="telefono" placeholder="Teléfono de contacto*">
+                                    </div>
+                                </div>
+
+                                <!-- Botón de Guardar Información -->
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-secondary btn-custom-small mt-4" onclick="guardarInformacion()">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
   </main>
   <footer class="text-muted">
     <div class="container-2">

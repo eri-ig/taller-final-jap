@@ -1,0 +1,221 @@
+html, body{
+    height: 100%;
+}
+
+body {
+    background-color: #f9f9fa
+}
+
+.padding {
+    padding: 3rem !important
+}
+
+.col-sm-8 {
+    border: 1.5px solid orange;
+}
+
+/*.col-sm-6 {
+    padding: 20px;
+}*/
+
+.user-card-full {
+    overflow: hidden;
+}
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+    box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+    border: none;
+    margin-bottom: 30px;
+}
+
+.m-r-0 {
+    margin-right: 0px;
+}
+
+.m-l-0 {
+    margin-left: 0px;
+}
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px;
+}
+
+.bg-c-lite-green {
+        background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, rgb(243, 144, 51), rgb(255, 186, 122));
+}
+
+.user-profile {
+    padding: 20px 0;
+}
+
+.card-block {
+    padding: 1.25rem;
+}
+
+.m-b-25 {
+    margin-bottom: 25px;
+}
+
+.img-radius {
+    border-radius: 5px;
+}
+
+
+ 
+h6 {
+    font-size: 14px;
+}
+
+.card .card-block p {
+    line-height: 25px;
+}
+
+@media only screen and (min-width: 1400px){
+p {
+    font-size: 14px;
+}
+}
+
+.card-block {
+    padding: 1.25rem;
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important;
+}
+
+.card .card-block p {
+    line-height: 25px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+    color: rgb(255, 186, 122);
+}
+
+.text-muted {
+    color: #919aa3 !important;
+}
+
+.b-b-default {
+    border-bottom: 1px solid orange;
+}
+
+.f-w-600 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: rgb(255, 186, 122);
+}
+
+.m-t-40 {
+    margin-top: 20px;
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important;
+}
+
+.m-t-40 {
+    margin-top: 20px;
+}
+
+.user-card-full .social-link li {
+    display: inline-block;
+}
+
+.user-card-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn {
+    border: 1px solid orange;
+    outline: none;
+    background: rgb(255, 186, 122);
+    color: whitesmoke;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn .btn-secondary {
+    left: 20px;
+}
+
+.btn:hover {
+    background: orange;
+}
+
+.btn-custom-small {
+    padding: 6px 10px;
+    font-size: 12px; 
+}
+
+/* Estilos para modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+.dark-mode .user-profile {
+    background-color: #333;
+}
+.dark-mode .card {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+input {
+    margin-bottom: 18px;
+}
+
+.form-control {
+    border: 1px solid orange;
+}
+
+.form-control::placeholder {
+    color: rgb(255, 186, 122);
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 15px 15px;
+    height: 60px;
+}
+
+
+.container-2 p a{
+    color: rgb(255, 186, 122);
+    text-decoration: none;
+}
+
+.container-2 a:hover {
+    text-decoration: underline;
+}
+
+.filtos-link {
+    color: #2d2d2d !important; 
+}
