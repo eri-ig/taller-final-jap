@@ -58,42 +58,39 @@
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light" id="productTitle"></h1>
           <p class="lead text-body-secondary" id="description"></p>
-          <p>
-            <a href="index.html" class="btn btn-sm btn-outline-secondary">Página Principal</a>
-          </p>
+          <button>  <!--Filtros-->
+            <a href="#" class="text-primary filtos-link link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas">
+              Establecer Filtros
+            </a>
+          </button>
           <!--Campo de busqueda-->
           <input type="search" id="search" class="form-control" placeholder="Buscar productos...">
         </div>
       </div>
-      <a href="#" class="text-primary filtos-link link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas">
-        Establecer Filtros
-      </a>
     </section>
     <!--Fin de banner-->
-
-  <!--Filtros-->
 
   <section>
     <!-- Offcanvas de los filtros -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="filterOffcanvas" aria-labelledby="filterOffcanvasLabel">
       <div class="offcanvas-header">
-        <h5 id="filterOffcanvasLabel">Filtros</h5>
+        <h5 id="filterOffcanvasLabel"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <div class="row">
           <div class="col-12">
-            <h5>Filtrar por Precio</h5>
+            <h5>Filtro por precio:</h5>
             <input type="number" id="minPrice" class="form-control form-control-sm mb-2" placeholder="Precio mínimo">
             <input type="number" id="maxPrice" class="form-control form-control-sm mb-2" placeholder="Precio máximo">
           </div>
   
           <div class="col-12">
-            <h5>Ordenar Productos</h5>
+            <h5>Orden según...</h5>
             <select id="sortOrder" class="form-control form-control-sm mb-2">
-              <option value="asc">Precio Ascendente</option>
-              <option value="desc">Precio Descendente</option>
-              <option value="sold">Más Vendidos</option>
+              <option value="asc">Menor precio</option>
+              <option value="desc">Mayor precio</option>
+              <option value="sold">Más vendidos</option>
             </select>
             <div class="d-flex justify-content-end">
               <button id="applyFilter" class="btn btn-sm btn-primary">Aplicar Filtros</button>
@@ -104,25 +101,6 @@
     </div>
   </section>
 <!--Fin de Offcanvas de los filtros -->
-
-      <!--Agrego el estilo del botón de "Aplicar Filtros" acá-->
-
-  <style>
-    #applyFilter {
-      background-color: white;
-      color: rgba(0, 0, 0, 0.945);
-      border: 1px solid rgba(0, 0, 0, 0.945);
-    }
-
-    #applyFilter:hover {
-      background-color: #f8f9fa;
-    }
-  </style>
-
-    <!--Fin de agregación (?ponele) de estilo-->
-
-  <!--Fin de filtros-->
-
 
     <!--Inicio de tarjetas-->
     <section>
