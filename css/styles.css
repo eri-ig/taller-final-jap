@@ -281,7 +281,7 @@ h1#productTitle {
   font-size: 30px;
   color: rgb(255, 186, 122);                  
   -webkit-text-stroke: 1px rgb(15, 10, 0);  /* Borde alrededor del texto */
-  text-stroke: 1px rgb(15, 10, 0); 
+  -webkit-text-stroke: 1px rgb(15, 10, 0); 
 }
 
 button {
