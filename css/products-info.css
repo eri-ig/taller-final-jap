@@ -172,6 +172,14 @@ footer{
   border: 2px solid orange;
 }
 
+#thumbnailsList {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-left: 30px; 
+}
+
 /* Ajustes pag */
 .hero {
   padding: 20px 0;
@@ -183,43 +191,27 @@ footer{
   object-fit: cover; 
 }
 
-.product-details {
-  text-align: left;
-}
-
 .product-title {
   font-size: 28px;
   font-weight: bold;
   color: #333;
 }
 
-.product-price {
-  font-size: 36px;
-  color: #000;
-  font-weight: bold;
-  margin-bottom: 20px;
+.item-price {
+  font-size: 40px; 
+  font-weight: bold; 
+  color: #000000; 
+  margin:0 ; 
+  display: block; /* Hace que ocupe todo el ancho disponible */
+  margin-bottom: 60px;
 }
 
-.badge {
-  background-color: #f5c518;
-  color: #000;
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
-  margin-bottom: 15px;
-}
-
-.product-description h4 {
-  font-size: 18px;
-  font-weight: bold;
+.descripcion-producto {
+  font-size: 20px;
   margin-bottom: 10px;
-}
-
-.product-description p {
-  color: #666;
+  color: #000;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid orange;
   padding: 10px;
   border-radius: 5px;
 }
@@ -239,7 +231,7 @@ footer{
     cursor: pointer; 
     width: 100%; /*
     transition: background-color 0.3s ease; /* Animación para el hover pasar el mouse */
-    margin-top: 50px;
+    margin-top: 20px;
 
 }
 
@@ -247,26 +239,7 @@ footer{
   background-color:orange ;
 }
 
-.descripcion-producto {
-    background-color: white;
-    padding: 15px;
-    border: 1px solid #f1ad85;
-    border-radius: 5px;
-    margin: 20px auto;
-    width: 100%; 
-}
-
-
-#thumbnailsList {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
-  margin-top: 20px;
-  margin-left: 30px; 
-}
-
-/* Alineacion de los detalles del producto */
-.col-lg-5.mb-5 {
+.col-lg-5.mb-5 { /* Alineacion de los detalles del producto */
   position: absolute;
   right: 150px; 
   top: 10; 
@@ -280,16 +253,7 @@ footer{
   margin: 0;
   display: block; /* Hace que ocupe todo el ancho disponible */
   margin-top: 50px; /* Margen inferior para separar del precio */
-  margin-bottom: 60px;
-}
-
-.item-price {
-  font-size: 40px; 
-  font-weight: bold; 
-  color: #000000; 
-  margin:0 ; 
-  display: block; /* Hace que ocupe todo el ancho disponible */
-  margin-top: 1px; /* Espacio por encima para separar del título */
+  margin-bottom: 5px;
 }
 
 .item-brand {
@@ -303,7 +267,6 @@ footer{
   text-align: center; 
   margin-top: 1px; /* Espacio debajo para separar del título */
   white-space: nowrap; /* Evitar que el texto se ajuste en múltiples líneas */
-  
 }
 
 /* tarjeta del producto */
@@ -317,10 +280,6 @@ footer{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.prueba{
-  margin-left: 100px;
 }
 
 /*Estilo de las estrellas*/
