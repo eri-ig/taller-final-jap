@@ -4,24 +4,7 @@
   box-sizing: border-box;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Alinea los elementos a los extremos */
-  align-items: center; 
-  padding: 10px 50px; /* Ajusta el espaciado */
-  background-color: #f2f2f2; 
-  width: 100%;
-}
-
 /* Estilo para el logo SHIGERICATEVA */
-.jumbotron .display-4 {
-  font-weight: bold;
-}
-
-nav a {
-  text-decoration: none;
-}
-
 /*Comienzo del navbar*/
 .navbar {
   display: flex;
@@ -33,7 +16,6 @@ nav a {
   border-bottom: 1px solid orange
 }
 
-/* Estilo para el logo SHIGERICATEVA */
 .navbar-light .navbar-brand {
   font-weight: bold;
   color: rgb(255, 186, 122);
@@ -86,10 +68,6 @@ nav a {
 }
 /*Fin del navbar*/
 
-.img-fit {
-  max-height: 100%;
-}
-
 .lds-ring {
   display: inline-block;
   position: relative;
@@ -102,12 +80,6 @@ nav a {
 .cursor-active {
   cursor:pointer;
 
-}
-
-.left {
-  float: left;
-  padding: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .lds-ring div {
@@ -156,22 +128,8 @@ nav a {
   display: none;
 }
 
-main {
-  min-height: calc(100vh - 210px);
-}
-
-a.custom-card,
-a.custom-card:hover {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-.checked {
-  color: orange;
-}
-
 .welcome-message {
-  color:#0087F7(218, 214, 214, 0.65);
+  color: rgba(0, 0, 0, 0.65);
   font-size: 15px;  
   margin-left: 0px;  
   text-align:center;  
@@ -188,6 +146,7 @@ footer{
   text-align: center;
   padding: 15px 15px;
   height: 60px;
+  border-top: 1px solid orange;
 }
 
 .container-2 p a{
@@ -198,6 +157,7 @@ footer{
 .container-2 a:hover {
   text-decoration: underline;
 }
+/*Fin del footer*/
 
 .thumbnail {
   cursor: pointer;
@@ -209,7 +169,7 @@ footer{
   object-fit: cover; /* Asegura que las imágenes no se deformen */
   margin: 0 10px; /* Espaciado entre las imágenes */
   border-radius: 8px; 
-  border: 2px solid #fd7e14;
+  border: 2px solid orange;
 }
 
 /* Ajustes pag */
@@ -516,7 +476,7 @@ form .btn button:hover {
 .card {
   flex: 0 0 auto;
   width: 200px;                
-  border: 1px solid #fd7e14;      
+  border: 1px solid orange;      
   border-radius: 10px;         
   overflow: hidden;            
   background-color: #fff;      
