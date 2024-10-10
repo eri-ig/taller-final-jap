@@ -285,8 +285,8 @@ footer{
 /*Estilo de las estrellas*/
 .container_comment {
   position: relative;
-  left: 1250px;
-  bottom: 450px;
+  /*left: 1250px;
+  bottom: 450px;*/
   width: 400px;
   background: #f2f2f2;
   padding: 20px 30px;
