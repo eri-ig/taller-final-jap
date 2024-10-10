@@ -1,5 +1,6 @@
 html, body{
     height: 100%;
+    margin-bottom: 40px; /*Espacio entre el contenido y el footer*/
 }
 
 body {
@@ -268,6 +269,7 @@ footer{
     text-align: center;
     padding: 15px 15px;
     height: 60px;
+    border-top: 1px solid orange;
 }
 
 

@@ -3,6 +3,9 @@
 .mt-5,
 .container,
 
+main, body {
+  margin-bottom: 40px; /*Espacio entre el contenido y el footer*/
+}
 body{
   padding-bottom: 0px;
 }
@@ -322,6 +325,7 @@ footer{
   text-align: center;
   padding: 15px 15px;
   height: 60px;
+  border-top: 1px solid orange;
 }
 
 

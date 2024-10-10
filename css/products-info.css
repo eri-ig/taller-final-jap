@@ -14,10 +14,35 @@
 }
 
 /* Estilo para el logo SHIGERICATEVA */
-.navbar-logo {
-  font-size: 24px;
-  color:#fd7e14; 
+.jumbotron .display-4 {
   font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+/*Comienzo del navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; 
+  padding: 10px 50px; /* Ajusta el espaciado */
+  background-color: #f1f1f1; 
+  width: 100%;
+  border-bottom: 1px solid orange
+}
+
+/* Estilo para el logo SHIGERICATEVA */
+.navbar-light .navbar-brand {
+  font-weight: bold;
+  color: rgb(255, 186, 122);
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: orange;
 }
 
 /* Menú de navegación */
@@ -25,13 +50,13 @@
   display: flex; /* Alinea los elementos horizontalmente */
   justify-content: center;
   align-items: center;
-  top: 0;
   list-style:none;
   margin-left: auto;
+  height: 20px;
 }
 
 .nav-item {
-  margin-right: 20px; /* Espaciado entre los ítems */
+  margin-top: 10px;
 }
 
 .nav-link {
@@ -42,38 +67,24 @@
 }
 
 .nav-link:hover {
-  color:#4f4c4c; /* Cambia de color al pasar el mouse */
+  color: orange;
 }
 
-/* Carrito de compras */
-.navbar-cart-container {
-  display: flex;
-  align-items: center;
+/*Menu desplegable*/
+.dropdown-menu {
+  max-width: 200px;
+  left: auto; /* Para permitir que el menú se ajuste a la pantalla */
+  right: 0; /* Para anclar el menú al lado derecho */
 }
 
-.navbar-cart {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #333;
+.dropdown-toggle::after {
+  display: none; /* Oculta la flecha */
 }
 
-.navbar-cart img {
-  margin-right: 5px; /* Espaciado entre la imagen y el texto */
+.dropdown-item:hover {
+  background-color: orange;
 }
-
-.navbar-cart small {
-  font-size: 14px;
-}
-
-.jumbotron .display-4 {
-  font-weight: bold;
-}
-
-nav a {
-  text-decoration: none;
-}
-
+/*Fin del navbar*/
 
 .img-fit {
   max-height: 100%;
