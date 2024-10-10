@@ -299,9 +299,11 @@ footer{
   border-radius: 10px; /* Bordes redondeados */
   font-weight: bold;
   font-size: 12px; 
-  display: inline-block; 
+  display: inline-block; /* El ancho se ajustará al contenido */
   text-align: center; 
   margin-top: 1px; /* Espacio debajo para separar del título */
+  white-space: nowrap; /* Evitar que el texto se ajuste en múltiples líneas */
+  
 }
 
 /* tarjeta del producto */
