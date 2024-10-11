@@ -159,25 +159,18 @@ footer{
 }
 /*Fin del footer*/
 
-.thumbnail {
-  cursor: pointer;
-  width: 140px !important; 
-  height: 120px !important; 
-  object-fit: cover; /* Ajusta para que la imagen no se deforme */
-  width: 180px; 
-  height: 180px;
-  object-fit: cover; /* Asegura que las imágenes no se deformen */
-  margin: 0 10px; /* Espaciado entre las imágenes */
-  border-radius: 8px; 
+#imagenPrincipal {
   border: 2px solid orange;
+  border-radius: 8px;
 }
 
-#thumbnailsList {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
-  margin-top: 20px;
-  margin-left: 30px; 
+.thumbnail {
+  cursor: pointer;
+  width: 130px !important; 
+  height: 110px !important; 
+  object-fit: cover; /* Ajusta para que la imagen no se deforme */
+  border-radius: 8px; 
+  border: 2px solid orange;
 }
 
 /* Ajustes pag */
@@ -429,6 +422,7 @@ form .btn button:hover {
 
 /*Productos relacionados*/
 .related-products {
+  margin: 20px;
   display: flex;               
   flex-wrap:nowrap;            
   gap: 15px;                   
