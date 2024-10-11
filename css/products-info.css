@@ -161,8 +161,8 @@ footer{
 
 .thumbnail {
   cursor: pointer;
-  width: 200px !important; 
-  height: 150px !important; 
+  width: 140px !important; 
+  height: 120px !important; 
   object-fit: cover; /* Ajusta para que la imagen no se deforme */
   width: 180px; 
   height: 180px;
