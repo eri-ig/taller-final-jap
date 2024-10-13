@@ -232,47 +232,32 @@ footer{
   background-color:orange ;
 }
 
-.col-lg-5.mb-5 { /* Alineacion de los detalles del producto */
-  position: absolute;
-  right: 150px; 
-  top: 10; 
-  width: 30%; 
-}
-
 .item-title {
-  font-size: 35px; 
-  font-weight: bold; 
-  color: #333333; 
-  margin: 0;
-  display: block; /* Hace que ocupe todo el ancho disponible */
-  margin-top: 50px; /* Margen inferior para separar del precio */
-  margin-bottom: 5px;
+  font-size: 35px;
+  font-weight: bold;
+  color: #333333;
+  margin: 50px 0 5px 0; /* Margen superior de 50px y margen inferior de 5px */
 }
 
 .item-brand {
-  background-color: #FDE6A7; 
-  color: #B26A00; 
-  padding: 5px 10px; 
-  border-radius: 10px; /* Bordes redondeados */
+  background-color: #FDE6A7;
+  color: #B26A00;
+  padding: 5px 10px;
+  border-radius: 10px;
   font-weight: bold;
-  font-size: 12px; 
-  display: inline-block; /* El ancho se ajustará al contenido */
-  text-align: center; 
-  margin-top: 1px; /* Espacio debajo para separar del título */
-  white-space: nowrap; /* Evitar que el texto se ajuste en múltiples líneas */
+  font-size: 12px;
+  display: inline-block; /* El tamaño del fondo se ajustará al contenido */
+  text-align: center;
+  white-space: nowrap; /* Evitar que el texto se ajuste a varias líneas */
 }
 
 /* tarjeta del producto */
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  max-width: 100%;
 }
 
 .row.justify-content-between {
-  display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 /*Estilo de las estrellas*/
