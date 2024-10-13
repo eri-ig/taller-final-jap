@@ -174,15 +174,15 @@ footer{
 }
 
 /* Ajustes pag */
-.hero {
-  padding: 20px 0;
-}
-
 .product-image img {
   max-width: 100%;
   height: auto;
   object-fit: cover; 
 }
+
+.product-details {
+  padding: 20px;
+} 
 
 .product-title {
   font-size: 28px;
@@ -194,7 +194,7 @@ footer{
   font-size: 40px; 
   font-weight: bold; 
   color: #000000; 
-  margin:0 ; 
+  margin: 0; 
   display: block; /* Hace que ocupe todo el ancho disponible */
   margin-bottom: 60px;
 }
@@ -423,6 +423,7 @@ form .btn button:hover {
   text-align: center;          
   transition: transform 0.3s ease;  
   margin: 10px;
+  padding: 15px;
 }
 .card:hover {
   transform: translateY(-3px);  /* Mueve la tarjeta hacia arriba ligeramente al pasar el mouse */
@@ -437,4 +438,15 @@ form .btn button:hover {
   font-size: 1.1em;
   margin: 10px 0;
   font-weight: bold;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 576px) {
+  .card {
+    width: 150px; /* Ajusta el ancho de la tarjeta a 150px en pantallas pequeñas */
+  }
+
+  .small-image {
+    height: 120px; /* Ajusta la altura de la imagen si es necesario */
+  }
 }
