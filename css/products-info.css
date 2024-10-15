@@ -172,6 +172,7 @@ footer{
   object-fit: cover; /* Ajusta para que la imagen no se deforme */
   border-radius: 8px; 
   border: 2px solid orange;
+  margin-bottom: 25px;
 }
 
 /* Ajustes pag */
