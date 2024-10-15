@@ -318,6 +318,7 @@ a.custom-card:hover {
 
 
 footer{
+  margin-top: 25px;
   position: fixed;
   bottom: 0;
   width: 100%;
