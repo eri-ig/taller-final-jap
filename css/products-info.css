@@ -139,6 +139,7 @@
 }
 
 footer{
+  margin-top: 20px;
   position: relative;
   bottom: 0;
   width: 100%;
@@ -261,32 +262,30 @@ footer{
 }
 
 /*Estilo de las estrellas*/
-.container_comment {
-  position: relative;
-  /*left: 1250px;
-  bottom: 450px;*/
-  width: 400px;
+.container-comment {
+  width: 100%;
+  max-width: 400px;
   background: #f2f2f2;
   padding: 20px 30px;
   border: 1px solid orange;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
-.container_comment .post {
+.container-comment .post {
   display: none;
 }
 
-.container_comment .text {
+.container-comment .text {
   font-size: 25px;
   color: #666;
   font-weight: 500;
 }
 
-.container_comment .edit {
+.container-comment .edit {
   position: absolute;
   right: 10px;
   top: 5px;
@@ -296,7 +295,7 @@ footer{
   cursor: pointer;
 }
 
-.container_comment .star-widget input {
+.container-comment .star-widget input {
   display: none;
 }
 
@@ -343,7 +342,7 @@ input#rate-5:checked ~ label {
   color: orange;
 }
 
-.container form {
+.container-comment form {
   display: none;
 }
 
