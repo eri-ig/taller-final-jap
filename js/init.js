@@ -39,3 +39,24 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+function cargarImagenDePerfil() {
+  const img = document.getElementById("imagenPerfil");
+  const imagenGuardada = localStorage.getItem('imagenGuardada');
+
+  if (img && imagenGuardada) {
+    img.src = imagenGuardada;
+  }
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  cargarImagenDePerfil();
+  showUserInformation();
+});
+
+function showUserInformation() {// se utiliza para dejar el nombre del usuario plasmado en el dropdown
+  const username = sessionStorage.getItem("username");
+  if (username) {
+      var userName = document.getElementById("welcome-message")
+      userName.innerHTML = username;
+  }
+};
