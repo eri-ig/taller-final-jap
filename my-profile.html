@@ -9,31 +9,13 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/my-profile.css" rel="stylesheet">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
   <nav class="navbar navbar-light">
     <!-- Logo del Navbar -->
     <div class="navbar-logo">
-        <a class="navbar-brand" href="index.html">
-            SHIGERICATEVA
-        </a>
+      <a class="navbar-brand" href="index.html">SHIGERICATEVA</a>
     </div>
 
     <!-- Menú de navegación -->
@@ -66,79 +48,80 @@
             </div>
         </li>
     </ul>
-</nav>
+  </nav>
 
-<main>
-<div class="page-content page-container" id="page-content">
-    <div class="padding">
+  <main>
+    <div class="page-content page-container" id="page-content">
+      <div class="padding">
         <div class="container-fluid d-flex align-items-center justify-content-center">
-            <div class="col-xl-8 col-md-12">
-                <!-- Switch de modo claro/oscuro -->
-                <div class="d-flex justify-content-end mb-3">
-                    <label class="mr-2">Modo oscuro</label>
-                    <input type="checkbox" id="darkModeSwitch">
-                </div>
-                <div class="card user-card-full">
-                    <div class="row m-l-0 m-r-0">
-                        <!-- Perfil de Usuario -->
-                        <div class="col-sm-4 bg-c-lite-green user-profile">
-                            <div class="card-block text-center text-white">
-                                <div class="m-b-25">
-                                    <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
-                                </div>
-                                <h6 class="f-w-600">NOMBRE DE USUARIO</h6>
-                                <i class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> <!--icono-->
-
-                                <!-- Botón de Editar Foto -->
-                                <button class="btn btn-primary btn-custom-small mt-3">Editar Foto</button>
-                            </div>
-                        </div>
-
-                        <!-- Información del Usuario -->
-                        <div class="col-sm-8">
-                            <div class="card-block">
-                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">CONFIGURACIÓN DE PERFIL</h6>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre*">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="segundoNombre" placeholder="Segundo Nombre">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="apellido" placeholder="Apellido*">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="segundoApellido" placeholder="Segundo Apellido">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="email" class="form-control" id="email" placeholder="Email*">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="tel" class="form-control" id="telefono" placeholder="Teléfono de contacto*">
-                                    </div>
-                                </div>
-
-                                <!-- Botón de Guardar Información -->
-                                <div class="d-flex justify-content-end">
-                                    <button class="btn btn-secondary btn-custom-small mt-4" onclick="guardarInformacion()">Guardar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="col-xl-8 col-md-12">
+            <div class="d-flex justify-content-end mb-3">
+              <label class="mr-2">Modo oscuro</label>
+              <input type="checkbox" id="darkModeSwitch">
             </div>
+            <div class="card user-card-full">
+              <div class="row m-l-0 m-r-0">
+                <!-- Perfil de Usuario -->
+                <div class="col-sm-4 bg-c-lite-green user-profile">
+                  <div class="card-block text-center text-white">
+                    <div class="m-b-25">
+                      <!-- Imagen de perfil -->
+                      <img src="./img/img_perfil.png" class="img-radius img-fluid img-profile" alt="User-Profile-Image" id="img" style="background-color: aliceblue!important;">
+                      <input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/*" style="display: none;">
+                    </div>
+                    <h6 class="f-w-600 d-inline">NOMBRE DE USUARIO</h6>
+                    <i class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16 d-inline" style="color: aliceblue!important;"></i>
+
+                    <!-- Botón de Editar Foto -->
+                    <button id="editarFotoBtn" class="btn btn-primary btn-custom-small mt-3">Editar Foto</button>
+                  </div>
+                </div>
+
+                <!-- Información del Usuario -->
+                <div class="col-sm-8">
+                  <div class="card-block">
+                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">CONFIGURACIÓN DE PERFIL</h6>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre*">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="segundoNombre" placeholder="Segundo Nombre">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="apellido" placeholder="Apellido*">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="segundoApellido" placeholder="Segundo Apellido">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="email" class="form-control" id="email" placeholder="Email*">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="tel" class="form-control" id="telefono" placeholder="Teléfono de contacto*">
+                      </div>
+                    </div>
+
+                    <!-- Botón de Guardar Información -->
+                    <div class="d-flex justify-content-end">
+                      <button class="btn btn-secondary btn-custom-small mt-4" onclick="guardarInformacion()">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
   </main>
+
   <footer class="text-muted">
     <div class="container-2">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
-      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>

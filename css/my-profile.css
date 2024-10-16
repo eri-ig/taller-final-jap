@@ -4,11 +4,11 @@ html, body{
 }
 
 body {
-    background-color: #f9f9fa
+    background-color: #f9f9fa;
 }
 
 .padding {
-    padding: 3rem !important
+    padding: 3rem !important;
 }
 
 /*Comienzo del navbar*/
@@ -19,10 +19,10 @@ body {
     padding: 10px 50px; /* Ajusta el espaciado */
     background-color: #f1f1f1; 
     width: 100%;
-    border-bottom: 1px solid orange
+    border-bottom: 1px solid orange;
 }
 
-  /* Estilo para el logo SHIGERICATEVA */
+/* Estilo para el logo SHIGERICATEVA */
 .navbar-light .navbar-brand {
     font-weight: bold;
     color: rgb(255, 186, 122);
@@ -34,7 +34,7 @@ body {
     color: orange;
 }
 
-  /* Menú de navegación */
+/* Menú de navegación */
 .nav-menu {
     display: flex; /* Alinea los elementos horizontalmente */
     justify-content: center;
@@ -73,15 +73,12 @@ body {
 .dropdown-item:hover {
     background-color: orange;
 }
+
 /*Fin del navbar*/
 
 .col-sm-8 {
     border: 1.5px solid orange;
 }
-
-/*.col-sm-6 {
-    padding: 20px;
-}*/
 
 .user-card-full {
     overflow: hidden;
@@ -108,7 +105,6 @@ body {
 }
 
 .bg-c-lite-green {
-        background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
     background: linear-gradient(to right, rgb(243, 144, 51), rgb(255, 186, 122));
 }
 
@@ -124,12 +120,34 @@ body {
     margin-bottom: 25px;
 }
 
+/* IMAGEN DE PERFIL NUEVA */
 .img-radius {
-    border-radius: 5px;
+    border-radius: 50%; 
+    overflow: hidden;
 }
 
+.img-profile {
+    width: 150px; 
+    height: 150px; 
+    object-fit:scale-down; 
+}
 
- 
+/* Estilos para modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .user-profile {
+    background-color: #333;
+}
+
+.dark-mode .card {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+/* Texto y botones */
 h6 {
     font-size: 14px;
 }
@@ -139,13 +157,9 @@ h6 {
 }
 
 @media only screen and (min-width: 1400px){
-p {
-    font-size: 14px;
-}
-}
-
-.card-block {
-    padding: 1.25rem;
+    p {
+        font-size: 14px;
+    }
 }
 
 .b-b-default {
@@ -154,19 +168,12 @@ p {
 
 .m-b-20 {
     margin-bottom: 20px;
+    font-size: 22px;
+    color: rgb(255, 186, 122);
 }
 
 .p-b-5 {
     padding-bottom: 5px !important;
-}
-
-.card .card-block p {
-    line-height: 25px;
-}
-
-.m-b-10 {
-    margin-bottom: 10px;
-    color: rgb(255, 186, 122);
 }
 
 .text-muted {
@@ -180,20 +187,6 @@ p {
 .f-w-600 {
     font-size: 22px;
     font-weight: 600;
-}
-
-.m-b-20 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: rgb(255, 186, 122);
-}
-
-.m-t-40 {
-    margin-top: 20px;
-}
-
-.p-b-5 {
-    padding-bottom: 5px !important;
 }
 
 .m-t-40 {
@@ -223,10 +216,6 @@ p {
     transition: all 0.3s ease;
 }
 
-.btn .btn-secondary {
-    left: 20px;
-}
-
 .btn:hover {
     background: orange;
 }
@@ -234,19 +223,6 @@ p {
 .btn-custom-small {
     padding: 6px 10px;
     font-size: 12px; 
-}
-
-/* Estilos para modo oscuro */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-.dark-mode .user-profile {
-    background-color: #333;
-}
-.dark-mode .card {
-    background-color: #1f1f1f;
-    color: #ffffff;
 }
 
 input {
@@ -261,7 +237,7 @@ input {
     color: rgb(255, 186, 122);
 }
 
-footer{
+footer {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -272,8 +248,7 @@ footer{
     border-top: 1px solid orange;
 }
 
-
-.container-2 p a{
+.container-2 p a {
     color: rgb(255, 186, 122);
     text-decoration: none;
 }
