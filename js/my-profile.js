@@ -26,7 +26,7 @@ botonEditarFoto.addEventListener('click', () => {
 });
 
 // recupera imagen guardada del localStorage
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const imagenGuardada = localStorage.getItem('imagenGuardada');
   if (imagenGuardada) {
     img.src = imagenGuardada;
