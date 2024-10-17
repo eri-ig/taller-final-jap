@@ -382,3 +382,12 @@ body.bg-dark .navbar-light .nav-link {
     filter: brightness(0) invert(1);
   }
   
+body.bg-dark .col-sm-8 .form-control {
+    background-color: #333;
+    color: white;
+    border: 1px solid orange;
+}
+
+body.bg-dark .col-sm-8 .form-control::placeholder {
+    color: #aaaaaa; /* Cambia el color del texto del placeholder */
+}
