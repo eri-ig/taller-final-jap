@@ -6,40 +6,6 @@ body {
   margin-bottom: 40px; /* Espacio entre el contenido y el footer */
 }
 
-/* Light Mode */
-body.bg-light {
-  background-color: #f8f9fa !important;
-  color: #343a40 !important;
-}
-
-.navbar.bg-light,
-.footer.bg-light {
-  background-color: #f1f1f1 !important;
-  color: #343a40 !important;
-}
-
-.card.bg-light {
-  background-color: #fff !important;
-  color: #343a40 !important;
-}
-
-/* Dark Mode */
-body.bg-dark {
-  background-color: #343a40 !important;
-  color: #f8f9fa !important;
-}
-
-.navbar.bg-dark,
-.footer.bg-dark {
-  background-color: #1f1f21 !important;
-  color: #f8f9fa !important;
-}
-
-.card.bg-dark {
-  background-color: #444 !important;
-  color: #f8f9fa !important;
-}
-
 /* Estilo del botón */
 button {
   border: 1px solid orange;
@@ -337,6 +303,22 @@ h1#productTitle {
 .navbar-light .nav-link:hover {
   color: orange;
 }
+/* Dark Mode */
+body.bg-dark {
+  background-color: #343a40 !important;
+  color: #f8f9fa !important;
+}
+
+.navbar.bg-dark,
+.footer.bg-dark {
+  background-color: #1f1f21 !important;
+  color: #f8f9fa !important;
+}
+
+.card.bg-dark {
+  background-color: #444 !important;
+  color: #f8f9fa !important;
+}
 
 /* estilo de los enlaces en modo oscuro */
 body.bg-dark .navbar-light .nav-link {
@@ -380,13 +362,7 @@ body.bg-dark .dropdown-item img {
   filter: brightness(0) invert(1);
 }
 .text-black {
-  color: black !important;
-}
-
-/* mantener el fondo de las tarjetas en blanco en modo oscuro */
-.card.bg-light-mode {
-  background-color: white !important;
-  color: black !important;
+  color: black ;
 }
 
 /* mantener los botones en modo claro */
