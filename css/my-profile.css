@@ -381,12 +381,13 @@ body.bg-dark .navbar-light .nav-link {
   body.bg-dark .dropdown-item img {
     filter: brightness(0) invert(1);
   }
-  body.bg-dark input {
+  
+body.bg-dark .col-sm-8 .form-control {
     background-color: #333;
     color: white;
     border: 1px solid orange;
 }
 
-body.bg-dark input::placeholder {
-    color: #aaaaaa;
+body.bg-dark .col-sm-8 .form-control::placeholder {
+    color: #aaaaaa; /* Cambia el color del texto del placeholder */
 }
