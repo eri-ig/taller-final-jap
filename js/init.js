@@ -71,32 +71,24 @@ function aplicarTema(tema) {
 
     if (tema === 'dark') {
         body.classList.add('bg-dark', 'text-white');
-        body.classList.remove('bg-light', 'text-dark');
 
         if (navbar) {
             navbar.classList.add('bg-dark', 'text-white');
-            navbar.classList.remove('bg-light', 'text-dark');
         }
         if (footer) {
             footer.classList.add('bg-dark', 'text-white');
-            footer.classList.remove('bg-light', 'text-dark');
         }
-
         cards.forEach(card => {//tema oscuro para las tarjetas
-            card.classList.add('bg-dark', 'text-white');
-            card.classList.remove('bg-light', 'text-dark');
+            card.classList.add('bg-dark', 'text-white');   
         });
 
     } else {
-        body.classList.add('bg-light', 'text-dark');
+       
         body.classList.remove('bg-dark', 'text-white');
-
-        if (navbar) {
-            navbar.classList.add('bg-light', 'text-dark');
+        if (navbar) {  
             navbar.classList.remove('bg-dark', 'text-white');
         }
-        if (footer) {
-            footer.classList.add('bg-light', 'text-dark');
+        if (footer) {  
             footer.classList.remove('bg-dark', 'text-white');
         }
 
