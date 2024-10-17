@@ -203,7 +203,7 @@ footer{
 .descripcion-producto {
   font-size: 20px;
   margin-bottom: 10px;
- 
+
   font-size: 16px;
   border: 1px solid orange;
   padding: 10px;
@@ -421,7 +421,7 @@ form .btn button:hover {
 .card {
   flex: 0 0 auto;
   width: 200px;                
-  border: 1px solid orange;      
+  border: 1px solid orange !important;      
   border-radius: 10px;         
   overflow: hidden;            
   background-color: #fff;      
@@ -456,8 +456,6 @@ form .btn button:hover {
   }
 }
 
-
-/* LA PROXIMA VEZ QUE VEA UNA PAGINA SIN BOOSTRAP Y TENGA QUE ARREGLARLA ASI ME VOY A TIRAR DELANTE DE UN CARRO Y LA CULPA SERA SUYA*/
 .comment {
   background-color: white !important;
   color: black !important;

@@ -65,7 +65,7 @@ form input, textarea, select {
 }
 
 .form-control::placeholder {
-  color: rgba(0, 0, 0, 0.945);
+  color: rgba(0, 0, 0, 0.945) !important;
 }
 
 /*Comienzo del navbar*/
@@ -261,19 +261,10 @@ h1#productTitle {
   -webkit-text-stroke: 1px rgb(15, 10, 0);  /* Borde alrededor del texto */
 }
 
-input {
-  margin-bottom: 18px;
-}
-
-.form-control {
-  border: 1px solid orange;
-}
-
-.form-control::placeholder {
-  color: rgba(0, 0, 0, 0.945);
-}
-
 /* Botón de "Aplicar Filtros" */
+.text-primary {
+  text-decoration: none;
+}
 #applyFilter {
   background-color: rgb(255, 186, 122);
   color: rgba(0, 0, 0, 0.945);
