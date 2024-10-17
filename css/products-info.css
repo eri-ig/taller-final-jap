@@ -189,13 +189,12 @@ footer{
 .product-title {
   font-size: 28px;
   font-weight: bold;
-  color: #333;
 }
 
 .item-price {
   font-size: 40px; 
   font-weight: bold; 
-  color: #000000; 
+
   margin: 0; 
   display: block; /* Hace que ocupe todo el ancho disponible */
   margin-bottom: 60px;
@@ -204,7 +203,7 @@ footer{
 .descripcion-producto {
   font-size: 20px;
   margin-bottom: 10px;
-  color: #000;
+ 
   font-size: 16px;
   border: 1px solid orange;
   padding: 10px;
@@ -237,7 +236,7 @@ footer{
 .item-title {
   font-size: 35px;
   font-weight: bold;
-  color: #333333;
+
   margin: 50px 0 5px 0; /* Margen superior de 50px y margen inferior de 5px */
 }
 
@@ -532,4 +531,45 @@ body.bg-dark .dropdown-item:hover {
 }
 body.bg-dark .dropdown-item img {
   filter: brightness(0) invert(1);
+}
+body.dark .hero {
+  background-color: #343a40; /* color oscuro (bg-dark) */
+  color: #f8f9fa; /* texto claro */
+}
+
+body.dark .hero .btn-warning {
+  background-color: #ffc107; /* Mantener el botón en amarillo */
+  border-color: #ffc107;
+}
+
+body.dark .hero .btn-warning:hover {
+  background-color: #e0a800; /* Cambiar el color al hacer hover en modo oscuro */
+}
+body.dark .hero .container {
+  background-color: #343a40; /* color oscuro */
+  color: #f8f9fa; /* texto claro */
+}
+
+/* También aseguramos que los enlaces o textos que no cambian automáticamente se adapten */
+body.dark .hero a {
+  color: #ffc107; /* Hacemos que los enlaces mantengan un buen contraste */
+}
+
+body.dark .hero a:hover {
+  color: #e0a800; /* Cambia el color del enlace al pasar el ratón en modo oscuro */
+}
+
+body.dark .hero .btn-warning {
+  background-color: #ffc107; /* Aseguramos que el botón siga visible */
+  border-color: #ffc107;
+}
+
+body.dark .hero .btn-warning:hover {
+  background-color: #e0a800; /* Color del botón al hacer hover en modo oscuro */
+}
+.dark-mode .hero .item-title,
+.dark-mode .hero .item-brand,
+.dark-mode .hero .item-price,
+.dark-mode .hero .descripcion-producto {
+    color: white !important; /* Forzar el color blanco */
 }
