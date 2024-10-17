@@ -260,3 +260,124 @@ footer {
 .filtos-link {
     color: #2d2d2d !important; 
 }
+/*checkbox*/
+#darkModeSwitch {
+    display: none;
+}
+
+.display {
+    width: 10%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    width: 75px;
+    height: 35px;
+    border-radius: 999px;
+    background: #F3F3F3;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.05) inset;
+    cursor: pointer;
+    position: relative;
+}
+
+.circle {
+    width: 27px;
+    height: 27px;
+    border-radius: 99px;
+    background: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05), -2px -2px 8px rgba(0, 0, 0, 0.05) inset;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(10%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: left 0.5s ease, transform 0.5s ease
+}
+svg {
+    width: 14px;
+    position: absolute;
+    transition: all 0.5s ease;
+}
+.sun {
+    color: #FFD600;
+    margin-top: 0%;
+    opacity: 1;
+    transition: margin-top 0.5s ease, opacity 0.5s ease;
+}
+.moon {
+    margin-top: -150%;
+    color: white;
+    opacity: 0;
+    transition: margin-top 0.5s ease, opacity 0.5s ease
+}
+
+
+#darkModeSwitch[type=checkbox]:checked + .display label {
+    background: #1F1F21;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5) inset;
+}
+#darkModeSwitch[type=checkbox]:checked + .display label .circle {
+    left: 100%;
+    transform: translate(-110%, -50%);
+    background: #2C2C2F;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5),
+    -10px -10px 30px rgba(0, 0, 0, 0.5) inset;
+}
+#darkModeSwitch[type=checkbox]:checked + .display label .circle .sun {
+    margin-top: 150%;
+    opacity: 0;
+}
+#darkModeSwitch[type=checkbox]:checked + .display label .circle .moon {
+    margin-top: 0%;
+    opacity: 1;
+}
+label:active .circle {
+    width: 30px;
+    transition: width 0.3s ease;
+}
+body.bg-dark .navbar-light .nav-link {
+    color: rgba(255, 255, 255, .75); /* color blanco para los enlaces en modo oscuro */
+  }
+  
+  body.bg-dark .navbar-light .nav-link:hover {
+    color: orange; /* mantener el hover en color naranja */
+  }
+  
+  /* corregir color de nombre de usuario en modo oscuro */
+  body.bg-dark .welcome-message {
+    color: rgba(255, 255, 255, 0.85); /*color del nombre de usuario a blanco */
+  }
+  
+  /* corregir el color de los íconos en el dropdown del navbar */
+  body.bg-dark .dropdown-item {
+    color: rgba(255, 255, 255, 0.75); /* color blanco para los ítems del dropdown */
+  }
+  
+  body.bg-dark .dropdown-item:hover {
+    background-color: orange; /* mantener el hover en color naranja */
+    color: white; /* cambia el color del texto a blanco cuando se pasa el mouse */
+  }
+  body.bg-dark .dropdown-menu {
+    background-color: #333; /* fondo oscuro */
+    color: rgba(255, 255, 255, 0.85); 
+    border: 1px solid rgba(255, 255, 255, 0.15); /* borde para modo oscuro */
+  }
+  
+  /* hover en los ítems del dropdown */
+  body.bg-dark .dropdown-item {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  
+  body.bg-dark .dropdown-item:hover {
+    background-color: orange; /* fondo naranja cuando se pasa el mouse */
+    color: #ffffff; 
+  }
+  body.bg-dark .dropdown-item img {
+    filter: brightness(0) invert(1);
+  }

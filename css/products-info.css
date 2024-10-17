@@ -456,3 +456,80 @@ form .btn button:hover {
     height: 120px; /* Ajusta la altura de la imagen si es necesario */
   }
 }
+
+
+/* LA PROXIMA VEZ QUE VEA UNA PAGINA SIN BOOSTRAP Y TENGA QUE ARREGLARLA ASI ME VOY A TIRAR DELANTE DE UN CARRO Y LA CULPA SERA SUYA*/
+.comment {
+  background-color: white !important;
+  color: black !important;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* mantener las estrellas negras */
+.comment .stars {
+  color: black !important;
+}
+.card {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+/* imagenes relacionadas */
+.small-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* título de  productos relacionados */
+.card-title {
+  font-size: 1.2em;
+  color: black !important;
+}
+body.bg-dark .navbar-light .nav-link {
+  color: rgba(255, 255, 255, .75); /* color blanco para los enlaces en modo oscuro */
+}
+
+body.bg-dark .navbar-light .nav-link:hover {
+  color: orange; /* mantener el hover color naranja */
+}
+
+/* color de nombre de usuario en modo oscuro */
+body.bg-dark .welcome-message {
+  color: rgba(255, 255, 255, 0.85); /* cambiar color del nombre de usuario a blanco */
+}
+
+/* color de los íconos en el dropdown del navbar en modo oscuro*/
+body.bg-dark .dropdown-item {
+  color: rgba(255, 255, 255, 0.75); /* color blanco para los ítems*/
+}
+
+body.bg-dark .dropdown-item:hover {
+  background-color: orange; /* mantener el hover naranja */
+  color: white; /* cambiar el color a blanco cuando se pasa el mouse */
+}
+body.bg-dark .dropdown-menu {
+  background-color: #333; /* fondo oscuro */
+  color: rgba(255, 255, 255, 0.85); /* texto blanco */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* borde tenue para modo oscuro */
+}
+
+/* Hover en los ítems del dropdown */
+body.bg-dark .dropdown-item {
+  color: rgba(255, 255, 255, 0.85); /* texto blanco */
+}
+
+body.bg-dark .dropdown-item:hover {
+  background-color: orange; /* fondo naranja cuando se pasa el mouse */
+  color: #ffffff; /* texto en blanco */
+}
+body.bg-dark .dropdown-item img {
+  filter: brightness(0) invert(1);
+}

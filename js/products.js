@@ -47,24 +47,24 @@ function cards(products, catName) {
 
   products.forEach(product => {
     const productCard = `
-          <div class="col" id="product${product.id}">
-          <div class="card shadow-sm">
-            <img src="${product.image}" alt="${product.name}" class="productImage">
-            <div class="card-body">
-              <h3 class="tituloProducto">${product.name}</h3>
-              <p class="productoPrecio">${product.cost} USD</p>
-              <p class="card-text">${product.description}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                  <button id="like_btn${product.id}" type="button" class="btn btn-sm btn-outline-secondary"><span>♥</span></button>
+        <div class="col" id="product${product.id}">
+            <div class="card shadow-sm bg-light-mode">
+                <img src="${product.image}" alt="${product.name}" class="productImage">
+                <div class="card-body">
+                    <h3 class="tituloProducto text-black">${product.name}</h3>
+                    <p class="productoPrecio text-black">${product.cost} USD</p>
+                    <p class="card-text text-black">${product.description}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary text-black">Comprar</button>
+                            <button id="like_btn${product.id}" type="button" class="btn btn-sm btn-outline-secondary text-black"><span>♥</span></button>
+                        </div>
+                        <small class="text-body-secondary text-black" style="font-size: x-small;"> Vendidos ${product.soldCount} hasta el momento </small>
+                    </div>
                 </div>
-                <small class="text-body-secondary" style="font-size: x-small;"> Vendidos ${product.soldCount} hasta el momento </small>
-              </div>
             </div>
-          </div>
         </div>
-            `;
+    `;
     productGrid.innerHTML += productCard;
   });
   setProductOnClickListener();

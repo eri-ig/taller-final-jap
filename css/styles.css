@@ -1,41 +1,71 @@
 .jumbotron,
 .card-body,
-.mt-5,
 .container,
-
-main, body {
-  margin-bottom: 40px; /*Espacio entre el contenido y el footer*/
-}
-body{
-  padding-bottom: 0px;
+main,
+body {
+  margin-bottom: 40px; /* Espacio entre el contenido y el footer */
 }
 
-label{
-  position: relative;
-  color: black;
-  font-size: 22px;
+/* Light Mode */
+body.bg-light {
+  background-color: #f8f9fa !important;
+  color: #343a40 !important;
 }
 
-
-input,
-
-
-.contenedor-input{
-  position: relative;
-  margin-bottom: 40px;
-}
-.site-header {
-  font-family: 'Verdana', serif !important;
+.navbar.bg-light,
+.footer.bg-light {
+  background-color: #f1f1f1 !important;
+  color: #343a40 !important;
 }
 
-
-.jumbotron .display-4 {
-  font-weight: bold;
+.card.bg-light {
+  background-color: #fff !important;
+  color: #343a40 !important;
 }
 
+/* Dark Mode */
+body.bg-dark {
+  background-color: #343a40 !important;
+  color: #f8f9fa !important;
+}
 
-nav a {
-  text-decoration: none;
+.navbar.bg-dark,
+.footer.bg-dark {
+  background-color: #1f1f21 !important;
+  color: #f8f9fa !important;
+}
+
+.card.bg-dark {
+  background-color: #444 !important;
+  color: #f8f9fa !important;
+}
+
+/* Estilo del botón */
+button {
+  border: 1px solid orange;
+  background-color: rgb(255, 186, 122); 
+  padding: 8px 15px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5%;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: orange;
+}
+
+form input, textarea, select {
+  margin-bottom: 18px;
+}
+
+.form-control {
+  border: 1px solid orange;
+}
+
+.form-control::placeholder {
+  color: rgba(0, 0, 0, 0.945);
 }
 
 /*Comienzo del navbar*/
@@ -46,7 +76,7 @@ nav a {
   padding: 10px 50px; /* Ajusta el espaciado */
   background-color: #f1f1f1; 
   width: 100%;
-  border-bottom: 1px solid orange
+  border-bottom: 1px solid orange;
 }
 
 /* Estilo para el logo SHIGERICATEVA */
@@ -118,7 +148,7 @@ nav a {
   }
 }
 
-
+/* Estilos de la jumbotron */
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
@@ -174,137 +204,31 @@ nav a {
   font-size: 38px;
 }
 
-
-.site-header a {
-  color: white;
-  transition: ease-in-out color .15s;
-}
-
-
-.site-header .dropdown-menu a {
-  color: black;
-}
-
-
-.dropzone {
-  border: 2px dashed #0087F7;
-  border-radius: 5px;
-  background: white;
-}
-
-
-.img-fit {
-  max-height: 100%;
-}
-
-
-.alert {
+/* Footer */
+footer {
   position: fixed;
-  top: 80px;
-  width: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 64px;
-  height: 64px;
-  top: 50%;
-  left: 50%;
-}
-
-
-.cursor-active {
-  cursor:pointer;
-}
-
-.left {
-  float: left;
-  padding: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 51px;
-  height: 51px;
-  margin: 6px;
-  border: 6px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
-}
-
-
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-
-
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-
-
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-.signin {
+  bottom: 0;
   width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 15px 15px;
+  height: 60px;
+  border-top: 1px solid orange;
 }
 
-
-#spinner-wrapper {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1021;
-  display: none;
+.container-2 p a {
+  color: rgb(255, 186, 122);
+  text-decoration: none;
 }
 
-
-main {
-  min-height: calc(100vh - 210px);
+.container-2 a:hover {
+  text-decoration: underline;
 }
 
-
-a.custom-card,
-a.custom-card:hover {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-
+/* Tarjetas */
 .checked {
   color: orange;
 }
-
 
 .welcome-message {
   color: rgba(0, 0, 0, 0.65);
@@ -316,60 +240,25 @@ a.custom-card:hover {
   margin: 0 auto;
 }
 
-
-footer{
-  margin-top: 25px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 15px 15px;
-  height: 60px;
-  border-top: 1px solid orange;
+.cursor-active {
+  cursor: pointer;
 }
 
-
-.container-2 p a{
-  color: rgb(255, 186, 122);
-  text-decoration: none;
+/* Estilo para las tarjetas en Products.HTML */
+#containerDiv .card {
+  border: 2px solid orange;
 }
 
-.container-2 a:hover {
-  text-decoration: underline;
+#containerDiv .card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave al hacer hover */
+  transform: scale(1.02); /* Efecto de agrandamiento */
 }
 
-.filtos-link {
-  color: #2d2d2d !important; 
-}
-
-/*Estilo para Product.HTML*/
 h1#productTitle {
   font-weight: bold !important;
   font-size: 30px;
   color: rgb(255, 186, 122);                  
   -webkit-text-stroke: 1px rgb(15, 10, 0);  /* Borde alrededor del texto */
-  -webkit-text-stroke: 1px rgb(15, 10, 0); 
-}
-
-button {
-  border: 1px solid orange;
-  background-color: rgb(255, 186, 122); 
-  padding: 8px 15px;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 5%;
-  margin-bottom: 10px;
-}
-
-button a {
-  text-decoration: none; 
-  color: rgb(255, 186, 122);
-}
-
-button:hover {
-  background: orange;
 }
 
 input {
@@ -384,7 +273,7 @@ input {
   color: rgba(0, 0, 0, 0.945);
 }
 
-/*Agrego el estilo del botón de "Aplicar Filtros" acá*/
+/* Botón de "Aplicar Filtros" */
 #applyFilter {
   background-color: rgb(255, 186, 122);
   color: rgba(0, 0, 0, 0.945);
@@ -395,14 +284,122 @@ input {
   background-color: orange;
 }
 
-/*Tarjetas*/
-#containerDiv .card {
-  border: 2px solid orange;
+/* Spinner */
+#spinner-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  display: none;
 }
 
-#containerDiv .card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave al hacer hover */
-  transform: scale(1.02); /* Efecto de agrandamiento */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
 }
 
-/*Fin de estilos para Products.HTML*/
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.navbar-light .nav-link {
+  color: rgba(0, 0, 0, .55);
+}
+
+.navbar-light .nav-link:hover {
+  color: orange;
+}
+
+/* estilo de los enlaces en modo oscuro */
+body.bg-dark .navbar-light .nav-link {
+  color: rgba(255, 255, 255, .75); /* color blanco para los enlaces en modo oscuro */
+}
+
+body.bg-dark .navbar-light .nav-link:hover {
+  color: orange; /* mantener el hover en color naranja */
+}
+
+/* corregir color de nombre de usuario en modo oscuro */
+body.bg-dark .welcome-message {
+  color: rgba(255, 255, 255, 0.85); /*color del nombre de usuario a blanco */
+}
+
+/* corregir el color de los íconos en el dropdown del navbar */
+body.bg-dark .dropdown-item {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body.bg-dark .dropdown-item:hover {
+  background-color: orange; /* mantener el hover  naranja */
+  color: white; /* cambia el color del texto a blanco cuando se pasa el mouse */
+}
+body.bg-dark .dropdown-menu {
+  background-color: #333; /* fondo oscuro */
+  color: rgba(255, 255, 255, 0.85); 
+  border: 1px solid rgba(255, 255, 255, 0.15); /* borde para modo oscuro */
+}
+
+/* hover en los ítems del dropdown */
+body.bg-dark .dropdown-item {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.bg-dark .dropdown-item:hover {
+  background-color: orange; /* fondo naranja cuando se pasa el mouse */
+  color: #ffffff; 
+}
+body.bg-dark .dropdown-item img {
+  filter: brightness(0) invert(1);
+}
+.text-black {
+  color: black !important;
+}
+
+/* mantener el fondo de las tarjetas en blanco en modo oscuro */
+.card.bg-light-mode {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* mantener los botones en modo claro */
+.btn-outline-secondary.text-black {
+  border-color: black;
+  color: black;
+}

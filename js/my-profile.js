@@ -3,7 +3,7 @@ const fotoPredeterminada = "./img/img_perfil.png";
 const img = document.getElementById("img");
 const botonEditarFoto = document.getElementById("editarFotoBtn");
 
-// Mostrar imagen seleccionada y guardarla en localStorage
+// muestra la imagen seleccionada y la guarda en el localstorage
 function guardarImagen(archivo) {
   archivo.addEventListener('change', evento => {
     const file = evento.target.files[0];
@@ -20,12 +20,12 @@ function guardarImagen(archivo) {
   });
 }
 
-// Ocultar el input de archivo y usar el botón para disparar la selección de archivo
+// oculta el input y usa el botón para disparar la selección de archivo
 botonEditarFoto.addEventListener('click', () => {
   archivo.click();
 });
 
-// Recuperar imagen guardada del localStorage
+// recupera imagen guardada del localStorage
 window.addEventListener('DOMContentLoaded', () => {
   const imagenGuardada = localStorage.getItem('imagenGuardada');
   if (imagenGuardada) {
@@ -33,6 +33,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   guardarImagen(archivo);
 });
+
+
 
 
 
