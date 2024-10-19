@@ -8,6 +8,7 @@ const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 const darkModeSwitch = document.getElementById('darkModeSwitch');
 const body = document.body;
+const btnCerrar = document.getElementById("cerrar_session");
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -56,12 +57,20 @@ document.addEventListener('DOMContentLoaded',()=>{
   inicializarModoOscuro();
 });
 
-function showUserInformation() {// se utiliza para dejar el nombre del usuario plasmado en el dropdown
-  const username = sessionStorage.getItem("username");
-  if (username) {
-      var userName = document.getElementById("welcome-message")
-      userName.innerHTML = username;
-  }
+// (#+_+) recuperar datos del almacenamiento //
+
+function showUserInformation() {
+  const username = sessionStorage.getItem("email");
+  const welcomeMessage = document.getElementById("welcome-message");
+  
+  if (localStorage.getItem("nombre")) {
+      welcomeMessage.innerHTML = localStorage.getItem("nombre");
+  } else {
+    if (username) {
+    const userName = document.getElementById("welcome-message")
+    userName.innerHTML = username;
+}}
+  
 };
 
 function aplicarTema(tema) {
@@ -129,3 +138,23 @@ function inicializarModoOscuro() {
     cargarTemaGuardado();
 }
 
+
+
+function cerrarSesion(){
+    
+// ✖‿✖  Elimina todos los datos del perfil al cerrar sesion//
+    localStorage.removeItem("nombre");
+    localStorage.removeItem("segundoNombre");
+    localStorage.removeItem("apellido");
+    localStorage.removeItem("segundoApellido");
+    localStorage.removeItem("email");
+    localStorage.removeItem("telefono");
+    localStorage.removeItem("imagenGuardada");
+  
+    // elimina los datos de sessionStorage //
+    sessionStorage.removeItem("username");
+  
+    // redirige a la pagina de inicio de sesision//
+    window.location.href = "login.html";
+  }
+  btnCerrar.addEventListener('click', cerrarSesion);
