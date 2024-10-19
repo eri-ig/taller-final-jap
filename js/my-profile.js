@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   guardarImagen(archivo);
 });
 
-
+// lo demas esta en el init.
 
 
 
