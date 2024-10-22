@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("price").innerHTML = producto.cost + " " + producto.currency;
         document.getElementById("description").innerHTML = producto.description;
         document.getElementById("ventas").innerHTML = "Cantidad vendida " + producto.soldCount;
+
         const thumbnails = document.getElementById("thumbnailsList") // se añade los thumbnails
         producto.images.forEach(imagen => {
             thumbnails.innerHTML += `
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("imagenPrincipal").src = producto.images[0];// se le pone una imagen principal predeterminada 
         showPrincipalImage();
         relatedProducts(producto.relatedProducts);
+        funcionalidadBotonComprar(producto)
     };
 
     function showPrincipalImage() { // se le cambia el src de la imagen principal por el de el thumbnail clickeado
@@ -165,4 +167,13 @@ function setProductOnClickListener() { // se recicla la funcion que permite hace
             document.location = "product-info.html" // te envia directamente a la pagina product-info
         })
     });
+}
+function funcionalidadBotonComprar(producto) {
+    const botonComprar = document.getElementById("btnComprar")// sde agarra el boton comprar
+    botonComprar.addEventListener("click", function () { // se le agrega un listening
+        agregarProductoAlCarrito(producto.id,//se guardan los datos en los parametros de la funcion
+            producto.name,
+            producto.images[0],
+            producto.cost)
+    })
 }

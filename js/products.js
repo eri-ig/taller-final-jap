@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const categoriaActual = localStorage.getItem("catID");/* se guarda el id actual */
   const PRODUCTOS_URL = `https://japceibal.github.io/emercado-api/cats_products/${categoriaActual}.json`/* se busca el json con el id actual */
-  
+
   fetch(PRODUCTOS_URL)
     .then(response => {
       if (!response.ok) {
@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       implementSearch(products);
     })
-  .catch(error => {
-    console.error(error)
-  });
+    .catch(error => {
+      console.error(error)
+    });
 });
 
 /* Se comienza con las categorias */
@@ -56,8 +56,7 @@ function cards(products, catName) {
                     <p class="card-text text-black">${product.description}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary text-black">Comprar</button>
-                            <button id="like_btn${product.id}" type="button" class="btn btn-sm btn-outline-secondary text-black"><span>♥</span></button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary text-black" id="btnComprar" >Comprar</button>
                         </div>
                         <small class="text-body-secondary text-black" style="font-size: x-small;"> Vendidos ${product.soldCount} hasta el momento </small>
                     </div>
@@ -74,14 +73,14 @@ function cards(products, catName) {
 /* Función para hacer la búsqueda en tiempo real */
 function implementSearch(products) {
   const searchInput = document.getElementById('search');
-  
+
   searchInput.addEventListener('input', function () {
     const searchText = this.value.toLowerCase();
 
     // Filtrar productos según el título o descripción
     const filteredProducts = products.filter(product => {
       return product.name.toLowerCase().includes(searchText) ||
-              product.description.toLowerCase().includes(searchText);
+        product.description.toLowerCase().includes(searchText);
     });
 
     // Mostrar solo los productos filtrados
@@ -89,16 +88,16 @@ function implementSearch(products) {
   });
 }
 /* funcion para que al clickear un producto se guarde el id del producto */
-function setProductOnClickListener(){
+function setProductOnClickListener() {
 
   const productDivs = document.querySelectorAll('div[id^="product"]');/* guarde en la constante una lista de div que su id inicie con product */
 
-productDivs.forEach(div => {/* para cada div se le añade un escuchador para que al hacer click cada id se guarde en el localStorage,se utiliza substring para acceder correctamente al ID proporcionado por el Json */
-   div.addEventListener("click",function(){ 
-    localStorage.setItem("productId",div.id.substring(7));
-    document.location = "product-info.html" /* te envia directamente a la pagina product-info */
-   })
-});
+  productDivs.forEach(div => {/* para cada div se le añade un escuchador para que al hacer click cada id se guarde en el localStorage,se utiliza substring para acceder correctamente al ID proporcionado por el Json */
+    div.addEventListener("click", function () {
+      localStorage.setItem("productId", div.id.substring(7));
+      document.location = "product-info.html" /* te envia directamente a la pagina product-info */
+    })
+  });
 }
 
 //Filtros
