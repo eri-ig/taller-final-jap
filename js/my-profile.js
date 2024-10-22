@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   guardarImagen(archivo);
 });
 
-
+// lo demas esta en el init.
 
 // ( ►_◄ )-c<*_*; ) guardar informacion perfil//
  
