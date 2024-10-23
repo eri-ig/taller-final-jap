@@ -391,3 +391,18 @@ body.bg-dark .col-sm-8 .form-control {
 body.bg-dark .col-sm-8 .form-control::placeholder {
     color: #aaaaaa; /* Cambia el color del texto del placeholder */
 }
+/*Dropdown*/
+.dropdown-menu {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: block;
+    visibility: hidden;
+  }
+  
+  .dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  

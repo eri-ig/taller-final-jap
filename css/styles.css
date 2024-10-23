@@ -370,3 +370,17 @@ body.bg-dark .dropdown-item img {
   border-color: black;
   color: black;
 }
+/*dropdown*/
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  visibility: hidden;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
