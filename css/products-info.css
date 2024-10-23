@@ -571,3 +571,17 @@ body.dark .hero .btn-warning:hover {
 .dark-mode .hero .descripcion-producto {
     color: white !important; /* Forzar el color blanco */
 }
+/*Dropdown*/
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  visibility: hidden;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
