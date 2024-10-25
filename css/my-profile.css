@@ -260,6 +260,20 @@ footer {
 .filtos-link {
     color: #2d2d2d !important; 
 }
+
+/*Validacion en tiempo real*/
+.is-valid {
+    border-color: green;
+}
+
+.is-invalid {
+    border-color: red;
+}
+
+.text-danger {
+    font-size: 0.9em;
+}
+
 /*checkbox*/
 #darkModeSwitch {
     display: none;
