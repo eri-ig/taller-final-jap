@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function verifyUser() {
     // verifica si hay un usuario guardado en sessionStorage//
-    const username = sessionStorage.getItem("username");
+    const username = sessionStorage.getItem("email");
 
     // si no hay un usuario guardado, redirigir al formulario de inicio de sesión//
     if (!username) {
