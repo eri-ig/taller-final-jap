@@ -9,6 +9,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/cart.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -51,15 +53,68 @@
         </li>
     </ul>
 </nav>
-
-  <main>
-    <div class="container">
-     <div id="cartItems" >
-
-     </div>
+<div class="container my-4">
+  <div class="row">
+    <div class="col-xl-8">
+      <h1 class="mb-4">Mi Carrito</h1>
+      <div id="cartItems" class="prueba">
+       
+      </div>
     </div>
-  </main>
-  <footer class="text-muted">
+
+    <div class="col-xl-4">
+      <div class="card border shadow-none">
+        <div class="card-header bg-transparent border-bottom py-3 px-4">
+          <h5 class="font-size-16 mb-0">Resumen de compra</h5>
+        </div>
+        <div class="card-body p-4 pt-2">
+          <div class="table-responsive">
+            <table class="table mb-0">
+              <tbody>
+                <tr>
+                  <td>Sub Total :</td>
+                  <td class="text-end">$ <span id="subtotal">0</span></td>
+                </tr>
+                <tr>
+                  <td>Descuento :</td>
+                  <td class="text-end">- $ <span id="discount">0</span></td>
+                </tr>
+                <tr>
+                  <td>Costo de envio :</td>
+                  <td class="text-end">$ <span id="shipping">0</span></td>
+                </tr>
+                <tr>
+                  <td>Impuestos :</td>
+                  <td class="text-end">$ <span id="tax">0</span></td>
+                </tr>
+                <tr class="bg-light">
+                  <th>Total :</th>
+                  <td class="text-end">
+                    <span class="fw-bold">$ <span id="total">0</span></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+     <div class="row my-4">
+    <div class="col-sm-6">
+      <a href="ecommerce-products.html" class="btn btn-warning">
+         <i class="mdi mdi-arrow-left me-1"></i> Continuar compra
+        </a>
+        </div>
+        <div class="col-sm-6 text-sm-end mt-2 mt-sm-0">
+        <a href="ecommerce-checkout.html" class="btn btn-success">
+        <i class="mdi mdi-cart-outline me-1"></i> Pagar
+      </a>
+    </div>
+  </div>
+</div>
+  <footer class="text-muted" >
     <div class="container-2">
       <p class="float-end">
         <a href="#">Volver arriba</a>

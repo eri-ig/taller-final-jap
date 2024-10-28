@@ -21,6 +21,30 @@ button {
 button:hover {
   background: orange;
 }
+.btn-primary{ 
+  background-color: rgb(255, 186, 122);  
+  border-color:orange;
+  color: black; 
+
+}
+.btn-primary:hover {
+  background-color:orange; 
+  border-color:black;
+  color:rgba(0, 0, 0, 0.945);  
+}
+
+.m-1{
+  background-color: rgb(255, 186, 122);  
+  border-color:orange;
+  color: black; 
+}
+.m-1-primary:hover {
+
+  background-color:orange; 
+  border-color:black;
+  color:rgba(0, 0, 0, 0.945);  
+}
+
 
 form input, textarea, select {
   margin-bottom: 18px;
