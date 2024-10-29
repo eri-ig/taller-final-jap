@@ -25,94 +25,76 @@ cargarCarrito();
 
  
 
-// funcion mostrar carrito
- 
- function mostrarProductosCarrito() {
-    container.innerHTML = ""; // limpiador//
+// ¯\(°_o)/¯ funcion mostrar carrito//
+function mostrarProductosCarrito() {
+    const container = document.getElementById("cartItems"); // Contenedor de las tarjetas//
+    container.innerHTML = ''; // Limpiador//
 
-  //mensaje de carrito vacio//
-    if (ProductosCarrito.size === 0) {
-     const mostrarMensaje = document.createElement("div");
-     mostrarMensaje.classList.add("alert", "alert-warning", "text-center");
-     mostrarMensaje.textContent = "Uy, al parecer no ha seleccionado ningún producto.";
+    // trae los productos del localStorage//
+    const carritoCargado = JSON.parse(localStorage.getItem("claveProductoCarrito"));
+
+    // mansaje carrito vacio//
+    if (!carritoCargado || carritoCargado.length === 0) {
+        const mostrarMensaje = document.createElement("p");
+        mostrarMensaje.textContent = "Uy, al parecer no hay ningún producto almacenado en el carrito.";
         container.appendChild(mostrarMensaje);
-        return; 
+        return;
     }
 
-    //recorrer y mostrar los productos//
-    ProductosCarrito.forEach((producto) => {
-        //tarjeta para cada producto/
-        const productoDiv = document.createElement("div");
-        productoDiv.classList.add("card", "border", "shadow-none", "mb-3", "mx-auto");
     
-        const cardBody = document.createElement("div");
-        cardBody.classList.add("card-body");
-    
-    //imagen y detalles del producto//
-        
-       const contenidoProducto = document.createElement("div");
-        contenidoProducto.classList.add("d-flex", "align-items-start", "bottom", "pb-1");
-    
-        const imagenProducto = document.createElement("div");
-        imagenProducto.classList.add("me-4");
-    
-        const imagen = document.createElement("img");
-        imagen.src = producto.image;
-        imagen.alt = producto.name;
-        imagen.classList.add("avatar-lg", "rounded");
-        imagenProducto.appendChild(imagen);
-    
-        const detalleProducto = document.createElement("div");
-        detalleProducto.classList.add("flex-grow-1", "align-self-center", "overflow-hidden");
-    
-        const titulo = document.createElement("h5");
-        titulo.classList.add("text-truncate", "font-size-18");
-        titulo.innerHTML = `<a href="#" class="text-dark">${producto.name}</a>`;
-    
-        const precioProductos = document.createElement("p");
-        precioProductos.classList.add("text-muted", "mb-2");
-        precioProductos.textContent = "Precio";
-        const precio = document.createElement("h5");
-        precio.textContent = `$${producto.price}`;
-    
-     // selector de las cantidades//
-          const quantityContainer = document.createElement("div");
-          quantityContainer.classList.add("mt-3");
-    
-          const quantityTexto = document.createElement("p");
-          quantityTexto.classList.add("text-muted", "mb-2");
-          quantityTexto.textContent = "Cantidad";
-    
-          const menuDesplegable = document.createElement("div");
-          menuDesplegable.classList.add("d-inline-flex");
-    
-          const quantitySelect = document.createElement("select");
-          quantitySelect.classList.add("form-select", "form-select-sm", "w-xl");
-    
-    // agrega el selector de cantidad//
-    
-        menuDesplegable.appendChild(quantitySelect);
-        quantityContainer.appendChild(quantityTexto);
-        quantityContainer.appendChild(menuDesplegable);
-    
-  // agregalos detalles del producto/
-          detalleProducto.appendChild(titulo);
-          detalleProducto.appendChild(precioProductos);
-          detalleProducto.appendChild(precio);
-          detalleProducto.appendChild(quantityContainer); 
-        
-        contenidoProducto.appendChild(imagenProducto);
-        contenidoProducto.appendChild(detalleProducto);
-    
-        
-    //pone el contenido dentro de la tarjeta//
-        cardBody.appendChild(contenidoProducto);
-    
-    //muetra la tarjeta//
-        productoDiv.appendChild(cardBody);
-        container.appendChild(productoDiv);
-    });
-    
-   }
+     carritoCargado.forEach(([id, producto]) => {
+        const card = document.createElement("div");
+        card.className = "card border shadow-none mb-3";
 
-mostrarProductosCarrito();
+    // opciones de cantidad de productos//
+    let opciones = "";
+       for (let i = 1; i <= 8; i++) {
+       opciones += `<option value="${i}">${i}</option>`;
+      }
+
+        
+       card.innerHTML = `
+            <div class="card-body">
+                <div class="d-flex align-items-start bottom pb-3">
+                    <div class="me-4">
+                        <img src="${producto.image}" alt="${producto.name}" class="avatar-lg rounded">
+                    </div>
+                    <div class="flex-grow-1 align-self-center overflow-hidden">
+                        <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">${producto.name}</a></h5>
+                        <p class="text-muted mb-2">Precio</p>
+                        <h5>$${producto.price}</h5>
+                    </div>
+                    <div class="flex-shrink-0 ms-2">
+                        <ul class="list-inline mb-0 font-size-16">
+                            <li class="list-inline-item">
+                                <a href="#" class="text-muted px-1">
+                                    <i class="mdi mdi-trash-can-outline"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="text-muted px-1">
+                                    <i class="mdi mdi-heart-outline"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mt-3">
+                        <p class="text-muted mb-2">Quantity</p>
+                        <div class="d-inline-flex">
+                            <select class="form-select form-select-sm w-xl">
+                              ${opciones}   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        container.appendChild(card);
+    });
+  }
+
+  // muestra los productos en la pagina//
+    mostrarProductosCarrito();
