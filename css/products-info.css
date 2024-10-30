@@ -585,3 +585,195 @@ body.dark .hero .btn-warning:hover {
   transform: translateY(0);
   visibility: visible;
 }
+
+
+/* OFFCANVAS */
+.offcanvas-custom {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+ /* offcanvas flotante */
+ .offcanvas-end {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  height: auto;
+  max-height: 80vh;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+  z-index: 1050;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.offcanvas-header-custom {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.offcanvas-body-custom {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+/* footer del offcanvas */
+.offcanvas-footer-custom {
+  border-top: 1px solid #dee2e6; 
+}
+
+
+.offcanvas-footer-custom .btn {
+  margin-left: auto;
+}
+
+/*  modo oscuro */
+.offcanvas-custom.bg-dark {
+  background-color: #343a40; 
+  color: #ffffff;
+}
+
+.offcanvas-header-custom.bg-dark {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.offcanvas-body-custom.bg-dark {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+
+.offcanvas-body-custom.text-white {
+  color: #ffffff;
+}
+
+
+.list-group-item.bg-dark {
+  background-color: #454d55;
+  color: #ffffff;
+}
+
+.list-group-item.bg-dark .btn-outline-secondary {
+  color: #ffffff;
+  border-color: #6c757d;
+}
+
+.list-group-item.bg-dark .btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+
+.badge-personalizado {
+  background-color: #ffb833; 
+  color: #ffffff;
+}
+
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #bd2130;
+  border-color: #b21f2d;
+}
+
+
+.boton-personalizado {
+  background-color: #ffb833;
+  color: #ffffff;
+  border: none;
+}
+
+.boton-personalizado:hover {
+  background-color: #e0a800;
+  color: #ffffff;
+}
+
+/* imágenes de los productos del offcanvas */
+.product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+
+.text-white {
+  color: #ffffff;
+}
+
+/* modo oscuro offcanvas */
+.offcanvas-custom.dark-mode {
+  background-color: #343a40; 
+  color: #ffffff;
+}
+
+.offcanvas-header-custom.dark-mode {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.offcanvas-body-custom.dark-mode {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.offcanvas-custom.dark-mode .list-group-item {
+  background-color: #454d55;
+  color: #ffffff;
+}
+
+.offcanvas-custom.dark-mode .btn {
+  background-color: #6c757d;
+  color: #ffffff;
+  border-color: #6c757d;
+}
+
+.offcanvas-custom.dark-mode .btn:hover {
+  background-color: #5a6268;
+  color: #ffffff;
+  border-color: #545b62;
+}
+
+.offcanvas-custom.dark-mode .text-white {
+  color: #ffffff;
+}
+
+.offcanvas-custom.dark-mode .mdi {
+  color: #ffffff;
+}
+.item-carrito.bg-dark {
+  background-color: #454d55;
+  color: #ffffff;
+}
+/* Estilos para el modo oscuro */
+.dark-mode .cart-item {
+  background-color: #2c2c2c; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+.dark-mode .offcanvas-item-carrito {
+  background-color: #2c2c2c; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+/* Ajustar botones y badges para mejor visibilidad en modo oscuro */
+.dark-mode .btn-outline-secondary {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.dark-mode .badge-personalizado {
+  background-color: #555555;
+  color: #ffffff;
+}
+
+/* Enlaces en modo oscuro */
+.dark-mode a.text-dark {
+  color: #ffffff;
+}

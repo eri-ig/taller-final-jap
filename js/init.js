@@ -74,37 +74,122 @@ function showUserInformation() {
 };
 
 function aplicarTema(tema) {
+    // Seleccionamos los elementos estáticos del DOM
     const navbar = document.querySelector('.navbar');
     const footer = document.querySelector('footer');
-    const cards = document.querySelectorAll('.card'); // Selecciona todas las tarjetas
+    const cards = document.querySelectorAll('.card'); // Selecciona todas las tarjetas estáticas
+    const offcanvas = document.querySelector('.offcanvas-custom');
+    const offcanvasHeader = document.querySelector('.offcanvas-header-custom');
+    const offcanvasBody = document.querySelector('.offcanvas-body-custom');
+    const itemsCarrito = document.querySelectorAll('.item-carrito'); // Elementos del carrito en offcanvas
+
+    // Seleccionamos los elementos dinámicos del carrito generados por cart.js
+    const cartItemsPage = document.querySelectorAll('.cart-item'); // Elementos del carrito en cart.html
+    const offcanvasCartItems = document.querySelectorAll('.offcanvas-item-carrito'); // Elementos del carrito en offcanvas
 
     if (tema === 'dark') {
-        body.classList.add('bg-dark', 'text-white');
+        // Aplicamos clases de fondo oscuro y texto blanco al body
+        document.body.classList.add('bg-dark', 'text-white');
 
+        // Aplicamos clases de fondo oscuro y texto blanco al navbar si existe
         if (navbar) {
             navbar.classList.add('bg-dark', 'text-white');
         }
+
+        // Aplicamos clases de fondo oscuro y texto blanco al footer si existe
         if (footer) {
             footer.classList.add('bg-dark', 'text-white');
         }
-        cards.forEach(card => {//tema oscuro para las tarjetas
-            card.classList.add('bg-dark', 'text-white');   
+
+        // Aplicamos clases de fondo oscuro y texto blanco a todas las tarjetas estáticas
+        cards.forEach(card => {
+            card.classList.add('bg-dark', 'text-white');
+        });
+
+        // Aplicamos clases de fondo oscuro y texto blanco al offcanvas si existe
+        if (offcanvas) {
+            offcanvas.classList.add('bg-dark', 'text-white');
+        }
+
+        // Aplicamos clases de fondo oscuro y texto blanco al encabezado del offcanvas si existe
+        if (offcanvasHeader) {
+            offcanvasHeader.classList.add('bg-dark', 'text-white');
+        }
+
+        // Aplicamos clases de fondo oscuro y texto blanco al cuerpo del offcanvas si existe
+        if (offcanvasBody) {
+            offcanvasBody.classList.add('bg-dark', 'text-white');
+        }
+
+        // Aplicamos clases de fondo oscuro y texto blanco a los elementos del carrito en offcanvas
+        itemsCarrito.forEach(item => {
+            item.classList.add('bg-dark', 'text-white');
+        });
+
+        // **Aplicamos clases de fondo oscuro y texto blanco a los elementos dinámicos del carrito en cart.html**
+        cartItemsPage.forEach(item => {
+            item.classList.add('bg-dark', 'text-white');
+        });
+
+        // **Aplicamos clases de fondo oscuro y texto blanco a los elementos dinámicos del carrito en offcanvas**
+        offcanvasCartItems.forEach(item => {
+            item.classList.add('bg-dark', 'text-white');
         });
 
     } else {
-       
-        body.classList.remove('bg-dark', 'text-white');
+        // Removemos clases de fondo oscuro y texto blanco del body para modo claro
+        document.body.classList.remove('bg-dark', 'text-white');
+
+        // Removemos clases de fondo oscuro y texto blanco del navbar si existe
         if (navbar) {  
             navbar.classList.remove('bg-dark', 'text-white');
         }
+
+        // Removemos clases de fondo oscuro y texto blanco del footer si existe
         if (footer) {  
             footer.classList.remove('bg-dark', 'text-white');
         }
 
-        // quita tema oscuro
+        // Cambiamos a fondo claro y texto oscuro para todas las tarjetas estáticas
         cards.forEach(card => {
             card.classList.add('bg-light', 'text-dark');
             card.classList.remove('bg-dark', 'text-white');
+        });
+
+        // Cambiamos a fondo claro y texto oscuro al offcanvas si existe
+        if (offcanvas) {
+            offcanvas.classList.remove('bg-dark', 'text-white');
+            offcanvas.classList.add('bg-light', 'text-dark');
+        }
+
+        // Cambiamos a fondo claro y texto oscuro al encabezado del offcanvas si existe
+        if (offcanvasHeader) {
+            offcanvasHeader.classList.remove('bg-dark', 'text-white');
+            offcanvasHeader.classList.add('bg-light', 'text-dark');
+        }
+
+        // Cambiamos a fondo claro y texto oscuro al cuerpo del offcanvas si existe
+        if (offcanvasBody) {
+            offcanvasBody.classList.remove('bg-dark', 'text-white');
+            offcanvasBody.classList.add('bg-light', 'text-dark');
+        }
+
+        // Cambiamos a fondo claro y texto oscuro a los elementos del carrito en offcanvas
+        itemsCarrito.forEach(item => {
+            item.classList.remove('bg-dark', 'text-white');
+            item.classList.add('bg-light', 'text-dark');
+        });
+
+        // **Cambiamos a fondo claro y texto oscuro a los elementos dinámicos del carrito en cart.html**
+        cartItemsPage.forEach(item => {
+            item.classList.remove('bg-dark', 'text-white');
+            item.classList.add('bg-light', 'text-dark');
+        });
+
+        // **Cambiamos a fondo claro y texto oscuro a los elementos dinámicos del carrito en offcanvas**
+        offcanvasCartItems.forEach(item => {
+            item.classList.remove('bg-dark', 'text-white');
+            item.classList.add('bg-light', 'text-dark');
         });
     }
 }
