@@ -58,23 +58,25 @@
   </ul>
 </nav>
 
-<!--offcanvas-->
+<!-- offcanvas -->
 <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
-  <div class="offcanvas-header d-flex justify-content-between align-items-center offcanvas-header-custom">
-    <h5 class="offcanvas-title" id="offcanvasCarritoLabel">Carrito de Compras</h5>
-    <button class="btn boton-personalizado btn-sm" onclick="procederAlPago()">Proceder al Pago</button>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <div class="offcanvas-header offcanvas-header-custom">
+      <h5 class="offcanvas-title" id="offcanvasCarritoLabel">Carrito de Compras</h5>
+      <button class="btn boton-personalizado btn-sm" onclick="procederAlPago()">Proceder al Pago</button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body offcanvas-body-custom">
-    <div id="cartItems">
-    </div>
+      <ul class="list-group" id="offcanvasCartItems">
+         
+      </ul>
   </div>
   <div class="offcanvas-footer offcanvas-footer-custom p-3">
-    <div class="d-flex justify-content-between align-items-center">
-      <strong>Total: $<span id="totalOffcanvas">0.00</span></strong>
-    </div>
+      <div class="d-flex justify-content-between align-items-center">
+          <strong>Total: $<span id="totalOffcanvas">0.00</span></strong>
+      </div>
   </div>
 </div>
+
 
 
 

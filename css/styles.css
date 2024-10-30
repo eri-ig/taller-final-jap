@@ -578,3 +578,29 @@ body.bg-dark .dropdown-item img {
   background-color: #454d55;
   color: #ffffff;
 }
+/* Estilos para el modo oscuro */
+.dark-mode .cart-item {
+  background-color: #2c2c2c; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+.dark-mode .offcanvas-item-carrito {
+  background-color: #2c2c2c; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+/* Ajustar botones y badges para mejor visibilidad en modo oscuro */
+.dark-mode .btn-outline-secondary {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.dark-mode .badge-personalizado {
+  background-color: #555555;
+  color: #ffffff;
+}
+
+/* Enlaces en modo oscuro */
+.dark-mode a.text-dark {
+  color: #ffffff;
+}
