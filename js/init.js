@@ -223,10 +223,7 @@ function inicializarModoOscuro() {
     cargarTemaGuardado();
 }
 
-
-
 function cerrarSesion(){
-    
 // ✖‿✖  Elimina todos los datos del perfil al cerrar sesion//
     localStorage.removeItem("nombre");
     localStorage.removeItem("segundoNombre");
@@ -235,27 +232,15 @@ function cerrarSesion(){
     localStorage.removeItem("email");
     localStorage.removeItem("telefono");
     localStorage.removeItem("imagenGuardada");
-  
-    // elimina los datos de sessionStorage //
-    sessionStorage.removeItem("username");
-  
-    // redirige a la pagina de inicio de sesision//
-    window.location.href = "login.html";
-  }
-  btnCerrar.addEventListener('click', cerrarSesion);
+// elimina los datos de sessionStorage //
+sessionStorage.removeItem("username");
+
+// redirige a la pagina de inicio de sesision//
+window.location.href = "login.html";
+}
 
 //Evento para evitar que el offcanvas del carrito redirija a la pagina del carrito automaticamente
 document.addEventListener("DOMContentLoaded", function () {
 const cartLink = document.querySelector(".nav-link[data-bs-toggle='offcanvas']");
 const offcanvasCart = document.getElementById("offcanvasCart");
-
-//Redirige cuando se selecciona "pagar" el offcanvas
-offcanvasCart.addEventListener("", function () { //hay que agregarlo
-    window.location.href = "cart.html";
-});
-
-// Impide la navegación directa al hacer clic, abriendo solo el offcanvas
-cartLink.addEventListener("click", function (event) {
-    event.preventDefault();
-});
 });

@@ -10,6 +10,7 @@ function cargarCarrito() {
         ProductosCarrito = new Map(carritoCargado);
     }
     mostrarCarrito();// mostramos el carrito 
+    actualizarBadgeCarrito(); //Actualizamos el badge
 }
 
 function guardarCarrito() {// guardamos el estado actual del carrito en localStorage
@@ -17,6 +18,20 @@ function guardarCarrito() {// guardamos el estado actual del carrito en localSto
     localStorage.setItem("claveProductoCarrito", JSON.stringify(mapAsArray));// guardamos el carrito en localStorage 
 }
 
+//Funcion para actualizar el badge
+function actualizarBadgeCarrito() {
+    let totalProductos = 0;
+
+    //Contamos la cantidad de cada producto en el carrito
+    ProductosCarrito.forEach(producto => {
+        totalProductos += producto.quantity;
+    });
+    //Actualizamos el badge con el total
+    const badgeCarrito = document.getElementById("cart-count");
+    if (badgeCarrito) {
+        badgeCarrito.textContent = totalProductos;
+    }
+}
 
 function agregarProductoAlCarrito(id, nombre, imagen, precio) {//agregar un producto al carrito
     id = parseInt(id);//  el id y el precio deben ser del tipo correcto
@@ -40,6 +55,7 @@ function agregarProductoAlCarrito(id, nombre, imagen, precio) {//agregar un prod
     }
     guardarCarrito();//guardamos  en el localStorage
     mostrarCarrito();//actualizamos el carrito
+    actualizarBadgeCarrito(); //Llamamos a la funcion para que se actualice el badge
 }
 
 
@@ -178,6 +194,7 @@ function cambiarCantidad(id, delta) {//para cambiar la cantidad de un producto u
         
         guardarCarrito();
         mostrarCarrito();
+        actualizarBadgeCarrito(); //Actualizamos el badge
     }
 }
 
@@ -196,9 +213,9 @@ function cambiarCantidadSelect(id, nuevaCantidad) {
         guardarCarrito();
         // Actualizamos la visualización del carrito
         mostrarCarrito();
+        actualizarBadgeCarrito(); //Actualizamos el badge
     }
 }
-
 
 function removeItem(id) {//para eliminar un producto del carrito   
     id = parseInt(id); // Convertimos el id a entero
@@ -208,14 +225,13 @@ function removeItem(id) {//para eliminar un producto del carrito
         
         guardarCarrito();
         mostrarCarrito();
+        actualizarBadgeCarrito(); //Actualizamos el badge
     }
 }
-
 
 function procederAlPago() {
     window.location.href = 'cart.html';
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
      cargarCarrito();
