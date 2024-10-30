@@ -77,6 +77,10 @@ function aplicarTema(tema) {
     const navbar = document.querySelector('.navbar');
     const footer = document.querySelector('footer');
     const cards = document.querySelectorAll('.card'); // Selecciona todas las tarjetas
+    const offcanvas = document.querySelector('.offcanvas-custom');
+    const offcanvasHeader = document.querySelector('.offcanvas-header-custom');
+    const offcanvasBody = document.querySelector('.offcanvas-body-custom');
+    const itemsCarrito = document.querySelectorAll('.item-carrito');
 
     if (tema === 'dark') {
         body.classList.add('bg-dark', 'text-white');
@@ -89,6 +93,18 @@ function aplicarTema(tema) {
         }
         cards.forEach(card => {//tema oscuro para las tarjetas
             card.classList.add('bg-dark', 'text-white');   
+        });
+        if (offcanvas) {
+            offcanvas.classList.add('bg-dark', 'text-white');
+        }
+        if (offcanvasHeader) {
+            offcanvasHeader.classList.add('bg-dark', 'text-white');
+        }
+        if (offcanvasBody) {
+            offcanvasBody.classList.add('bg-dark', 'text-white');
+        }
+        itemsCarrito.forEach(item => {
+            item.classList.add('bg-dark', 'text-white');
         });
 
     } else {
@@ -105,6 +121,22 @@ function aplicarTema(tema) {
         cards.forEach(card => {
             card.classList.add('bg-light', 'text-dark');
             card.classList.remove('bg-dark', 'text-white');
+        });
+        if (offcanvas) {
+            offcanvas.classList.remove('bg-dark', 'text-white');
+            offcanvas.classList.add('bg-light', 'text-dark');
+        }
+        if (offcanvasHeader) {
+            offcanvasHeader.classList.remove('bg-dark', 'text-white');
+            offcanvasHeader.classList.add('bg-light', 'text-dark');
+        }
+        if (offcanvasBody) {
+            offcanvasBody.classList.remove('bg-dark', 'text-white');
+            offcanvasBody.classList.add('bg-light', 'text-dark');
+        }
+        itemsCarrito.forEach(item => {
+            item.classList.remove('bg-dark', 'text-white');
+            item.classList.add('bg-light', 'text-dark');
         });
     }
 }

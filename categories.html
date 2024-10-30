@@ -10,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
 </head>
 
 <body>
@@ -31,8 +32,8 @@
       </li>
       <li> 
         <a class="nav-item">
-          <li>
-            <a class="nav-link" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+          <li class="nav-item">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
               <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito" style="margin-right: 8px;">MI CARRITO
               <span id="cart-count" class="badge bg-danger position-absolute translate-middle badge rounded-pill">0</span>
             </a>
@@ -59,6 +60,25 @@
       </li>
   </ul>
 </nav>
+
+<!--offcanvas-->
+<div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
+  <div class="offcanvas-header d-flex justify-content-between align-items-center offcanvas-header-custom">
+    <h5 class="offcanvas-title" id="offcanvasCarritoLabel">Carrito de Compras</h5>
+    <button class="btn boton-personalizado btn-sm" onclick="procederAlPago()">Proceder al Pago</button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body offcanvas-body-custom">
+    <div id="cartItems">
+    </div>
+  </div>
+  <div class="offcanvas-footer offcanvas-footer-custom p-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <strong>Total: $<span id="totalOffcanvas">0.00</span></strong>
+    </div>
+  </div>
+</div>
+
 
   <main class="pb-5">
     <div class="text-center p-4">
@@ -125,6 +145,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/categories.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 
 </html>

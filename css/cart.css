@@ -122,3 +122,9 @@ a {
     margin-top: 10px; 
     width: 100%;
 }
+
+.cart-items-container {
+    max-height: calc(100vh - 150px); /* Altura máxima basada en la altura de la ventana */
+    overflow-y: auto; /* Permite el scroll vertical */
+  }
+  
