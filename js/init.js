@@ -158,3 +158,19 @@ function cerrarSesion(){
     window.location.href = "login.html";
   }
   btnCerrar.addEventListener('click', cerrarSesion);
+
+//Evento para evitar que el offcanvas del carrito redirija a la pagina del carrito automaticamente
+document.addEventListener("DOMContentLoaded", function () {
+const cartLink = document.querySelector(".nav-link[data-bs-toggle='offcanvas']");
+const offcanvasCart = document.getElementById("offcanvasCart");
+
+//Redirige cuando se selecciona "pagar" el offcanvas
+offcanvasCart.addEventListener("", function () { //hay que agregarlo
+    window.location.href = "cart.html";
+});
+
+// Impide la navegación directa al hacer clic, abriendo solo el offcanvas
+cartLink.addEventListener("click", function (event) {
+    event.preventDefault();
+});
+});
