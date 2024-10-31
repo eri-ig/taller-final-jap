@@ -177,3 +177,9 @@ function funcionalidadBotonComprar(producto) {
             producto.cost)
     })
 }
+
+//Al presionar OK en la alerta redirije al carrito
+document.querySelector('#offcanvasCarrito .btn').addEventListener('click', function(event) {
+    event.preventDefault(); //Se supone que debe evitar que se muestre la alerta
+    procederAlPago(); //Te dirije al cart.html
+});
