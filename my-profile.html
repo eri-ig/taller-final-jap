@@ -6,69 +6,164 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
+  <link href="css/my-profile.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light p-1" style="border-bottom: 1px solid orange;">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
-      </div>
+  <nav class="navbar navbar-light">
+    <!-- Logo del Navbar -->
+    <div class="navbar-logo">
+      <a class="navbar-brand" href="index.html">SHIGERICATEVA</a>
     </div>
-  </nav>
+
+    <!-- Menú de navegación -->
+    <ul class="nav-menu">
+      <li class="nav-item">
+          <a class="nav-link" href="categories.html">CATEGORÍAS</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="sell.html">VENDER</a>
+      </li>
+      <li> 
+        <a class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
+              <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito" style="margin-right: 8px;">MI CARRITO
+              <span id="cart-count" class="badge bg-danger position-absolute translate-middle badge rounded-pill">0</span>
+            </a>
+          </li>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="d-flex align-items-center">
+              <img src="./img/acountCircle.png" id="imagenPerfil" width="35" height="35" alt="User Icon" style=" border-radius: 50%;">
+              <div class="welcome-message ms-2" id="welcome-message"></div>
+          </div>
+          </a>
+          <div class="dropdown-menu ml-2 mr-2" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="my-profile.html">
+                  <img src="./img/edit.png" width="20" height="20" alt="Editar" style="margin-right: 8px;">Editar Perfil
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="login.html">
+                  <img src="./img/cerrar-session.png" width="20" height="20" alt="Cerrar sesión" style="margin-right: 8px;">Cerrar Sesión
+              </a>
+          </div>
+      </li>
+  </ul>
+</nav>
+
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
+  <div class="offcanvas-header offcanvas-header-custom">
+      <h5 class="offcanvas-title" id="offcanvasCarritoLabel">Carrito de Compras</h5>
+      <button class="btn boton-personalizado btn-sm" onclick="procederAlPago()">Proceder al Pago</button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body offcanvas-body-custom">
+      <ul class="list-group" id="offcanvasCartItems">
+         
+      </ul>
+  </div>
+  <div class="offcanvas-footer offcanvas-footer-custom p-3">
+      <div class="d-flex justify-content-between align-items-center">
+          <strong>Total: $<span id="totalOffcanvas">0.00</span></strong>
+      </div>
+  </div>
+</div>
+
+
+
+
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="page-content page-container" id="page-content">
+      <div class="padding">
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+          <div class="col-xl-8 col-md-12">
+            <div class="d-flex justify-content-end mb-3">
+             <input type="checkbox" id="darkModeSwitch">
+
+    <div class="display">
+        <label for="darkModeSwitch">
+            <div class="circle">
+                <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+                </svg>
+                <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+                </svg>                               
+            </div>
+        </label>
     </div>
-  </main>
+            </div>
+            <div class="card user-card-full">
+              <div class="row m-l-0 m-r-0">
+                <!-- Perfil de Usuario -->
+                <div class="col-sm-4 bg-c-lite-green user-profile">
+                  <div class="card-block text-center text-white">
+                    <div class="m-b-25">
+                      <!-- Imagen de perfil -->
+                      <img src="./img/img_perfil.png" class="img-radius img-fluid img-profile" alt="User-Profile-Image" id="img" style="background-color: aliceblue!important;">
+                      <input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/*" style="display: none;">
+                    </div>
+                    <h6 class="f-w-600 d-inline">NOMBRE DE USUARIO</h6>
+                    <i class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16 d-flex flex-column align-items-center" style="color: aliceblue!important;"></i>
+
+                    <!-- Botón de Editar Foto -->
+                    <button id="editarFotoBtn" class="btn btn-primary btn-custom-small mt-3">Editar Foto</button>
+                  </div>
+                </div>
+
+                <div class="col-sm-8">
+                  <div class="card-block">
+                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">CONFIGURACIÓN DE PERFIL</h6>
+                    <div class="row" id="form">
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre*">
+                        <small class="text-danger d-none" id="nombreError">Este campo es obligatorio</small>
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="segundoNombre" placeholder="Segundo Nombre">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="apellido" placeholder="Apellido*">
+                        <small class="text-danger d-none" id="apellidoError">Este campo es obligatorio</small>
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="segundoApellido" placeholder="Segundo Apellido">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="email" class="form-control" id="email" placeholder="Email*">
+                        <small class="text-danger d-none" id="emailError">Debe ingresar un correo válido</small>
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="tel" class="form-control" id="telefono" placeholder="Teléfono de contacto*" pattern="[0-9]+" title="Solo se permiten números">
+                        <small class="text-danger d-none" id="telefonoError">Este campo es obligatorio</small>
+                      </div>
+                    </div>
+                    <!-- Botón de Guardar Información -->
+                    <div class="d-flex justify-content-end">
+                      <button class="btn btn-secondary btn-custom-small mt-4" id="btnGuardar">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+
   <footer class="text-muted">
     <div class="container-2">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
-      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 
 </html>

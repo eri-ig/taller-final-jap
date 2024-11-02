@@ -1,40 +1,126 @@
 .jumbotron,
 .card-body,
-.mt-5,
 .container,
-
-body{
-  padding-bottom: 0px;
+main,
+body {
+  margin-bottom: 40px; /* Espacio entre el contenido y el footer */
 }
 
-label{
-  position: relative;
-  color: black;
-  font-size: 22px;
+/* Estilo del botón */
+button {
+  border: 1px solid orange;
+  background-color: rgb(255, 186, 122); 
+  padding: 8px 15px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5%;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: orange;
+}
+.btn-primary{ 
+  background-color: rgb(255, 186, 122);  
+  border-color:orange;
+  color: black; 
+
+}
+.btn-primary:hover {
+  background-color:orange; 
+  border-color:black;
+  color:rgba(0, 0, 0, 0.945);  
+}
+
+.m-1{
+  background-color: rgb(255, 186, 122);  
+  border-color:orange;
+  color: black; 
+}
+.m-1-primary:hover {
+
+  background-color:orange; 
+  border-color:black;
+  color:rgba(0, 0, 0, 0.945);  
 }
 
 
-input,
-
-
-.contenedor-input{
-  position: relative;
-  margin-bottom: 40px;
-}
-.site-header {
-  font-family: 'Verdana', serif !important;
+form input, textarea, select {
+  margin-bottom: 18px;
 }
 
+.form-control {
+  border: 1px solid orange;
+}
 
-.jumbotron .display-4 {
+.form-control::placeholder {
+  color: rgba(0, 0, 0, 0.945) !important;
+}
+
+/*Comienzo del navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; 
+  padding: 10px 50px; /* Ajusta el espaciado */
+  background-color: #f1f1f1; 
+  width: 100%;
+  border-bottom: 1px solid orange;
+}
+
+/* Estilo para el logo SHIGERICATEVA */
+.navbar-light .navbar-brand {
   font-weight: bold;
-}
-
-
-nav a {
+  color: rgb(255, 186, 122);
+  font-size: 28px;
   text-decoration: none;
 }
 
+.navbar-light .navbar-brand:hover {
+  color: orange;
+}
+
+/* Menú de navegación */
+.nav-menu {
+  display: flex; /* Alinea los elementos horizontalmente */
+  justify-content: center;
+  align-items: center;
+  list-style:none;
+  margin-left: auto;
+  height: 20px;
+}
+
+.nav-item {
+  margin-top: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color:rgba(0, 0, 0, .55); 
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: orange;
+}
+
+/*Menu desplegable*/
+.dropdown-menu {
+  max-width: 200px;
+  left: auto; /* Para permitir que el menú se ajuste a la pantalla */
+  right: 0; /* Para anclar el menú al lado derecho */
+}
+
+.dropdown-toggle::after {
+  display: none; /* Oculta la flecha */
+}
+
+.dropdown-item:hover {
+  background-color: orange;
+}
+/*Fin del navbar*/
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -52,7 +138,7 @@ nav a {
   }
 }
 
-
+/* Estilos de la jumbotron */
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
@@ -108,38 +194,88 @@ nav a {
   font-size: 38px;
 }
 
-
-.site-header a {
-  color: white;
-  transition: ease-in-out color .15s;
-}
-
-
-.site-header .dropdown-menu a {
-  color: black;
-}
-
-
-.dropzone {
-  border: 2px dashed #0087F7;
-  border-radius: 5px;
-  background: white;
-}
-
-
-.img-fit {
-  max-height: 100%;
-}
-
-
-.alert {
+/* Footer */
+footer {
   position: fixed;
-  top: 80px;
-  width: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 15px 15px;
+  height: 60px;
+  border-top: 1px solid orange;
 }
 
+.container-2 p a {
+  color: rgb(255, 186, 122);
+  text-decoration: none;
+}
+
+.container-2 a:hover {
+  text-decoration: underline;
+}
+
+/* Tarjetas */
+.checked {
+  color: orange;
+}
+
+.welcome-message {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 15px;  
+  margin-left: 0px;  
+  text-align:center;  
+  margin-top: 20px;
+  margin-right: 20px;
+  margin: 0 auto;
+}
+
+.cursor-active {
+  cursor: pointer;
+}
+
+/* Estilo para las tarjetas en Products.HTML */
+#containerDiv .card {
+  border: 2px solid orange;
+}
+
+#containerDiv .card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave al hacer hover */
+  transform: scale(1.02); /* Efecto de agrandamiento */
+}
+
+h1#productTitle {
+  font-weight: bold !important;
+  font-size: 30px;
+  color: rgb(255, 186, 122);                  
+  -webkit-text-stroke: 1px rgb(15, 10, 0);  /* Borde alrededor del texto */
+}
+
+/* Botón de "Aplicar Filtros" */
+.text-primary {
+  text-decoration: none;
+}
+#applyFilter {
+  background-color: rgb(255, 186, 122);
+  color: rgba(0, 0, 0, 0.945);
+  border: 1px solid orange;
+}
+
+#applyFilter:hover {
+  background-color: orange;
+}
+
+/* Spinner */
+#spinner-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  display: none;
+}
 
 .lds-ring {
   display: inline-block;
@@ -149,18 +285,6 @@ nav a {
   top: 50%;
   left: 50%;
 }
-
-
-.cursor-active {
-  cursor:pointer;
-}
-
-.left {
-  float: left;
-  padding: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
 
 .lds-ring div {
   box-sizing: border-box;
@@ -175,99 +299,308 @@ nav a {
   border-color: #fff transparent transparent transparent;
 }
 
-
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
 }
-
 
 .lds-ring div:nth-child(2) {
   animation-delay: -0.3s;
 }
 
-
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
-
 
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
   }
 
-
   100% {
     transform: rotate(360deg);
   }
 }
-
-
-.signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
+.navbar-light .nav-link {
+  color: rgba(0, 0, 0, .55);
 }
 
-
-#spinner-wrapper {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1021;
-  display: none;
-}
-
-
-main {
-  min-height: calc(100vh - 210px);
-}
-
-
-a.custom-card,
-a.custom-card:hover {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-
-.checked {
+.navbar-light .nav-link:hover {
   color: orange;
 }
+/* Dark Mode */
+body.bg-dark {
+  background-color: #343a40 !important;
+  color: #f8f9fa !important;
+}
 
+.navbar.bg-dark,
+.footer.bg-dark {
+  background-color: #1f1f21 !important;
+  color: #f8f9fa !important;
+}
 
-.welcome-message {
-  color: rgba(218, 214, 214, 0.65);
-  font-size: 15px;  
-  margin-left: 0px;  
-  text-align:center;  
-  margin-top: 20px;
-  margin-right: 20px;
-  margin: 0 auto;
+.card.bg-dark {
+  background-color: #444 !important;
+  color: #f8f9fa !important;
+}
+
+/* estilo de los enlaces en modo oscuro */
+body.bg-dark .navbar-light .nav-link {
+  color: rgba(255, 255, 255, .75); /* color blanco para los enlaces en modo oscuro */
+}
+
+body.bg-dark .navbar-light .nav-link:hover {
+  color: orange; /* mantener el hover en color naranja */
+}
+
+/* corregir color de nombre de usuario en modo oscuro */
+body.bg-dark .welcome-message {
+  color: rgba(255, 255, 255, 0.85); /*color del nombre de usuario a blanco */
+}
+
+/* corregir el color de los íconos en el dropdown del navbar */
+body.bg-dark .dropdown-item {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body.bg-dark .dropdown-item:hover {
+  background-color: orange; /* mantener el hover  naranja */
+  color: white; /* cambia el color del texto a blanco cuando se pasa el mouse */
+}
+body.bg-dark .dropdown-menu {
+  background-color: #333; /* fondo oscuro */
+  color: rgba(255, 255, 255, 0.85); 
+  border: 1px solid rgba(255, 255, 255, 0.15); /* borde para modo oscuro */
+}
+
+/* hover en los ítems del dropdown */
+body.bg-dark .dropdown-item {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.bg-dark .dropdown-item:hover {
+  background-color: orange; /* fondo naranja cuando se pasa el mouse */
+  color: #ffffff; 
+}
+body.bg-dark .dropdown-item img {
+  filter: brightness(0) invert(1);
+}
+.text-black {
+  color: black ;
+}
+
+/* mantener los botones en modo claro */
+.btn-outline-secondary.text-black {
+  border-color: black;
+  color: black;
+}
+/*dropdown*/
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  visibility: hidden;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 
-footer{
+
+/* Estilos generales para el offcanvas personalizado */
+.offcanvas-custom {
+  background-color: #f8f9fa; /* Color de fondo por defecto */
+  color: #212529; /* Color de texto por defecto */
+}
+ /* Hacer el offcanvas flotante con altura limitada */
+ .offcanvas-end {
   position: fixed;
-  bottom: 0;
+  top: 20px;
+  right: 0;
+  height: auto;
+  max-height: 80vh;
+  max-width: 400px;
   width: 100%;
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 15px 15px;
-  height: 60px;
+  margin-bottom: 20px;
+  z-index: 1050;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 
-.container-2 p a{
-  color: rgb(255, 186, 122);
-  text-decoration: none;
+.offcanvas-header-custom {
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
+.offcanvas-body-custom {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+/* Estilos para el footer del offcanvas */
+.offcanvas-footer-custom {
+  border-top: 1px solid #dee2e6; /* Línea superior para separar del contenido */
+}
 
-.container-2 a:hover {
-  text-decoration: underline;
+/* Ajustes para que el total y el botón estén alineados */
+.offcanvas-footer-custom .btn {
+  margin-left: auto;
+}
+
+/* Estilos para el modo oscuro */
+.offcanvas-custom.bg-dark {
+  background-color: #343a40; /* Color de fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+.offcanvas-header-custom.bg-dark {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.offcanvas-body-custom.bg-dark {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+/* Estilos para los elementos internos en el offcanvas */
+.offcanvas-body-custom.text-white {
+  color: #ffffff;
+}
+
+/* Estilos para los items de la lista en el offcanvas */
+.list-group-item.bg-dark {
+  background-color: #27292b;
+  color: #ffffff;
+}
+
+.list-group-item.bg-dark .btn-outline-secondary {
+  color: #ffffff;
+  border-color: #2a2c2d;
+}
+
+.list-group-item.bg-dark .btn-outline-secondary:hover {
+  background-color: #353739;
+  color: #ffffff;
+}
+
+/* Estilos para la insignia personalizada */
+.badge-personalizado {
+  background-color: #ffb833; /* Mantiene el color naranja */
+  color: #ffffff;
+}
+
+/* Estilos para el botón de eliminar en modo oscuro */
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #bd2130;
+  border-color: #b21f2d;
+}
+
+/* Estilos para los botones personalizados en el offcanvas */
+.boton-personalizado {
+  background-color: #ffb833; /* Color naranja personalizado */
+  color: #ffffff;
+  border: none;
+}
+
+.boton-personalizado:hover {
+  background-color: #e0a800;
+  color: #ffffff;
+}
+
+/* Estilos para las imágenes de los productos */
+.product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Estilos generales para el texto en modo oscuro */
+.text-white {
+  color: #ffffff;
+}
+
+/* Estilos para el modo oscuro */
+.offcanvas-custom.dark-mode {
+  background-color: #343a40; /* Fondo oscuro */
+  color: #ffffff; /* Texto claro */
+}
+
+.offcanvas-header-custom.dark-mode {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.offcanvas-body-custom.dark-mode {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+/* Estilos para elementos internos en modo oscuro */
+.offcanvas-custom.dark-mode .list-group-item {
+  background-color: #454d55;
+  color: #ffffff;
+}
+
+.offcanvas-custom.dark-mode .btn {
+  background-color: #6c757d;
+  color: #ffffff;
+  border-color: #6c757d;
+}
+
+.offcanvas-custom.dark-mode .btn:hover {
+  background-color: #5a6268;
+  color: #ffffff;
+  border-color: #545b62;
+}
+
+/* Ajustes para textos e íconos */
+.offcanvas-custom.dark-mode .text-white {
+  color: #ffffff;
+}
+
+.offcanvas-custom.dark-mode .mdi {
+  color: #ffffff;
+}
+/* Estilos para los items del carrito en modo oscuro */
+.item-carrito.bg-dark {
+  background-color: #454d55;
+  color: #ffffff;
+}
+/* Estilos para el modo oscuro */
+.dark-mode .cart-item {
+  background-color: #2c2c2c; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+.dark-mode .offcanvas-item-carrito {
+  background-color: #2c2c2c; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+/* Ajustar botones y badges para mejor visibilidad en modo oscuro */
+.dark-mode .btn-outline-secondary {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.dark-mode .badge-personalizado {
+  background-color: #555555;
+  color: #ffffff;
+}
+
+/* Enlaces en modo oscuro */
+.dark-mode a.text-dark {
+  color: #ffffff;
 }

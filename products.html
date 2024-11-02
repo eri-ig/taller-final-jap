@@ -13,43 +13,76 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/my-profile.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
 </head>
 
 <body>
-  <!--Comienzo del nav-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light p-1" style="border-bottom: 1px solid orange;">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
-      </div>
+  <nav class="navbar navbar-light">
+    <!-- Logo del Navbar -->
+    <div class="navbar-logo">
+        <a class="navbar-brand" href="index.html">
+            SHIGERICATEVA
+        </a>
     </div>
-    <a href="#" class="navbar-brand d-flex align-items-center">
-     <img src="./img/shoppingCart.png" width="20" height="20" fill="none" stroke="currentColor"
-        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
-        viewBox="0 0 24 24">
-        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-        <circle cx="12" cy="13" r="4" />
-      </svg>
-      <small>0.00$</small><!--aqui iría el resultado de un js que sume a medida que el carrito se vaya llenando-->
-    </a>
-  </nav>
-  <!--Fin del nav-->
+
+    <!-- Menú de navegación -->
+    <ul class="nav-menu">
+      <li class="nav-item">
+          <a class="nav-link" href="categories.html">CATEGORÍAS</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="sell.html">VENDER</a>
+      </li>
+      <li> 
+        <a class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
+              <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito" style="margin-right: 8px;">MI CARRITO
+              <span id="cart-count" class="badge bg-danger position-absolute translate-middle badge rounded-pill">0</span>
+            </a>
+          </li>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="d-flex align-items-center">
+              <img src="./img/acountCircle.png" id="imagenPerfil" width="35" height="35" alt="User Icon" style=" border-radius: 50%;">
+              <div class="welcome-message ms-2" id="welcome-message"></div>
+          </div>
+          </a>
+          <div class="dropdown-menu ml-2 mr-2" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="my-profile.html">
+                  <img src="./img/edit.png" width="20" height="20" alt="Editar" style="margin-right: 8px;">Editar Perfil
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="login.html">
+                  <img src="./img/cerrar-session.png" width="20" height="20" alt="Cerrar sesión" style="margin-right: 8px;">Cerrar Sesión
+              </a>
+          </div>
+      </li>
+  </ul>
+</nav>
+
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
+  <div class="offcanvas-header offcanvas-header-custom">
+      <h5 class="offcanvas-title" id="offcanvasCarritoLabel">Carrito de Compras</h5>
+      <button class="btn boton-personalizado btn-sm" onclick="procederAlPago()">Proceder al Pago</button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body offcanvas-body-custom">
+      <ul class="list-group" id="offcanvasCartItems">
+         
+      </ul>
+  </div>
+  <div class="offcanvas-footer offcanvas-footer-custom p-3">
+      <div class="d-flex justify-content-between align-items-center">
+          <strong>Total: $<span id="totalOffcanvas">0.00</span></strong>
+      </div>
+  </div>
+</div>
+
 
   <main class="pb-5 container">
     <!--Inicio de banner-->
@@ -58,9 +91,11 @@
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light" id="productTitle"></h1>
           <p class="lead text-body-secondary" id="description"></p>
-          <p>
-            <a href="index.html" class="btn btn-sm btn-outline-secondary">Página Principal</a>
-          </p>
+          <button>  <!--Filtros-->
+            <a href="#" class="text-primary filtos-link link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas">
+              Establecer Filtros
+            </a>
+          </button>
           <!--Campo de busqueda-->
           <input type="search" id="search" class="form-control" placeholder="Buscar productos...">
         </div>
@@ -68,48 +103,37 @@
     </section>
     <!--Fin de banner-->
 
-  <!--Filtros-->
-
   <section>
-    <div class="row justify-content-end">
-      <div class="col-md-3">
-        <h5>Filtrar por Precio</h5>
-        <input type="number" id="minPrice" class="form-control form-control-sm mb-2" placeholder="Precio mínimo">
-        <input type="number" id="maxPrice" class="form-control form-control-sm mb-2" placeholder="Precio máximo">
+    <!-- Offcanvas de los filtros -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="filterOffcanvas" aria-labelledby="filterOffcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 id="filterOffcanvasLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-
-      <div class="col-md-3">
-        <h5>Ordenar Productos</h5>
-        <select id="sortOrder" class="form-control form-control-sm mb-2">
-          <option value="asc">Precio Ascendente</option>
-          <option value="desc">Precio Descendente</option>
-          <option value="sold">Más Vendidos</option>
-        </select>
-        <div class="d-flex justify-content-end">
-          <button id="applyFilter" class="btn btn-sm btn-primary">Aplicar Filtros</button>
+      <div class="offcanvas-body">
+        <div class="row">
+          <div class="col-12">
+            <h5>Filtro por precio:</h5>
+            <input type="number" id="minPrice" class="form-control form-control-sm mb-2" placeholder="Precio mínimo">
+            <input type="number" id="maxPrice" class="form-control form-control-sm mb-2" placeholder="Precio máximo">
+          </div>
+  
+          <div class="col-12">
+            <h5>Orden según...</h5>
+            <select id="sortOrder" class="form-control form-control-sm mb-2">
+              <option value="asc">Menor precio</option>
+              <option value="desc">Mayor precio</option>
+              <option value="sold">Más vendidos</option>
+            </select>
+            <div class="d-flex justify-content-end">
+              <button id="applyFilter" class="btn btn-sm btn-primary">Aplicar Filtros</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-      <!--Agrego el estilo del botón de "Aplicar Filtros" acá-->
-
-  <style>
-    #applyFilter {
-      background-color: white;
-      color: rgba(0, 0, 0, 0.945);
-      border: 1px solid rgba(0, 0, 0, 0.945);
-    }
-
-    #applyFilter:hover {
-      background-color: #f8f9fa;
-    }
-  </style>
-
-    <!--Fin de agregación (?ponele) de estilo-->
-
-  <!--Fin de filtros-->
-
+<!--Fin de Offcanvas de los filtros -->
 
     <!--Inicio de tarjetas-->
     <section>
@@ -144,6 +168,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 
 </html>

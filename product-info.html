@@ -5,132 +5,185 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="shortcut icon" href="./img/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"> <!--Logo-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
-  <!--Bootstrap para los iconos-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link href="css/products-info.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/products-info.css"> <!--CSS-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
   
 </head>
-</head>
 
-<body> 
-  <nav class="navbar">
-    <!-- Logo a la izquierda -->
-    <h1 class="navbar-logo">SHIGERICATEVA</h1>
+<body>
+  <nav class="navbar navbar-light">
+    <!-- Logo del Navbar -->
+    <div class="navbar-logo">
+        <a class="navbar-brand" href="index.html">
+            SHIGERICATEVA
+        </a>
+    </div>
 
-    <!-- Menú de navegación al centro -->
+    <!-- Menú de navegación -->
     <ul class="nav-menu">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="categories.html">CATEGORÍAS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="categories.html">Categorías</a>
+          <a class="nav-link" href="sell.html">VENDER</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="sell.html">Vender</a>
+      <li> 
+        <a class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
+              <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito" style="margin-right: 8px;">MI CARRITO
+              <span id="cart-count" class="badge bg-danger position-absolute translate-middle badge rounded-pill">0</span>
+            </a>
+          </li>
+        </a>
       </li>
-    </ul>
-
-    <!-- Carrito a la derecha -->
-    <a href="#" class="navbar-cart">
-      <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito">
-      <small>0.00</small>
-    </a>
-  </nav>
-
-
-<!--comienzo de la tarjeta del producto-->
-<section class="hero bg-light pt-5">
-  <div class="container">
-      <div class="row justify-content-between">
-
-          <!-- Columna para el carrusel -->
-          <div class="col-lg-7 mb-4">
-              <div class="row flex-direction">
-
-                  <!-- Imagen Principal -->
-                  <div class="col-12 mb-3 h-100" >
-                      <img id="imagenPrincipal" src="" alt="Main Image" class="img-fluid w-100 " style=" object-fit: cover;">
-                  </div>
-
-                  <!-- Thumbnails -->
-                  <div class="col-12">
-                      <div class="d-flex justify-content-center" id="thumbnailsList">
-                          
-                      </div>
-                  </div>
-
-              </div>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="d-flex align-items-center">
+              <img src="./img/acountCircle.png" id="imagenPerfil" width="35" height="35" alt="User Icon" style=" border-radius: 50%;">
+              <div class="welcome-message ms-2" id="welcome-message"></div>
           </div>
+          </a>
+          <div class="dropdown-menu ml-2 mr-2" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="my-profile.html">
+                  <img src="./img/edit.png" width="20" height="20" alt="Editar" style="margin-right: 8px;">Editar Perfil
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="login.html">
+                  <img src="./img/cerrar-session.png" width="20" height="20" alt="Cerrar sesión" style="margin-right: 8px;">Cerrar Sesión
+              </a>
+          </div>
+      </li>
+  </ul>
+</nav>
 
-          <!-- Columna para los detalles del producto -->
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
+  <div class="offcanvas-header offcanvas-header-custom">
+      <h5 class="offcanvas-title" id="offcanvasCarritoLabel">Carrito de Compras</h5>
+      <button class="btn boton-personalizado btn-sm" onclick="procederAlPago()">Proceder al Pago</button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body offcanvas-body-custom">
+      <ul class="list-group" id="offcanvasCartItems">
          
-            <div class="col-lg-5 mb-5">
-                <div class="row">
-                    
-                        <h1 class="item-title" id="brand">Marca del Auto</h1>
-                        <span class="item-brand" id="category">Sessión de Autos</span>
-                        <span class="item-price" id="price">$0.00</span>
-
-                    
-                </div>
-        
-                <div class="row">
-                    <div class="col-12">
-                        <a href="#!" class="btn-warning">COMPRAR</a>
-                        <a href="#!" class="btn btn-block btn-lg btn-outline-secondary">
-                            <span>☆</span>
-                        </a>
-                       <aside class="descripcion-producto">
-                        <p id="description">Descripción del producto</p>
-                      </aside>
-                        <p id="ventas"> cantidad de vendidos</p>
+      </ul>
+  </div>
+  <div class="offcanvas-footer offcanvas-footer-custom p-3">
+      <div class="d-flex justify-content-between align-items-center">
+          <strong>Total: $<span id="totalOffcanvas">0.00</span></strong>
+      </div>
+  </div>
+</div>
 
 
-                    </div>
-                </div>
+
+
+
+<!-- Comienzo de la tarjeta del producto -->
+<section class="hero pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="row justify-content-center align-items-start gap-">
+        <!-- Columna para el carrusel (imágenes del producto) -->
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="row">
+            <!-- Imagen principal -->
+            <div class="col-12 mb-3">
+              <img id="imagenPrincipal" src="" alt="Main Image" class="img-fluid w-100" style="object-fit: cover;">
             </div>
+            <!-- Thumbnails -->
+            <div class="col-12">
+              <div class="d-flex flex-wrap justify-content-center" id="thumbnailsList"></div>
+            </div>
+          </div>
+        </div>
 
-        
-          
-        
-        
+        <!-- Columna para los detalles del producto -->
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 product-details">
+          <div class="row">
+            <h1 class="item-title" id="brand">Marca del Auto</h1>
+            <span class="item-brand" id="category">Sessión de Autos</span>
+            <p id="ventas">Cantidad de vendidos</p>
+            <span class="item-price" id="price">$0.00</span>
+            <aside class="descripcion-producto">
+              <p id="description">Descripción del producto</p>
+            </aside>
+            <a href="#!" id="btnComprar" class="btn btn-warning w-100" >COMPRAR</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
 <!--fin de la tarjeta del producto-->
 
-<!-- Sección de comentarios y calificación -->
-<section id="commentSection" class="comment-section-container">
-<!--  (⋅⃘˕̭⋅⃘) comentarios-->
-  <div class="" id="comentarios">
-  </div>
-
-<!--Fromulario de calificacion-->
-  <div class="commentContainer"></div>
-  <div class="comment-section">
-      <textarea id="commentText" rows="4" placeholder="Escribe tu opinion..."></textarea>
-      <div class="rating">
-          <i class="bi bi-star-fill star"></i>
-          <i class="bi bi-star-fill star"></i>
-          <i class="bi bi-star-fill star"></i>
-          <i class="bi bi-star-fill star"></i>
-          <i class="bi bi-star-fill star"></i>
+<div class="container">
+  <div class="row">
+    <!-- Sección de productos relacionados -->
+    <div class="col-md-6">
+      <div class="col-12">
+        <div style="color: rgb(255, 186, 122); margin: 25px;">
+          <h4>Productos Relacionados:</h4>
+        </div>
+        <div class="related-products" id="relatedProductss">
+          <!-- Aquí van los productos relacionados -->
+        </div>
       </div>
-      <button id="submitBtn">Enviar</button>
+    </div>
+
+    <!-- Sección de comentarios y calificación -->
+    <div class="col-md-6 justify-content-center align-items-center">
+      <div style="color: rgb(255, 186, 122); margin: 25px;">
+        <h4>Comentarios:</h4>
+      </div>
+      <div class="container-comment mt-4 w-100">
+        <section id="commentSection" class="comment-section-container">
+          <div class="overflow-auto" id="comentarios" style="max-height: 160px;">
+            <!-- Comentarios -->
+          </div>
+
+          <div class="post mt-3">
+            <div class="text">Gracias por calificarnos!</div>
+            <div class="edit">EDITAR</div>
+          </div>
+
+          <div class="star-widget mt-3">
+            <input type="radio" name="rate" id="rate-5" value="5">
+            <label for="rate-5" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-4" value="4">
+            <label for="rate-4" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-3" value="3">
+            <label for="rate-3" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-2" value="2">
+            <label for="rate-2" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-1" value="1">
+            <label for="rate-1" class="fas fa-star"></label>
+
+            <form action="#" class="mt-3">
+              <header></header>
+              <div class="textarea mb-3">
+                <textarea cols="30" placeholder="Escribe tu experiencia..." class="form-control"></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit" class="btn btn-primary w-100">Post</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
-
-  <!--Aca se veran los comentarios que se agreguen-->
-  <div id="commentList"></div>
-  </div>
-</section>
-
-<!--productos Relacionados-->
-
-
-<!--fin de productos Relacionados-->
-
+</div>
 
 <footer class="text-muted">
   <div class="container-2">
@@ -150,15 +203,11 @@
       <div></div>
     </div>
   </div>
-
-  <!-- vínculo css-comentarios -->
-
-<!-- fin vínculo css-comentarios -->
-
   
+  <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
-  
+  <script src="js/cart.js"></script>
 </body>
 
 </html>
