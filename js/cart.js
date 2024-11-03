@@ -112,60 +112,69 @@ function mostrarCarrito() {//para mostrar el carrito en el offcanvas y cart.html
     const taxElement = document.getElementById("tax");
     const totalElement = document.getElementById("total");
 
-    if (cartItemsPage && subtotalElement && discountElement && shippingElement && taxElement && totalElement) {//si los elementos necesarios existen 
-        cartItemsPage.innerHTML = "";// limpiamos el contenido actual de la pagina 
-
-        ProductosCarrito.forEach(producto => {// para cada producto
-            let opciones = ''; //hacemos las opciones para el selector de cantidad
-            for (let i = 1; i <= 10; i++) {
-                opciones += `<option value="${i}" ${producto.quantity === i ? 'selected' : ''}>${i}</option>`;//le agregamos la cantidad a seleccionar y a la seleccionada le ponemos la clase select
-            }
-            const itemDiv = document.createElement('div');// se crea una tarjeta para cada producto y le ponemos clases
-            itemDiv.classList.add('card', 'mb-3', 'cart-item');
-
-            itemDiv.innerHTML = `
-                <div class="card-body">
-                    <div class="d-flex align-items-start bottom pb-3">
-                        <div class="me-4">
-                            <img src="${producto.image}" alt="${producto.name}" class="avatar-lg rounded">
+    if (cartItemsPage && subtotalElement && discountElement && shippingElement && taxElement && totalElement) { //si los elementos necesarios existen 
+        cartItemsPage.innerHTML = ""; // limpiamos el contenido actual de la pagina 
+        if (ProductosCarrito.size === 0) { // verificar si no hay productos
+            const emptyMessage = document.createElement('div'); // creamos un div para el mensaje
+            emptyMessage.style.background = 'rgb(255, 186, 122)'; // Establecer el fondo
+            emptyMessage.style.padding = '6px'; // Agregar padding para espacio
+            emptyMessage.style.borderRadius = '5px'; // Bordes redondeados
+            emptyMessage.style.textAlign = 'center'; // Centrar el texto
+        
+            emptyMessage.innerHTML = '<p class="text-muted" style="font-size:20px;">UY!...al parecer no hay ningun producto agregado en el carrito.</p>'; // texto que se mostrará
+            cartItemsPage.appendChild(emptyMessage); // agregamos el mensaje a la página
+        } else {
+            ProductosCarrito.forEach(producto => { // para cada producto
+                let opciones = ''; //hacemos las opciones para el selector de cantidad
+                for (let i = 1; i <= 10; i++) {
+                    opciones += `<option value="${i}" ${producto.quantity === i ? 'selected' : ''}>${i}</option>`; //le agregamos la cantidad a seleccionar y a la seleccionada le ponemos la clase select
+                }
+                const itemDiv = document.createElement('div'); // se crea una tarjeta para cada producto y le ponemos clases
+                itemDiv.classList.add('card', 'mb-3', 'cart-item');
+    
+                itemDiv.innerHTML = `
+                    <div class="card-body">
+                        <div class="d-flex align-items-start bottom pb-3">
+                            <div class="me-4">
+                                <img src="${producto.image}" alt="${producto.name}" class="avatar-lg rounded">
+                            </div>
+                            <div class="flex-grow-1 align-self-center overflow-hidden">
+                                <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">${producto.name}</a></h5>
+                                <p class="text-muted mb-2">Precio</p>
+                                <h5>$${producto.price.toFixed(2)}</h5>
+                            </div>
+                            <div class="flex-shrink-0 ms-2">
+                                <ul class="list-inline mb-0 font-size-16">
+                                    <li class="list-inline-item">
+                                        <!-- Botón para eliminar el producto -->
+                                        <button class="btn btn-danger btn-sm" onclick="removeItem(${producto.id})">
+                                            <i class="mdi mdi-trash-can-outline"></i>
+                                        </button>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <button class="btn btn-outline-secondary btn-sm">
+                                            <i class="mdi mdi-heart-outline"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="flex-grow-1 align-self-center overflow-hidden">
-                            <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">${producto.name}</a></h5>
-                            <p class="text-muted mb-2">Precio</p>
-                            <h5>$${producto.price.toFixed(2)}</h5>
-                        </div>
-                        <div class="flex-shrink-0 ms-2">
-                            <ul class="list-inline mb-0 font-size-16">
-                                <li class="list-inline-item">
-                                    <!-- Botón para eliminar el producto -->
-                                    <button class="btn btn-danger btn-sm" onclick="removeItem(${producto.id})">
-                                        <i class="mdi mdi-trash-can-outline"></i>
-                                    </button>
-                                </li>
-                                <li class="list-inline-item">
-                                    <button class="btn btn-outline-secondary btn-sm">
-                                        <i class="mdi mdi-heart-outline"></i>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 mt-3">
-                            <p class="text-muted mb-2">Cantidad</p>
-                            <div class="d-inline-flex">
-                                <select class="form-select form-select-sm w-xl" onchange="cambiarCantidadSelect(${producto.id}, this.value)">
-                                    ${opciones}
-                                </select>
+                        <div class="row">
+                            <div class="col-md-5 mt-3">
+                                <p class="text-muted mb-2">Cantidad</p>
+                                <div class="d-inline-flex">
+                                    <select class="form-select form-select-sm w-xl" onchange="cambiarCantidadSelect(${producto.id}, this.value)">
+                                        ${opciones}
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            `;
-
-            
-            cartItemsPage.appendChild(itemDiv);//añadimos la tarjeta 
-        });
+                `;
+    
+                cartItemsPage.appendChild(itemDiv); //añadimos la tarjeta 
+            });
+        }
 
         
         let subtotal = 0;//calculamos el subtotal multiplicando el precio de todos los productos por la cantidad
