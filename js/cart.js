@@ -143,29 +143,16 @@ function mostrarCarrito() {//para mostrar el carrito en el offcanvas y cart.html
                                 <p class="text-muted mb-2">Precio</p>
                                 <h5>$${producto.price.toFixed(2)}</h5>
                             </div>
-                            <div class="flex-shrink-0 ms-2">
-                                <ul class="list-inline mb-0 font-size-16">
-                                    <li class="list-inline-item">
-                                        <!-- Botón para eliminar el producto -->
-                                        <button class="btn btn-danger btn-sm" onclick="removeItem(${producto.id})">
-                                            <i class="mdi mdi-trash-can-outline"></i>
-                                        </button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button class="btn btn-outline-secondary btn-sm">
-                                            <i class="mdi mdi-heart-outline"></i>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-5 mt-3">
-                                <p class="text-muted mb-2">Cantidad</p>
-                                <div class="d-inline-flex">
-                                    <select class="form-select form-select-sm w-xl" onchange="cambiarCantidadSelect(${producto.id}, this.value)">
+                        <div class="d-flex align-items-center flex-shrink-0 ms-2">
+                                <div>
+                                    <p class="text-muted mb-2">Cantidad</p>
+                                    <select class="form-select form-select-sm w-auto" onchange="cambiarCantidadSelect(${producto.id}, this.value)">
                                         ${opciones}
                                     </select>
+                                </div>
+                                <button class="btn btn-danger btn-sm ms-4" onclick="removeItem(${producto.id})">
+                                    <i class="mdi mdi-trash-can-outline"></i>
+                                </button>
                                 </div>
                             </div>
                         </div>
