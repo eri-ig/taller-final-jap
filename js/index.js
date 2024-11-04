@@ -27,15 +27,3 @@ function verifyUser() {
         window.location.href = "products.html";
     }
 };
-
-
-//Si hubiese que validar el correo:
-/*function validarCorreo(correo) {
-    const password = sessionStorage.getItem("password");
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (regex.test(correo) && correo.endsWith(".com")) {
-        return "El correo es válido";
-    } else {
-        return "El correo no es válido";
-    }
-}*/
