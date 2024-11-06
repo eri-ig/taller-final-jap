@@ -29,40 +29,38 @@
     <!-- Menú de navegación -->
     <ul class="nav-menu">
       <li class="nav-item">
-          <a class="nav-link" href="categories.html">CATEGORÍAS</a>
+        <a class="nav-link" href="categories.html">CATEGORÍAS</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="sell.html">VENDER</a>
+        <a class="nav-link" href="sell.html">VENDER</a>
       </li>
-      <li> 
-        <a class="nav-item">
-          <li class="nav-item">
-            <a class="nav-link" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
-              <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito" style="margin-right: 8px;">MI CARRITO
-              <span id="cart-count" class="badge bg-danger position-absolute translate-middle badge rounded-pill">0</span>
-            </a>
-          </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
+          <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito" style="margin-right: 8px;">MI CARRITO
+          <span id="cart-count" class="badge bg-danger position-absolute translate-middle badge rounded-pill">0</span>
         </a>
       </li>
+      <!--Dropdown-->
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="d-flex align-items-center">
-              <img src="./img/acountCircle.png" id="imagenPerfil" width="35" height="35" alt="User Icon" style=" border-radius: 50%;">
-              <div class="welcome-message ms-2" id="welcome-message"></div>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="d-flex align-items-center">
+            <img src="./img/acountCircle.png" id="imagenPerfil" width="35" height="35" alt="User Icon" style="border-radius: 50%;">
+            <div class="welcome-message ms-2" id="welcome-message"></div>
           </div>
-          </a>
-          <div class="dropdown-menu ml-2 mr-2" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="my-profile.html">
-                  <img src="./img/edit.png" width="20" height="20" alt="Editar" style="margin-right: 8px;">Editar Perfil
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="login.html">
-                  <img src="./img/cerrar-session.png" width="20" height="20" alt="Cerrar sesión" style="margin-right: 8px;">Cerrar Sesión
-              </a>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="my-profile.html">Editar Perfil</a>
+          <a class="dropdown-item" href="login.html">Cerrar Sesión</a>
+          <!--Las opciones que pasan a mostrarse en pantallas pequenas-->
+          <div class="dropdown-small-screen">
+            <a class="dropdown-item" href="categories.html">CATEGORÍAS</a>
+            <a class="dropdown-item" href="sell.html">VENDER</a>
+            <a class="dropdown-item" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">MI CARRITO</a>
           </div>
+        </div>
       </li>
-  </ul>
-</nav>
+    </ul>
+  </nav>
 
 <!-- offcanvas -->
 <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
