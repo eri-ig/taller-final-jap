@@ -263,7 +263,7 @@ input {
 
 /* Footer */
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #f1f1f1;
