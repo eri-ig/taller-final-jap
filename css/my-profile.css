@@ -13,88 +13,65 @@ body {
 
 /*Comienzo del navbar*/
 .navbar {
-  display: flex;
-  justify-content: space-between; /* Alinea los elementos a los extremos */
-  align-items: center; 
-  padding: 6px 20px; /* Ajusta el espaciado */
-  background-color: #f1f1f1; 
-  width: 100%;
-  border-bottom: 1px solid orange;
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a los extremos */
+    align-items: center; 
+    padding: 10px 50px; /* Ajusta el espaciado */
+    background-color: #f1f1f1; 
+    width: 100%;
+    border-bottom: 1px solid orange;
 }
 
 /* Estilo para el logo SHIGERICATEVA */
 .navbar-light .navbar-brand {
-  font-weight: bold;
-  color: rgb(255, 186, 122);
-  font-size: 28px;
-  text-decoration: none;
+    font-weight: bold;
+    color: rgb(255, 186, 122);
+    font-size: 28px;
+    text-decoration: none;
 }
 
 .navbar-light .navbar-brand:hover {
-  color: orange;
+    color: orange;
 }
 
 /* Menú de navegación */
 .nav-menu {
-  display: flex; /* Alinea los elementos horizontalmente */
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex; /* Alinea los elementos horizontalmente */
+    justify-content: center;
+    align-items: center;
+    list-style:none;
+    margin-left: auto;
+    height: 20px;
 }
 
 .nav-item {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .nav-link {
-  color: rgba(0, 0, 0, .55);
-  font-size: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  margin-right: 15px;
+    text-decoration: none;
+    color:rgba(0, 0, 0, .55); 
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .nav-link:hover {
-  color: orange;
-}
-
-.dropdown-small-screen {
-  display: none;
-}
-
-/*Estilos para pantallas pequenas*/
-@media (max-width: 993px) {
-  .navbar {
-    justify-content: space-between;
-  }
-  
-  .nav-menu > .nav-item:not(.dropdown) {
-    display: none;
-  }
-
-  .navbar-brand, .nav-item.dropdown {
-    margin: auto;
-  }
-
-  /*Muestra las opciones adicionales en el dropdown*/
-  .dropdown-small-screen {
-    display: block;
-  }
+    color: orange;
 }
 
 /*Menu desplegable*/
 .dropdown-menu {
-  max-width: 200px;
-  left: auto; /* Para permitir que el menú se ajuste a la pantalla */
-  right: 0; /* Para anclar el menú al lado derecho */
+    max-width: 200px;
+    left: auto; /* Para permitir que el menú se ajuste a la pantalla */
+    right: 0; /* Para anclar el menú al lado derecho */
 }
 
 .dropdown-toggle::after {
-  display: none; /* Oculta la flecha */
+    display: none; /* Oculta la flecha */
 }
 
 .dropdown-item:hover {
-  background-color: orange;
+    background-color: orange;
 }
 /*Fin del navbar*/
 
@@ -259,28 +236,53 @@ input {
     color: rgb(255, 186, 122);
 }
 
+/* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 15px 15px;
-    height: 60px;
-    border-top: 1px solid orange;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 15px 15px;
+  height: 60px;
+  border-top: 1px solid orange;
 }
 
 .container-2 p a {
-    color: rgb(255, 186, 122);
-    text-decoration: none;
+  color: rgb(255, 186, 122);
+  text-decoration: none;
 }
 
 .container-2 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-.filtos-link {
-    color: #2d2d2d !important; 
+#scrollToTop {
+  position: relative;
+}
+
+#scrollToTop::after {
+  content: "Volver arriba";
+  position: absolute;
+  top: -30px; /* Ajusta esta distancia según necesites */
+  right: 0;
+  background-color: #f2f2f2;
+  color: orange;
+  border: 1px solid orange;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTop:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /*Validacion en tiempo real*/
@@ -637,4 +639,3 @@ body.bg-dark .col-sm-8 .form-control::placeholder {
 .dark-mode a.text-dark {
   color: #ffffff;
 }
-  
