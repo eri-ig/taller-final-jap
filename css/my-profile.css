@@ -1,6 +1,8 @@
-html, body{
-    height: 100%;
-    margin-bottom: 40px; /*Espacio entre el contenido y el footer*/
+html, 
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
@@ -259,28 +261,25 @@ input {
     color: rgb(255, 186, 122);
 }
 
+/* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 15px 15px;
-    height: 60px;
-    border-top: 1px solid orange;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 15px 15px;
+  height: 60px;
+  border-top: 1px solid orange;
 }
 
 .container-2 p a {
-    color: rgb(255, 186, 122);
-    text-decoration: none;
+  color: rgb(255, 186, 122);
+  text-decoration: none;
 }
 
 .container-2 a:hover {
-    text-decoration: underline;
-}
-
-.filtos-link {
-    color: #2d2d2d !important; 
+  text-decoration: underline;
 }
 
 /*Validacion en tiempo real*/
@@ -637,4 +636,3 @@ body.bg-dark .col-sm-8 .form-control::placeholder {
 .dark-mode a.text-dark {
   color: #ffffff;
 }
-  
