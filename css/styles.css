@@ -572,3 +572,11 @@ h1#productTitle {
   background-color: #444;
   color: white;
 }
+
+/*Banner en dark mode */
+.dark-mode .jumbotron {
+  background: url('../img/BannerWeb-DarkMode.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
