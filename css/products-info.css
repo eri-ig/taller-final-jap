@@ -659,3 +659,42 @@ form .btn button:hover {
   background-color: #444;
   color: white;
 }
+
+/*Dark Mode para comentarios y calificacion*/
+.dark-mode .container-comment,
+.dark-mode .comment {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid rgb(255, 186, 122);
+}
+
+.dark-mode .stars {
+  color: #f1f1f1;
+}
+
+.dark-mode input:checked ~ label {
+  color: rgb(255, 186, 122);
+}
+
+.dark-mode form .btn button {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
+}
+
+.dark-mode form .btn button:hover {
+  background-color: orange;
+}
+/*Fin*/
+
+.dark-mode .card-title {
+  color: #f1f1f1;
+}
+
+.dark-mode #btnComprar {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
+}
+
+.dark-mode #btnComprar:hover {
+  background-color: orange;
+}
