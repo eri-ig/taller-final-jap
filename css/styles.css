@@ -6,7 +6,7 @@ body {
   margin-bottom: 40px; /* Espacio entre el contenido y el footer */
 }
 
-/* Estilo del botón */
+/* Estilo del botones */
 button {
   border: 1px solid orange;
   background-color: rgb(255, 186, 122); 
@@ -21,16 +21,34 @@ button {
 button:hover {
   background: orange;
 }
+
+.btn-light {
+  border-color: orange;
+}
+
 .btn-primary{ 
   background-color: rgb(255, 186, 122);  
   border-color:orange;
   color: black; 
-
 }
+
 .btn-primary:hover {
   background-color:orange; 
   border-color:black;
   color:rgba(0, 0, 0, 0.945);  
+}
+
+.filtos-link {
+  color: #f1f1f1 !important;
+}
+
+.filtos-link:hover {
+  color: orange;
+}
+
+.offcanvas {
+  background-color: #fff;
+  color: #121212;
 }
 
 .m-1{
@@ -38,13 +56,12 @@ button:hover {
   border-color:orange;
   color: black; 
 }
-.m-1-primary:hover {
 
+.m-1-primary:hover {
   background-color:orange; 
   border-color:black;
   color:rgba(0, 0, 0, 0.945);  
 }
-
 
 form input, textarea, select {
   margin-bottom: 18px;
@@ -52,10 +69,6 @@ form input, textarea, select {
 
 .form-control {
   border: 1px solid orange;
-}
-
-.form-control::placeholder {
-  color: rgba(0, 0, 0, 0.945) !important;
 }
 
 /*Comienzo del navbar*/
@@ -154,7 +167,6 @@ form input, textarea, select {
   user-select: none;
 }
 
-
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
@@ -175,7 +187,6 @@ form input, textarea, select {
   font-weight: bold;
 }
 
-
 @media (min-width: 768px) and (max-width: 1279px) {
   .jumbotron {
     min-height: 30vh;
@@ -194,16 +205,13 @@ form input, textarea, select {
   }
 }
 
-
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
 
-
 .jumbotron-heading {
   font-weight: 300;
 }
-
 
 .jumbotron .container {
   max-width: 40rem;
@@ -211,7 +219,6 @@ form input, textarea, select {
   border-radius: 10px;
   text-shadow: 1px 1px 2px grey;
 }
-
 
 .jumbotron .lead {
   font-size: 38px;
@@ -310,7 +317,7 @@ h1#productTitle {
 
 #applyFilter {
   background-color: rgb(255, 186, 122);
-  color: rgba(0, 0, 0, 0.945);
+  color: #f1f1f1;
   border: 1px solid orange;
 }
 
@@ -573,10 +580,77 @@ h1#productTitle {
   color: white;
 }
 
+.dark-mode #file-upload {
+  background-color: #333;
+}
+
+.dark-mode #productCurrency {
+  background-color: #212529;
+  color: #f1f1f1;
+}
+
+.dark-mode .offcanvas {
+  background-color: #333;
+  color: #f1f1f1;
+}
 /*Banner en dark mode */
 .dark-mode .jumbotron {
   background: url('../img/BannerWeb-DarkMode.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/*Dark mode para sell.html*/
+.dark-mode .list-group-item {
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+.dark-mode .list-group-item strong,
+.dark-mode .text-muted {
+  color: #ffffff;
+}
+
+.dark-mode label[for="productCategory"] {
+  color: #f1f1f1;
+}
+
+.dark-mode .custom-select,
+.dark-mode .form-select {
+  background-color: #333;
+  color: #f1f1f1;
+  border: 1px solid orange;
+}
+
+.dark-mode .custom-select option,
+.dark-mode .form-select option {
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+.dark-mode .custom-select:focus,
+.dark-mode .form-select:focus {
+  background-color: #444;
+  color: #f1f1f1;
+}
+
+/*Botones*/
+.dark-mode .btn-primary,
+.dark-mode .btn-outline-secondary {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
+}
+
+.dark-mode .btn-primary:hover {
+  background-color: orange;
+}
+
+.dark-mode .filtos-link {
+  color: #121212 !important;
+}
+
+#applyFilter {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
 }
