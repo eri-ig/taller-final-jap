@@ -238,34 +238,6 @@ footer {
   text-decoration: underline;
 }
 
-#scrollToTop {
-  position: relative;
-}
-
-#scrollToTop::after {
-  content: "Volver arriba";
-  position: absolute;
-  top: -30px; /* Ajusta esta distancia según necesites */
-  right: 0;
-  background-color: #f2f2f2;
-  color: orange;
-  border: 1px solid orange;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-#scrollToTop:hover::after {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
 /* Tarjetas */
 .checked {
   color: orange;
@@ -302,7 +274,7 @@ h1#productTitle {
   -webkit-text-stroke: 1px rgb(15, 10, 0);  /* Borde alrededor del texto */
 }
 
-/* Botón de "Aplicar Filtros" */
+/* Botón de "Aplicar Filtros" del offcanvas*/
 .text-primary {
   text-decoration: none;
 }
@@ -314,6 +286,52 @@ h1#productTitle {
 
 #applyFilter:hover {
   background-color: orange;
+}
+
+/*Botones de los filtros en "categorias"*/
+#clearRangeFilter {
+  background-color: rgb(255, 186, 122);
+  color: rgba(0, 0, 0, 0.945);
+  text-decoration: none;
+}
+
+@media (max-width: 576px) {
+/*Hace que los botones ocupen el ancho completo en pantallas sm*/
+  .btn-group-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-group-toggle label.btn {
+    margin-bottom: 5px;
+  }
+
+/*Alinea los campos de filtro de cantidad en una columna en lugar de fila*/
+  #rangeFilterCountMin, #rangeFilterCountMax, #rangeFilterCount, #clearRangeFilter {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-group .btn-link {
+    text-align: center;
+  }
+
+/*Centrando el texto 'Cant.' en pantallas sm*/
+  .font-weight-normal {
+    text-align: center;
+  }
+}
+
+/*Lista de categorias*/
+#cat-list-container .list-group-item {
+  border: 1px solid orange;
+  padding: 10px;
 }
 
 /* Spinner */
