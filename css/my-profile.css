@@ -156,21 +156,6 @@ body {
     object-fit:scale-down; 
 }
 
-/* Estilos para modo oscuro */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-.dark-mode .user-profile {
-    background-color: #333;
-}
-
-.dark-mode .card {
-    background-color: #1f1f1f;
-    color: #ffffff;
-}
-
 /* Texto y botones */
 h6 {
     font-size: 14px;
@@ -405,56 +390,7 @@ label:active .circle {
     width: 30px;
     transition: width 0.3s ease;
 }
-body.bg-dark .navbar-light .nav-link {
-    color: rgba(255, 255, 255, .75); /* color blanco para los enlaces en modo oscuro */
-  }
-  
-  body.bg-dark .navbar-light .nav-link:hover {
-    color: orange; /* mantener el hover en color naranja */
-  }
-  
-  /* corregir color de nombre de usuario en modo oscuro */
-  body.bg-dark .welcome-message {
-    color: rgba(255, 255, 255, 0.85); /*color del nombre de usuario a blanco */
-  }
-  
-  /* corregir el color de los íconos en el dropdown del navbar */
-  body.bg-dark .dropdown-item {
-    color: rgba(255, 255, 255, 0.75); /* color blanco para los ítems del dropdown */
-  }
-  
-  body.bg-dark .dropdown-item:hover {
-    background-color: orange; /* mantener el hover en color naranja */
-    color: white; /* cambia el color del texto a blanco cuando se pasa el mouse */
-  }
-  body.bg-dark .dropdown-menu {
-    background-color: #333; /* fondo oscuro */
-    color: rgba(255, 255, 255, 0.85); 
-    border: 1px solid rgba(255, 255, 255, 0.15); /* borde para modo oscuro */
-  }
-  
-  /* hover en los ítems del dropdown */
-  body.bg-dark .dropdown-item {
-    color: rgba(255, 255, 255, 0.85);
-  }
-  
-  body.bg-dark .dropdown-item:hover {
-    background-color: orange; /* fondo naranja cuando se pasa el mouse */
-    color: #ffffff; 
-  }
-  body.bg-dark .dropdown-item img {
-    filter: brightness(0) invert(1);
-  }
-  
-body.bg-dark .col-sm-8 .form-control {
-    background-color: #333;
-    color: white;
-    border: 1px solid orange;
-}
 
-body.bg-dark .col-sm-8 .form-control::placeholder {
-    color: #aaaaaa; /* Cambia el color del texto del placeholder */
-}
 /*dropdown*/
 .dropdown-menu {
   opacity: 0;
@@ -586,7 +522,8 @@ body.bg-dark .col-sm-8 .form-control::placeholder {
 }
 
 .dark-mode .dropdown-item:hover,
-.dark-mode .btn-outline-secondary:hover {
+.dark-mode .btn-outline-secondary,
+.dark-mode .btn:hover {
   background-color: orange;
   color: white;
 }
@@ -599,4 +536,10 @@ body.bg-dark .col-sm-8 .form-control::placeholder {
 .dark-mode #cat-list-container .list-group-item {
   background-color: #444;
   color: white;
+}
+
+.dark-mode .btn {
+  border: 1px solid orange;
+  background: rgb(255, 186, 122);
+  color: #121212;
 }

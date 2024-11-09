@@ -642,8 +642,10 @@ h1#productTitle {
   color: #121212;
 }
 
-.dark-mode .btn-primary:hover {
+.dark-mode .btn-primary
+.dark-mode .btn-outline-secondary:hover {
   background-color: orange;
+  color: #f1f1f1;
 }
 
 .dark-mode .filtos-link {
