@@ -6,7 +6,7 @@ body {
   margin-bottom: 40px; /* Espacio entre el contenido y el footer */
 }
 
-/* Estilo del botón */
+/* Estilo del botones */
 button {
   border: 1px solid orange;
   background-color: rgb(255, 186, 122); 
@@ -21,16 +21,34 @@ button {
 button:hover {
   background: orange;
 }
+
+.btn-light {
+  border-color: orange;
+}
+
 .btn-primary{ 
   background-color: rgb(255, 186, 122);  
   border-color:orange;
   color: black; 
-
 }
+
 .btn-primary:hover {
   background-color:orange; 
   border-color:black;
   color:rgba(0, 0, 0, 0.945);  
+}
+
+.filtos-link {
+  color: #f1f1f1 !important;
+}
+
+.filtos-link:hover {
+  color: orange;
+}
+
+.offcanvas {
+  background-color: #fff;
+  color: #121212;
 }
 
 .m-1{
@@ -38,13 +56,12 @@ button:hover {
   border-color:orange;
   color: black; 
 }
-.m-1-primary:hover {
 
+.m-1-primary:hover {
   background-color:orange; 
   border-color:black;
   color:rgba(0, 0, 0, 0.945);  
 }
-
 
 form input, textarea, select {
   margin-bottom: 18px;
@@ -52,10 +69,6 @@ form input, textarea, select {
 
 .form-control {
   border: 1px solid orange;
-}
-
-.form-control::placeholder {
-  color: rgba(0, 0, 0, 0.945) !important;
 }
 
 /*Comienzo del navbar*/
@@ -154,7 +167,6 @@ form input, textarea, select {
   user-select: none;
 }
 
-
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
@@ -175,7 +187,6 @@ form input, textarea, select {
   font-weight: bold;
 }
 
-
 @media (min-width: 768px) and (max-width: 1279px) {
   .jumbotron {
     min-height: 30vh;
@@ -194,16 +205,13 @@ form input, textarea, select {
   }
 }
 
-
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
 
-
 .jumbotron-heading {
   font-weight: 300;
 }
-
 
 .jumbotron .container {
   max-width: 40rem;
@@ -211,7 +219,6 @@ form input, textarea, select {
   border-radius: 10px;
   text-shadow: 1px 1px 2px grey;
 }
-
 
 .jumbotron .lead {
   font-size: 38px;
@@ -307,9 +314,10 @@ h1#productTitle {
 .text-primary {
   text-decoration: none;
 }
+
 #applyFilter {
   background-color: rgb(255, 186, 122);
-  color: rgba(0, 0, 0, 0.945);
+  color: #f1f1f1;
   border: 1px solid orange;
 }
 
@@ -425,73 +433,7 @@ h1#productTitle {
 .navbar-light .nav-link:hover {
   color: orange;
 }
-/* Dark Mode */
-body.bg-dark {
-  background-color: #343a40 !important;
-  color: #f8f9fa !important;
-}
 
-.navbar.bg-dark,
-.footer.bg-dark {
-  background-color: #1f1f21 !important;
-  color: #f8f9fa !important;
-}
-
-.card.bg-dark {
-  background-color: #444 !important;
-  color: #f8f9fa !important;
-}
-
-/* estilo de los enlaces en modo oscuro */
-body.bg-dark .navbar-light .nav-link {
-  color: rgba(255, 255, 255, .75); /* color blanco para los enlaces en modo oscuro */
-}
-
-body.bg-dark .navbar-light .nav-link:hover {
-  color: orange; /* mantener el hover en color naranja */
-}
-
-/* corregir color de nombre de usuario en modo oscuro */
-body.bg-dark .welcome-message {
-  color: rgba(255, 255, 255, 0.85); /*color del nombre de usuario a blanco */
-}
-
-/* corregir el color de los íconos en el dropdown del navbar */
-body.bg-dark .dropdown-item {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-body.bg-dark .dropdown-item:hover {
-  background-color: orange; /* mantener el hover  naranja */
-  color: white; /* cambia el color del texto a blanco cuando se pasa el mouse */
-}
-body.bg-dark .dropdown-menu {
-  background-color: #333; /* fondo oscuro */
-  color: rgba(255, 255, 255, 0.85); 
-  border: 1px solid rgba(255, 255, 255, 0.15); /* borde para modo oscuro */
-}
-
-/* hover en los ítems del dropdown */
-body.bg-dark .dropdown-item {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-body.bg-dark .dropdown-item:hover {
-  background-color: orange; /* fondo naranja cuando se pasa el mouse */
-  color: #ffffff; 
-}
-body.bg-dark .dropdown-item img {
-  filter: brightness(0) invert(1);
-}
-.text-black {
-  color: black ;
-}
-
-/* mantener los botones en modo claro */
-.btn-outline-secondary.text-black {
-  border-color: black;
-  color: black;
-}
 /*dropdown*/
 .dropdown-menu {
   opacity: 0;
@@ -507,15 +449,13 @@ body.bg-dark .dropdown-item img {
   visibility: visible;
 }
 
-
-
 /* Estilos generales para el offcanvas personalizado */
 .offcanvas-custom {
   background-color: #f8f9fa; /* Color de fondo por defecto */
   color: #212529; /* Color de texto por defecto */
 }
  /* Hacer el offcanvas flotante con altura limitada */
- .offcanvas-end {
+.offcanvas-end {
   position: fixed;
   top: 20px;
   right: 0;
@@ -529,7 +469,6 @@ body.bg-dark .dropdown-item img {
   border-radius: 10px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 
 .offcanvas-header-custom {
   background-color: #f8f9fa;
@@ -550,40 +489,8 @@ body.bg-dark .dropdown-item img {
   margin-left: auto;
 }
 
-/* Estilos para el modo oscuro */
-.offcanvas-custom.bg-dark {
-  background-color: #343a40; /* Color de fondo oscuro */
-  color: #ffffff; /* Texto blanco */
-}
-
-.offcanvas-header-custom.bg-dark {
-  background-color: #343a40;
-  color: #ffffff;
-}
-
-.offcanvas-body-custom.bg-dark {
-  background-color: #343a40;
-  color: #ffffff;
-}
-
 /* Estilos para los elementos internos en el offcanvas */
 .offcanvas-body-custom.text-white {
-  color: #ffffff;
-}
-
-/* Estilos para los items de la lista en el offcanvas */
-.list-group-item.bg-dark {
-  background-color: #27292b;
-  color: #ffffff;
-}
-
-.list-group-item.bg-dark .btn-outline-secondary {
-  color: #ffffff;
-  border-color: #2a2c2d;
-}
-
-.list-group-item.bg-dark .btn-outline-secondary:hover {
-  background-color: #353739;
   color: #ffffff;
 }
 
@@ -594,11 +501,6 @@ body.bg-dark .dropdown-item img {
 }
 
 /* Estilos para el botón de eliminar en modo oscuro */
-.btn-danger {
-  background-color: #dc3545;
-  border-color: #dc3545;
-}
-
 .btn-danger:hover {
   background-color: #bd2130;
   border-color: #b21f2d;
@@ -624,81 +526,133 @@ body.bg-dark .dropdown-item img {
   margin-right: 10px;
 }
 
-/* Estilos generales para el texto en modo oscuro */
-.text-white {
-  color: #ffffff;
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
 }
 
-/* Estilos para el modo oscuro */
-.offcanvas-custom.dark-mode {
-  background-color: #343a40; /* Fondo oscuro */
-  color: #ffffff; /* Texto claro */
-}
-
-.offcanvas-header-custom.dark-mode {
-  background-color: #343a40;
-  color: #ffffff;
-}
-
-.offcanvas-body-custom.dark-mode {
-  background-color: #343a40;
-  color: #ffffff;
-}
-
-/* Estilos para elementos internos en modo oscuro */
-.offcanvas-custom.dark-mode .list-group-item {
-  background-color: #454d55;
-  color: #ffffff;
-}
-
-.offcanvas-custom.dark-mode .btn {
-  background-color: #6c757d;
-  color: #ffffff;
-  border-color: #6c757d;
-}
-
-.offcanvas-custom.dark-mode .btn:hover {
-  background-color: #5a6268;
-  color: #ffffff;
-  border-color: #545b62;
-}
-
-/* Ajustes para textos e íconos */
-.offcanvas-custom.dark-mode .text-white {
-  color: #ffffff;
-}
-
-.offcanvas-custom.dark-mode .mdi {
-  color: #ffffff;
-}
-/* Estilos para los items del carrito en modo oscuro */
-.item-carrito.bg-dark {
-  background-color: #454d55;
-  color: #ffffff;
-}
-/* Estilos para el modo oscuro */
-.dark-mode .cart-item {
-  background-color: #2c2c2c; /* Fondo oscuro */
-  color: #ffffff; /* Texto blanco */
-}
-
+/* Elementos en modo oscuro */
+.dark-mode .navbar,
+.dark-mode footer,
+.dark-mode .card,
+.dark-mode .offcanvas-custom,
+.dark-mode .offcanvas-header-custom,
+.dark-mode .offcanvas-body-custom,
+.dark-mode .item-carrito,
+.dark-mode .cart-item,
 .dark-mode .offcanvas-item-carrito {
-  background-color: #2c2c2c; /* Fondo oscuro */
-  color: #ffffff; /* Texto blanco */
+  background-color: #333;
+  color: white;
 }
 
-/* Ajustar botones y badges para mejor visibilidad en modo oscuro */
-.dark-mode .btn-outline-secondary {
-  color: #ffffff;
-  border-color: #ffffff;
+/* Estilos para botones, enlaces y elementos interactivos en modo oscuro */
+.dark-mode .btn {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .form-control {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .navbar .nav-link,
+.dark-mode .welcome-message,
+.dark-mode .dropdown-item,
+.dark-mode .dropdown-menu {
+  color: rgb(255, 186, 122);
+}
+
+.dark-mode .dropdown-item:hover,
+.dark-mode .btn-outline-secondary:hover {
+  background-color: orange;
+  color: white;
 }
 
 .dark-mode .badge-personalizado {
-  background-color: #555555;
+  background-color: rgb(255, 186, 122);
   color: #ffffff;
 }
 
-/* Enlaces en modo oscuro */
-.dark-mode a.text-dark {
+.dark-mode #cat-list-container .list-group-item {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode #file-upload {
+  background-color: #333;
+}
+
+.dark-mode #productCurrency {
+  background-color: #212529;
+  color: #f1f1f1;
+}
+
+.dark-mode .offcanvas {
+  background-color: #333;
+  color: #f1f1f1;
+}
+/*Banner en dark mode */
+.dark-mode .jumbotron {
+  background: url('../img/BannerWeb-DarkMode.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*Dark mode para sell.html*/
+.dark-mode .list-group-item {
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+.dark-mode .list-group-item strong,
+.dark-mode .text-muted {
   color: #ffffff;
+}
+
+.dark-mode label[for="productCategory"] {
+  color: #f1f1f1;
+}
+
+.dark-mode .custom-select,
+.dark-mode .form-select {
+  background-color: #333;
+  color: #f1f1f1;
+  border: 1px solid orange;
+}
+
+.dark-mode .custom-select option,
+.dark-mode .form-select option {
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+.dark-mode .custom-select:focus,
+.dark-mode .form-select:focus {
+  background-color: #444;
+  color: #f1f1f1;
+}
+
+/*Botones*/
+.dark-mode .btn-primary,
+.dark-mode .btn-outline-secondary {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
+}
+
+.dark-mode .btn-primary
+.dark-mode .btn-outline-secondary:hover {
+  background-color: orange;
+  color: #f1f1f1;
+}
+
+.dark-mode .filtos-link {
+  color: #121212 !important;
+}
+
+#applyFilter {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
 }

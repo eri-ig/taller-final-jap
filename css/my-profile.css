@@ -156,21 +156,6 @@ body {
     object-fit:scale-down; 
 }
 
-/* Estilos para modo oscuro */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-.dark-mode .user-profile {
-    background-color: #333;
-}
-
-.dark-mode .card {
-    background-color: #1f1f1f;
-    color: #ffffff;
-}
-
 /* Texto y botones */
 h6 {
     font-size: 14px;
@@ -405,263 +390,156 @@ label:active .circle {
     width: 30px;
     transition: width 0.3s ease;
 }
-body.bg-dark .navbar-light .nav-link {
-    color: rgba(255, 255, 255, .75); /* color blanco para los enlaces en modo oscuro */
-  }
-  
-  body.bg-dark .navbar-light .nav-link:hover {
-    color: orange; /* mantener el hover en color naranja */
-  }
-  
-  /* corregir color de nombre de usuario en modo oscuro */
-  body.bg-dark .welcome-message {
-    color: rgba(255, 255, 255, 0.85); /*color del nombre de usuario a blanco */
-  }
-  
-  /* corregir el color de los íconos en el dropdown del navbar */
-  body.bg-dark .dropdown-item {
-    color: rgba(255, 255, 255, 0.75); /* color blanco para los ítems del dropdown */
-  }
-  
-  body.bg-dark .dropdown-item:hover {
-    background-color: orange; /* mantener el hover en color naranja */
-    color: white; /* cambia el color del texto a blanco cuando se pasa el mouse */
-  }
-  body.bg-dark .dropdown-menu {
-    background-color: #333; /* fondo oscuro */
-    color: rgba(255, 255, 255, 0.85); 
-    border: 1px solid rgba(255, 255, 255, 0.15); /* borde para modo oscuro */
-  }
-  
-  /* hover en los ítems del dropdown */
-  body.bg-dark .dropdown-item {
-    color: rgba(255, 255, 255, 0.85);
-  }
-  
-  body.bg-dark .dropdown-item:hover {
-    background-color: orange; /* fondo naranja cuando se pasa el mouse */
-    color: #ffffff; 
-  }
-  body.bg-dark .dropdown-item img {
-    filter: brightness(0) invert(1);
-  }
-  
-body.bg-dark .col-sm-8 .form-control {
-    background-color: #333;
-    color: white;
-    border: 1px solid orange;
-}
 
-body.bg-dark .col-sm-8 .form-control::placeholder {
-    color: #aaaaaa; /* Cambia el color del texto del placeholder */
-}
-/*Dropdown*/
+/*dropdown*/
 .dropdown-menu {
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    display: block;
-    visibility: hidden;
-  }
-  
-  .dropdown-menu.show {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-  }
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  visibility: hidden;
+}
 
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
 
-
-  /* Estilos generales para el offcanvas personalizado */
+/* Estilos generales para el offcanvas personalizado */
 .offcanvas-custom {
-    background-color: #f8f9fa;
-    color: #212529; 
-  }
-   /* Hacer el offcanvas flotante con altura limitada */
-   .offcanvas-end {
-    position: fixed;
-    top: 20px;
-    right: 0;
-    height: auto;
-    max-height: 80vh;
-    max-width: 400px;
-    width: 100%;
-    margin-bottom: 20px;
-    z-index: 1050;
-    overflow-y: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  .offcanvas-header-custom {
-    background-color: #f8f9fa;
-    color: #212529;
-  }
-  
-  .offcanvas-body-custom {
-    background-color: #f8f9fa;
-    color: #212529;
-  }
-  /* Estilos para el footer del offcanvas */
-  .offcanvas-footer-custom {
-    border-top: 1px solid #dee2e6; /* Línea superior para separar del contenido */
-  }
-  
-  /* Ajustes para que el total y el botón estén alineados */
-  .offcanvas-footer-custom .btn {
-    margin-left: auto;
-  }
-  
-  /* Estilos para el modo oscuro */
-  .offcanvas-custom.bg-dark {
-    background-color: #343a40; /* Color de fondo oscuro */
-    color: #ffffff; /* Texto blanco */
-  }
-  
-  .offcanvas-header-custom.bg-dark {
-    background-color: #343a40;
-    color: #ffffff;
-  }
-  
-  .offcanvas-body-custom.bg-dark {
-    background-color: #343a40;
-    color: #ffffff;
-  }
-  
-  /* Estilos para los elementos internos en el offcanvas */
-  .offcanvas-body-custom.text-white {
-    color: #ffffff;
-  }
-  
-  /* Estilos para los items de la lista en el offcanvas */
-  .list-group-item.bg-dark {
-    background-color: #27292b;
-    color: #ffffff;
-  }
-  
-  .list-group-item.bg-dark .btn-outline-secondary {
-    color: #ffffff;
-    border-color: #2a2c2d;
-  }
-  
-  .list-group-item.bg-dark .btn-outline-secondary:hover {
-    background-color: #353739;
-    color: #ffffff;
-  }
-  
-  /* Estilos para la insignia personalizada */
-  .badge-personalizado {
-    background-color: #ffb833; /* Mantiene el color naranja */
-    color: #ffffff;
-  }
-  
-  /* Estilos para el botón de eliminar en modo oscuro */
-  .btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-  }
-  
-  .btn-danger:hover {
-    background-color: #bd2130;
-    border-color: #b21f2d;
-  }
-  
-  /* Estilos para los botones personalizados en el offcanvas */
-  .boton-personalizado {
-    background-color: #ffb833; /* Color naranja personalizado */
-    color: #ffffff;
-    border: none;
-  }
-  
-  .boton-personalizado:hover {
-    background-color: #e0a800;
-    color: #ffffff;
-  }
-  
-  /* Estilos para las imágenes de los productos */
-  .product-img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  /* Estilos generales para el texto en modo oscuro */
-  .text-white {
-    color: #ffffff;
-  }
-  
-  /* Estilos para el modo oscuro */
-  .offcanvas-custom.dark-mode {
-    background-color: #343a40; /* Fondo oscuro */
-    color: #ffffff; /* Texto claro */
-  }
-  
-  .offcanvas-header-custom.dark-mode {
-    background-color: #343a40;
-    color: #ffffff;
-  }
-  
-  .offcanvas-body-custom.dark-mode {
-    background-color: #343a40;
-    color: #ffffff;
-  }
-  
-  /* Estilos para elementos internos en modo oscuro */
-  .offcanvas-custom.dark-mode .list-group-item {
-    background-color: #454d55;
-    color: #ffffff;
-  }
-  
-  .offcanvas-custom.dark-mode .btn {
-    background-color: #6c757d;
-    color: #ffffff;
-    border-color: #6c757d;
-  }
-  
-  .offcanvas-custom.dark-mode .btn:hover {
-    background-color: #5a6268;
-    color: #ffffff;
-    border-color: #545b62;
-  }
-  
-  /* Ajustes para textos e íconos */
-  .offcanvas-custom.dark-mode .text-white {
-    color: #ffffff;
-  }
-  
-  .offcanvas-custom.dark-mode .mdi {
-    color: #ffffff;
-  }
-  /* Estilos para los items del carrito en modo oscuro */
-  .item-carrito.bg-dark {
-    background-color: #454d55;
-    color: #ffffff;
-  }
-  /* Estilos para el modo oscuro */
-.dark-mode .cart-item {
-  background-color: #2c2c2c; /* Fondo oscuro */
-  color: #ffffff; /* Texto blanco */
+  background-color: #f8f9fa; /* Color de fondo por defecto */
+  color: #212529; /* Color de texto por defecto */
+}
+ /* Hacer el offcanvas flotante con altura limitada */
+.offcanvas-end {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  height: auto;
+  max-height: 80vh;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+  z-index: 1050;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.dark-mode .offcanvas-item-carrito {
-  background-color: #2c2c2c; /* Fondo oscuro */
-  color: #ffffff; /* Texto blanco */
+.offcanvas-header-custom {
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
-/* Ajustar botones y badges para mejor visibilidad en modo oscuro */
-.dark-mode .btn-outline-secondary {
+.offcanvas-body-custom {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+/* Estilos para el footer del offcanvas */
+.offcanvas-footer-custom {
+  border-top: 1px solid #dee2e6; /* Línea superior para separar del contenido */
+}
+
+/* Ajustes para que el total y el botón estén alineados */
+.offcanvas-footer-custom .btn {
+  margin-left: auto;
+}
+
+/* Estilos para los elementos internos en el offcanvas */
+.offcanvas-body-custom.text-white {
   color: #ffffff;
-  border-color: #ffffff;
+}
+
+/* Estilos para la insignia personalizada */
+.badge-personalizado {
+  background-color: #ffb833; /* Mantiene el color naranja */
+  color: #ffffff;
+}
+
+/* Estilos para el botón de eliminar en modo oscuro */
+.btn-danger:hover {
+  background-color: #bd2130;
+  border-color: #b21f2d;
+}
+
+/* Estilos para los botones personalizados en el offcanvas */
+.boton-personalizado {
+  background-color: #ffb833; /* Color naranja personalizado */
+  color: #ffffff;
+  border: none;
+}
+
+.boton-personalizado:hover {
+  background-color: #e0a800;
+  color: #ffffff;
+}
+
+/* Estilos para las imágenes de los productos */
+.product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+/* Elementos en modo oscuro */
+.dark-mode .navbar,
+.dark-mode footer,
+.dark-mode .card,
+.dark-mode .offcanvas-custom,
+.dark-mode .offcanvas-header-custom,
+.dark-mode .offcanvas-body-custom,
+.dark-mode .item-carrito,
+.dark-mode .cart-item,
+.dark-mode .offcanvas-item-carrito {
+  background-color: #333;
+  color: white;
+}
+
+/* Estilos para botones, enlaces y elementos interactivos en modo oscuro */
+.dark-mode .btn {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .form-control {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .navbar .nav-link,
+.dark-mode .welcome-message,
+.dark-mode .dropdown-item,
+.dark-mode .dropdown-menu {
+  color: rgb(255, 186, 122);
+}
+
+.dark-mode .dropdown-item:hover,
+.dark-mode .btn-outline-secondary,
+.dark-mode .btn:hover {
+  background-color: orange;
+  color: white;
 }
 
 .dark-mode .badge-personalizado {
-  background-color: #555555;
+  background-color: rgb(255, 186, 122);
   color: #ffffff;
 }
 
-/* Enlaces en modo oscuro */
-.dark-mode a.text-dark {
-  color: #ffffff;
+.dark-mode #cat-list-container .list-group-item {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .btn {
+  border: 1px solid orange;
+  background: rgb(255, 186, 122);
+  color: #121212;
 }
