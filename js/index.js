@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("catID", 103);
         verifyUser()
     });
+<<<<<<< HEAD
+=======
     //validarCorreo();
+>>>>>>> a4e338db7b8e101ab8d92eaea198f3ca338d3bc8
     showUserInformation();
     cargarImagenDePerfil();
 });
