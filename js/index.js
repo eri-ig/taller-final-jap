@@ -27,3 +27,31 @@ function verifyUser() {
         window.location.href = "products.html";
     }
 };
+
+
+//Si hubiese que validar el correo:
+/*function validarCorreo(correo) {
+    const password = sessionStorage.getItem("password");
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (regex.test(correo) && correo.endsWith(".com")) {
+        return "El correo es válido";
+    } else {
+        return "El correo no es válido";
+    }
+}*/
+
+
+// Mejora fecha y hora
+function actualizarFechaHora() {
+    const fechaHoraElemento = document.getElementById('fecha-hora');
+    const ahora = new Date();
+    const dia = String(ahora.getDate()).padStart(2, '0');
+    const mes = String(ahora.getMonth() + 1).padStart(2, '0');
+    const anio = ahora.getFullYear();
+    const horas = String(ahora.getHours()).padStart(2, '0');
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+    fechaHoraElemento.textContent = `${dia}/${mes}/${anio} ${horas}:${minutos}`;
+  }
+  
+  setInterval(actualizarFechaHora, 1000); 
+  actualizarFechaHora(); 
