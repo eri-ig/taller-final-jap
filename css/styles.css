@@ -1,45 +1,162 @@
 .jumbotron,
 .card-body,
-.mt-5,
 .container,
-
-
-label{
-  position: relative;
-  color: black;
-  font-size: 22px;
+main,
+body {
+  margin-bottom: 40px; /* Espacio entre el contenido y el footer */
 }
 
-input,
-
-.contenedor-input{
-  position: relative;
-  margin-bottom: 40px;
+/* Estilo del botones */
+button {
+  border: 1px solid orange;
+  background-color: rgb(255, 186, 122); 
+  padding: 8px 15px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5%;
+  margin-bottom: 10px;
 }
-.site-header {
-  font-family: 'Verdana', serif !important;
+
+button:hover {
+  background: orange;
 }
 
-.jumbotron .display-4 {
+.btn-light {
+  border-color: orange;
+}
+
+.btn-primary{ 
+  background-color: rgb(255, 186, 122);  
+  border-color:orange;
+  color: black; 
+}
+
+.btn-primary:hover {
+  background-color:orange; 
+  border-color:black;
+  color:rgba(0, 0, 0, 0.945);  
+}
+
+.filtos-link {
+  color: #f1f1f1 !important;
+}
+
+.filtos-link:hover {
+  color: orange;
+}
+
+.offcanvas {
+  background-color: #fff;
+  color: #121212;
+}
+
+.m-1{
+  background-color: rgb(255, 186, 122);  
+  border-color:orange;
+  color: black; 
+}
+
+.m-1-primary:hover {
+  background-color:orange; 
+  border-color:black;
+  color:rgba(0, 0, 0, 0.945);  
+}
+
+form input, textarea, select {
+  margin-bottom: 18px;
+}
+
+.form-control {
+  border: 1px solid orange;
+}
+
+/*Comienzo del navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; 
+  padding: 6px 20px; /* Ajusta el espaciado */
+  background-color: #f1f1f1; 
+  width: 100%;
+  border-bottom: 1px solid orange;
+}
+
+/* Estilo para el logo SHIGERICATEVA */
+.navbar-light .navbar-brand {
   font-weight: bold;
-}
-
-nav a {
+  color: rgb(255, 186, 122);
+  font-size: 28px;
   text-decoration: none;
 }
 
-nav.navbar {
-  background-color: #ffffff !important;
+.navbar-light .navbar-brand:hover {
+  color: orange;
 }
 
-.navbar-nav .nav-link {
-  color: #333333 !important;
+/* Menú de navegación */
+.nav-menu {
+  display: flex; /* Alinea los elementos horizontalmente */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-nav .nav-link:hover {
-  color: rgb(238, 137, 35) !important; 
+.nav-item {
+  margin-top: 10px;
 }
 
+.nav-link {
+  color: rgba(0, 0, 0, .55);
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.nav-link:hover {
+  color: orange;
+}
+
+.dropdown-small-screen {
+  display: none;
+}
+
+/*Estilos para pantallas pequenas*/
+@media (max-width: 993px) {
+  .navbar {
+    justify-content: space-between;
+  }
+  
+  .nav-menu > .nav-item:not(.dropdown) {
+    display: none;
+  }
+
+  .navbar-brand, .nav-item.dropdown {
+    margin: auto;
+  }
+
+  /*Muestra las opciones adicionales en el dropdown*/
+  .dropdown-small-screen {
+    display: block;
+  }
+}
+
+/*Menu desplegable*/
+.dropdown-menu {
+  max-width: 200px;
+  left: auto; /* Para permitir que el menú se ajuste a la pantalla */
+  right: 0; /* Para anclar el menú al lado derecho */
+}
+
+.dropdown-toggle::after {
+  display: none; /* Oculta la flecha */
+}
+
+.dropdown-item:hover {
+  background-color: orange;
+}
+/*Fin del navbar*/
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -56,29 +173,35 @@ nav.navbar {
   }
 }
 
+/* Estilos de la jumbotron */
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
-<<<<<<< HEAD
-  background-color: #fbb253;
-  background: url('../img/cover_back.png'); 
-  background-size: cover; 
-=======
   background-color: #53C0FB;
   background: url('../img/bannerWeb.png');
   background-size: cover;
->>>>>>> a4e338db7b8e101ab8d92eaea198f3ca338d3bc8
   background-position: center;
   background-repeat: no-repeat;
   color: black;
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1279px) {
   .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    min-height: 30vh;
+    padding: 2em 1em;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .jumbotron {
+    min-height: 20vh;
+    padding: 1em 0.5em;
+    background-position: 91% center;
+    background-size: cover;
   }
 }
 
@@ -92,49 +215,172 @@ nav.navbar {
 
 .jumbotron .container {
   max-width: 40rem;
-  background-color: #333333; 
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
-  text-shadow: 1px 1px 2px grey; 
+  text-shadow: 1px 1px 2px grey;
 }
 
 .jumbotron .lead {
   font-size: 38px;
 }
 
+/* Footer */
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-footer p {
-  margin-bottom: .25rem;
-}
-
-.site-header a {
-  color: white;
-  transition: ease-in-out color .15s; 
-}
-
-.site-header .dropdown-menu a {
-  color: black;
-}
-
-.dropzone {
-  border: 2px dashed #fbb253;
-  border-radius: 5px;
-  background: white;
-}
-
-.img-fit {
-  max-height: 100%;
-}
-
-.alert {
   position: fixed;
-  top: 80px;
-  width: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 15px 15px;
+  height: 60px;
+  border-top: 1px solid orange;
+}
+
+.container-2 p a {
+  color: rgb(255, 186, 122);
+  text-decoration: none;
+}
+
+.container-2 a:hover {
+  text-decoration: underline;
+}
+
+/*Volver arriba*/
+#scrollToTop {
+  position: relative;
+}
+
+#scrollToTop::after {
+  content: "Volver arriba";
+  position: absolute;
+  top: -30px; /* Ajusta esta distancia según necesites */
+  right: 0;
+  background-color: #f2f2f2;
+  color: orange;
+  border: 1px solid orange;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTop:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Tarjetas */
+.checked {
+  color: orange;
+}
+
+.welcome-message {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 15px;  
+  margin-left: 0px;  
+  text-align:center;  
+  margin-top: 20px;
+  margin-right: 20px;
+  margin: 0 auto;
+}
+
+.cursor-active {
+  cursor: pointer;
+}
+
+/* Estilo para las tarjetas en Products.HTML */
+#containerDiv .card {
+  border: 2px solid orange;
+}
+
+#containerDiv .card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave al hacer hover */
+  transform: scale(1.02); /* Efecto de agrandamiento */
+}
+
+h1#productTitle {
+  font-weight: bold !important;
+  font-size: 30px;
+  color: rgb(255, 186, 122);                  
+  -webkit-text-stroke: 1px rgb(15, 10, 0);  /* Borde alrededor del texto */
+}
+
+/* Botón de "Aplicar Filtros" del offcanvas*/
+.text-primary {
+  text-decoration: none;
+}
+
+#applyFilter {
+  background-color: rgb(255, 186, 122);
+  color: #f1f1f1;
+  border: 1px solid orange;
+}
+
+#applyFilter:hover {
+  background-color: orange;
+}
+
+/*Botones de los filtros en "categorias"*/
+#clearRangeFilter {
+  background-color: rgb(255, 186, 122);
+  color: rgba(0, 0, 0, 0.945);
+  text-decoration: none;
+}
+
+@media (max-width: 576px) {
+/*Hace que los botones ocupen el ancho completo en pantallas sm*/
+  .btn-group-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-group-toggle label.btn {
+    margin-bottom: 5px;
+  }
+
+/*Alinea los campos de filtro de cantidad en una columna en lugar de fila*/
+  #rangeFilterCountMin, #rangeFilterCountMax, #rangeFilterCount, #clearRangeFilter {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-group .btn-link {
+    text-align: center;
+  }
+
+/*Centrando el texto 'Cant.' en pantallas sm*/
+  .font-weight-normal {
+    text-align: center;
+  }
+}
+
+/*Lista de categorias*/
+#cat-list-container .list-group-item {
+  border: 1px solid orange;
+  padding: 10px;
+}
+
+/* Spinner */
+#spinner-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  display: none;
 }
 
 .lds-ring {
@@ -144,16 +390,6 @@ footer p {
   height: 64px;
   top: 50%;
   left: 50%;
-}
-
-.cursor-active {
-  cursor:pointer;
-}
-
-.left {
-  float: left;
-  padding: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .lds-ring div {
@@ -185,151 +421,238 @@ footer p {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
-
-.signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
+.navbar-light .nav-link {
+  color: rgba(0, 0, 0, .55);
 }
 
-#spinner-wrapper {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1021;
-  display: none;
-}
-
-main {
-  min-height: calc(100vh - 210px);
-}
-
-a.custom-card,
-a.custom-card:hover {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-.checked {
+.navbar-light .nav-link:hover {
   color: orange;
 }
 
-<<<<<<< HEAD
-.header-container {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
+/*dropdown*/
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  visibility: hidden;
 }
 
-.header-container h1 {
-  margin-left: 20px; 
-  font-size: 2rem;
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
-.cart-container {
-  display: flex;
-  align-items: center; 
-  margin-right: 20px; 
+/* Estilos generales para el offcanvas personalizado */
+.offcanvas-custom {
+  background-color: #f8f9fa; /* Color de fondo por defecto */
+  color: #212529; /* Color de texto por defecto */
+}
+ /* Hacer el offcanvas flotante con altura limitada */
+.offcanvas-end {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  height: auto;
+  max-height: 80vh;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+  z-index: 1050;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-body {
-  font-family: 'Raleway', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: white;
+.offcanvas-header-custom {
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
-h1, h2 {
-  color: #333333; 
+.offcanvas-body-custom {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+/* Estilos para el footer del offcanvas */
+.offcanvas-footer-custom {
+  border-top: 1px solid #dee2e6; /* Línea superior para separar del contenido */
 }
 
-.card-title {
-  font-size: 1.5rem; 
+/* Ajustes para que el total y el botón estén alineados */
+.offcanvas-footer-custom .btn {
+  margin-left: auto;
 }
 
-.card-text {
-  font-size: 1rem; 
-  color: #555; 
+/* Estilos para los elementos internos en el offcanvas */
+.offcanvas-body-custom.text-white {
+  color: #ffffff;
 }
 
-/* footer */
-
-footer {
-  background-color: #ffffff !important; 
-  color: #333333 !important;
+/* Estilos para la insignia personalizada */
+.badge-personalizado {
+  background-color: #ffb833; /* Mantiene el color naranja */
+  color: #ffffff;
 }
 
-footer p {
-  color: #333333 !important; 
+/* Estilos para el botón de eliminar en modo oscuro */
+.btn-danger:hover {
+  background-color: #bd2130;
+  border-color: #b21f2d;
 }
 
-footer a {
-  color: #f4f1f1 !important; 
-  
-}
-footer a:hover {
-  color: rgb(238, 137, 35) !important; 
-  text-decoration: none; 
+/* Estilos para los botones personalizados en el offcanvas */
+.boton-personalizado {
+  background-color: #ffb833; /* Color naranja personalizado */
+  color: #ffffff;
+  border: none;
 }
 
-.card-body .text-center {
-  text-align: center;
+.boton-personalizado:hover {
+  background-color: #e0a800;
+  color: #ffffff;
 }
 
-.card-body .btn {
-  margin-top: 10px;
+/* Estilos para las imágenes de los productos */
+.product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
-/* products */
-
-.custom-body {
-  background-color: #f0f0f0; 
-  font-family: Arial, sans-serif; 
-  color: #333; 
-  margin: 0;
-  padding: 20px;
-  line-height: 1.6; 
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
 }
 
-.custom-header {
-  border-bottom: 2px solid #333333; 
-  padding-bottom: 10px; 
+/* Elementos en modo oscuro */
+.dark-mode .navbar,
+.dark-mode footer,
+.dark-mode .card,
+.dark-mode .offcanvas-custom,
+.dark-mode .offcanvas-header-custom,
+.dark-mode .offcanvas-body-custom,
+.dark-mode .item-carrito,
+.dark-mode .cart-item,
+.dark-mode .offcanvas-item-carrito {
+  background-color: #333;
+  color: white;
 }
 
-.custom-product-item {
-  border: 2px solid #ddd; 
-  padding: 20px;
-  margin-bottom: 20px; 
-  text-align: center; 
+/* Estilos para botones, enlaces y elementos interactivos en modo oscuro */
+.dark-mode .btn {
+  background-color: #444;
+  color: white;
 }
 
-.product-image {
-  width: 400px; 
-  height: auto; 
-  display: block; 
-  margin: 0 auto; 
-  border: 5px solid rgb(238, 137, 35); 
-  transition: transform 0.3s ease-in-out; 
+.dark-mode .form-control {
+  background-color: #333;
+  color: white;
 }
 
-.product-image:hover {
-  transform: scale(1.05); 
-=======
-.welcome-message {
-  color: rgba(218, 214, 214, 0.65);
-  font-size: 15px;  
-  margin-left: 0px;  
-  text-align:center;  
-  margin-top: 20px;
-  margin-right: 20px;
-  margin: 0 auto;
->>>>>>> a4e338db7b8e101ab8d92eaea198f3ca338d3bc8
+.dark-mode .navbar .nav-link,
+.dark-mode .welcome-message,
+.dark-mode .dropdown-item,
+.dark-mode .dropdown-menu {
+  color: rgb(255, 186, 122);
+}
+
+.dark-mode .dropdown-item:hover,
+.dark-mode .btn-outline-secondary:hover {
+  background-color: orange;
+  color: white;
+}
+
+.dark-mode .badge-personalizado {
+  background-color: rgb(255, 186, 122);
+  color: #ffffff;
+}
+
+.dark-mode #cat-list-container .list-group-item {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode #file-upload {
+  background-color: #333;
+}
+
+.dark-mode #productCurrency {
+  background-color: #212529;
+  color: #f1f1f1;
+}
+
+.dark-mode .offcanvas {
+  background-color: #333;
+  color: #f1f1f1;
+}
+/*Banner en dark mode */
+.dark-mode .jumbotron {
+  background: url('../img/BannerWeb-DarkMode.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*Dark mode para sell.html*/
+.dark-mode .list-group-item {
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+.dark-mode .list-group-item strong,
+.dark-mode .text-muted {
+  color: #ffffff;
+}
+
+.dark-mode label[for="productCategory"] {
+  color: #f1f1f1;
+}
+
+.dark-mode .custom-select,
+.dark-mode .form-select {
+  background-color: #333;
+  color: #f1f1f1;
+  border: 1px solid orange;
+}
+
+.dark-mode .custom-select option,
+.dark-mode .form-select option {
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+.dark-mode .custom-select:focus,
+.dark-mode .form-select:focus {
+  background-color: #444;
+  color: #f1f1f1;
+}
+
+/*Botones*/
+.dark-mode .btn-primary,
+.dark-mode .btn-outline-secondary {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
+}
+
+.dark-mode .btn-primary
+.dark-mode .btn-outline-secondary:hover {
+  background-color: orange;
+  color: #f1f1f1;
+}
+
+.dark-mode .filtos-link {
+  color: #121212 !important;
+}
+
+#applyFilter {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
 }

@@ -1,0 +1,700 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Comienzo del navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; 
+  padding: 6px 20px; /* Ajusta el espaciado */
+  background-color: #f1f1f1; 
+  width: 100%;
+  border-bottom: 1px solid orange;
+}
+
+/* Estilo para el logo SHIGERICATEVA */
+.navbar-light .navbar-brand {
+  font-weight: bold;
+  color: rgb(255, 186, 122);
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: orange;
+}
+
+/* Menú de navegación */
+.nav-menu {
+  display: flex; /* Alinea los elementos horizontalmente */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-top: 10px;
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, .55);
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.nav-link:hover {
+  color: orange;
+}
+
+.dropdown-small-screen {
+  display: none;
+}
+
+/*Estilos para pantallas pequenas*/
+@media (max-width: 993px) {
+  .navbar {
+    justify-content: space-between;
+  }
+  
+  .nav-menu > .nav-item:not(.dropdown) {
+    display: none;
+  }
+
+  .navbar-brand, .nav-item.dropdown {
+    margin: auto;
+  }
+
+  /*Muestra las opciones adicionales en el dropdown*/
+  .dropdown-small-screen {
+    display: block;
+  }
+}
+
+/*Menu desplegable*/
+.dropdown-menu {
+  max-width: 200px;
+  left: auto; /* Para permitir que el menú se ajuste a la pantalla */
+  right: 0; /* Para anclar el menú al lado derecho */
+}
+
+.dropdown-toggle::after {
+  display: none; /* Oculta la flecha */
+}
+
+.dropdown-item:hover {
+  background-color: orange;
+}
+/*Fin del navbar*/
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+}
+
+.cursor-active {
+  cursor:pointer;
+
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#spinner-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  display: none;
+}
+
+.welcome-message {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 15px;  
+  margin-left: 0px;  
+  text-align:center;  
+  margin-top: 20px;
+  margin-right: 20px;
+  margin: 0 auto;
+}
+
+footer{
+  margin-top: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 15px 15px;
+  height: 60px;
+  border-top: 1px solid orange;
+}
+
+.container-2 p a{
+  color: rgb(255, 186, 122);
+  text-decoration: none;
+}
+
+.container-2 a:hover {
+  text-decoration: underline;
+}
+/*Fin del footer*/
+
+#imagenPrincipal {
+  border: 2px solid orange;
+  border-radius: 8px;
+}
+
+.thumbnail {
+  cursor: pointer;
+  width: 130px !important; 
+  height: 110px !important; 
+  object-fit: cover; /* Ajusta para que la imagen no se deforme */
+  border-radius: 8px; 
+  border: 2px solid orange;
+  margin-bottom: 25px;
+}
+
+/* Ajustes pag */
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; 
+}
+
+.product-details {
+  padding: 20px;
+} 
+
+.product-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.item-price {
+  font-size: 40px; 
+  font-weight: bold; 
+
+  margin: 0; 
+  display: block; /* Hace que ocupe todo el ancho disponible */
+  margin-bottom: 60px;
+}
+
+.descripcion-producto {
+  font-size: 20px;
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Estilo del botón "COMPRAR" */
+.btn-warning {
+  background-color:rgb(255, 186, 122); 
+    color: rgb(0, 0, 0); 
+    text-decoration: none;
+    border: none;
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; 
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block; 
+    cursor: pointer; 
+    width: 100%; /*
+    transition: background-color 0.3s ease; /* Animación para el hover pasar el mouse */
+    margin-top: 20px;
+
+}
+
+.btn-warning:hover {
+  background-color:orange ;
+}
+
+.item-title {
+  font-size: 35px;
+  font-weight: bold;
+
+  margin: 50px 0 5px 0; /* Margen superior de 50px y margen inferior de 5px */
+}
+
+.item-brand {
+  background-color: #FDE6A7;
+  color: #B26A00;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 12px;
+  display: inline-block; /* El tamaño del fondo se ajustará al contenido */
+  text-align: center;
+  white-space: nowrap; /* Evitar que el texto se ajuste a varias líneas */
+}
+
+/* tarjeta del producto */
+.container {
+  max-width: 100%;
+}
+
+.row.justify-content-between {
+  justify-content: space-between;
+}
+
+/*Estilo de las estrellas*/
+.container-comment {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 20px 30px;
+  border: 1px solid orange;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-comment .post {
+  display: none;
+}
+
+.container-comment .text {
+  font-size: 25px;
+  color: #666;
+  font-weight: 500;
+}
+
+.container-comment .edit {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.container-comment .star-widget input {
+  display: none;
+}
+
+.star-widget label {
+  font-size: 40px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 576px) { /*Las estrellas mas pequeñas en pantallas sm */
+  .star-widget label {
+    font-size: 30px;
+  }
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label {
+  color: rgb(255, 186, 122);
+}
+
+input:checked ~ label {
+  color: rgb(255, 186, 122);
+}
+
+input#rate-5:checked ~ label {
+  color: rgb(247, 160, 80);
+  text-shadow: 0 0 20px goldenrod;
+}
+
+#rate-1:checked ~ form header:before {
+  content: "Lo odio 😒";
+  color: orange;
+}
+#rate-2:checked ~ form header:before {
+  content: "No me gusta 🙄";
+  color: orange;
+}
+#rate-3:checked ~ form header:before {
+  content: "Me gusta 😄";
+  color: orange;
+}
+#rate-4:checked ~ form header:before {
+  content: "Me encanta 🤩";
+  color: orange;
+}
+#rate-5:checked ~ form header:before {
+  content: "Lo amo 😍";
+  color: orange;
+}
+
+.container-comment form {
+  display: none;
+}
+
+input:checked ~ form {
+  display: block;
+}
+
+form header {
+  width: 100%;
+  font-size: 25px;
+  color: #fe7;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+
+form .textarea {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+form .textarea textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: orange;
+  border: 1px solid orange;
+  background: white;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+
+form .btn {
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+form .btn button {
+  height: 100%;
+  width: 100%;
+  border: 1px solid orange;
+  outline: none;
+  background: rgb(255, 186, 122);
+  color: #646464;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .btn button:hover {
+  background: orange;
+
+}
+
+/*Productos relacionados*/
+.related-products {
+  margin: 20px;
+  display: flex;               
+  flex-wrap:nowrap;            
+  gap: 15px;                   
+  justify-content: flex-start; 
+}
+.card {
+  flex: 0 0 auto;
+  width: 200px;                
+  border: 1px solid orange !important;      
+  border-radius: 10px;         
+  overflow: hidden;            
+  background-color: #fff;      
+  text-align: center;          
+  transition: transform 0.3s ease;  
+  margin: 10px;
+  padding: 15px;
+}
+.card:hover {
+  transform: translateY(-3px);  /* Mueve la tarjeta hacia arriba ligeramente al pasar el mouse */
+}
+.small-image {
+  width: 100%;                 /* La imagen ocupa todo el ancho de la tarjeta */
+  height: 150px;               /* Alto fijo para las imágenes */
+  object-fit: cover;           /* Ajusta la imagen sin distorsionarla */
+  border-bottom: 1px solid #ccc;  /* Línea divisoria entre la imagen y el contenido */
+}
+.card-title {
+  font-size: 1.1em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 576px) {
+  .card {
+    width: 150px; /* Ajusta el ancho de la tarjeta a 150px en pantallas pequeñas */
+  }
+
+  .small-image {
+    height: 120px; /* Ajusta la altura de la imagen si es necesario */
+  }
+}
+
+.comment {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* mantener las estrellas negras */
+.comment .stars {
+  color: black;
+}
+.card {
+  background-color: white;
+  color: black;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+/* imagenes relacionadas */
+.small-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* título de  productos relacionados */
+.card-title {
+  font-size: 1.2em;
+  color: black;
+}
+
+/*dropdown*/
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  visibility: hidden;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Estilos generales para el offcanvas personalizado */
+.offcanvas-custom {
+  background-color: #f8f9fa; /* Color de fondo por defecto */
+  color: #212529; /* Color de texto por defecto */
+}
+ /* Hacer el offcanvas flotante con altura limitada */
+.offcanvas-end {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  height: auto;
+  max-height: 80vh;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+  z-index: 1050;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas-header-custom {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.offcanvas-body-custom {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+/* Estilos para el footer del offcanvas */
+.offcanvas-footer-custom {
+  border-top: 1px solid #dee2e6; /* Línea superior para separar del contenido */
+}
+
+/* Ajustes para que el total y el botón estén alineados */
+.offcanvas-footer-custom .btn {
+  margin-left: auto;
+}
+
+/* Estilos para los elementos internos en el offcanvas */
+.offcanvas-body-custom.text-white {
+  color: #ffffff;
+}
+
+/* Estilos para la insignia personalizada */
+.badge-personalizado {
+  background-color: #ffb833; /* Mantiene el color naranja */
+  color: #ffffff;
+}
+
+/* Estilos para el botón de eliminar en modo oscuro */
+.btn-danger:hover {
+  background-color: #bd2130;
+  border-color: #b21f2d;
+}
+
+/* Estilos para los botones personalizados en el offcanvas */
+.boton-personalizado {
+  background-color: #ffb833; /* Color naranja personalizado */
+  color: #ffffff;
+  border: none;
+}
+
+.boton-personalizado:hover {
+  background-color: #e0a800;
+  color: #ffffff;
+}
+
+/* Estilos para las imágenes de los productos */
+.product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+/* Elementos en modo oscuro */
+.dark-mode .navbar,
+.dark-mode footer,
+.dark-mode .card,
+.dark-mode .offcanvas-custom,
+.dark-mode .offcanvas-header-custom,
+.dark-mode .offcanvas-body-custom,
+.dark-mode .item-carrito,
+.dark-mode .cart-item,
+.dark-mode .offcanvas-item-carrito {
+  background-color: #333;
+  color: white;
+}
+
+/* Estilos para botones, enlaces y elementos interactivos en modo oscuro */
+.dark-mode .btn {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .form-control {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .navbar .nav-link,
+.dark-mode .welcome-message,
+.dark-mode .dropdown-item,
+.dark-mode .dropdown-menu {
+  color: rgb(255, 186, 122);
+}
+
+.dark-mode .dropdown-item:hover,
+.dark-mode .btn-outline-secondary:hover {
+  background-color: orange;
+  color: white;
+}
+
+.dark-mode .badge-personalizado {
+  background-color: rgb(255, 186, 122);
+  color: #ffffff;
+}
+
+.dark-mode #cat-list-container .list-group-item {
+  background-color: #444;
+  color: white;
+}
+
+/*Dark Mode para comentarios y calificacion*/
+.dark-mode .container-comment,
+.dark-mode .comment {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid rgb(255, 186, 122);
+}
+
+.dark-mode .stars {
+  color: #f1f1f1;
+}
+
+.dark-mode input:checked ~ label {
+  color: rgb(255, 186, 122);
+}
+
+.dark-mode form .btn button {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
+}
+
+.dark-mode form .btn button:hover {
+  background-color: orange;
+}
+/*Fin*/
+
+.dark-mode .card-title {
+  color: #f1f1f1;
+}
+
+.dark-mode #btnComprar {
+  background-color: rgb(255, 186, 122);
+  color: #121212;
+}
+
+.dark-mode #btnComprar:hover {
+  background-color: orange;
+}

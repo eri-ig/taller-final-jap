@@ -4,53 +4,209 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <title>SHIGERICATEVA - eCommerce</title>
+  <link rel="shortcut icon" href="./img/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"> <!--Logo-->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/products-info.css"> <!--CSS-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
+  
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
-      </div>
+  <nav class="navbar navbar-light">
+    <!-- Logo del Navbar -->
+    <div class="navbar-logo">
+        <a class="navbar-brand" href="index.html">
+            SHIGERICATEVA
+        </a>
     </div>
+
+    <!-- Menú de navegación -->
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a class="nav-link" href="categories.html">CATEGORÍAS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sell.html">VENDER</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
+          <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito" style="margin-right: 8px;">MI CARRITO
+          <span id="cart-count" class="badge bg-danger position-absolute translate-middle badge rounded-pill">0</span>
+        </a>
+      </li>
+      <!--Dropdown-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="d-flex align-items-center">
+            <img src="./img/acountCircle.png" id="imagenPerfil" width="35" height="35" alt="User Icon" style="border-radius: 50%;">
+            <div class="welcome-message ms-2" id="welcome-message"></div>
+          </div>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <!--Las opciones que pasan a mostrarse en pantallas pequenas-->
+          <div class="dropdown-small-screen">
+            <a class="dropdown-item" href="categories.html">CATEGORÍAS</a>
+            <a class="dropdown-item" href="sell.html">VENDER</a>
+            <a class="dropdown-item" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
+              <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito" style="margin-right: 8px;">
+              MI CARRITO
+            </a>
+          </div>
+          <!--Las opcines que se muestran siempre-->
+          <a class="dropdown-item" href="my-profile.html">
+            <img src="./img/edit.png" width="20" height="20" alt="Editar" style="margin-right: 8px;">
+            Editar Perfil
+          </a>
+          <a class="dropdown-item" href="login.html">
+            <img src="./img/cerrar-session.png" width="20" height="20" alt="Cerrar sesión" style="margin-right: 8px;">
+            Cerrar Sesión
+          </a>
+        </div>
+      </li>
+    </ul>
   </nav>
-  <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
+  <div class="offcanvas-header offcanvas-header-custom">
+    <h5 class="offcanvas-title" id="offcanvasCarritoLabel">Carrito de Compras</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body offcanvas-body-custom">
+      <ul class="list-group" id="offcanvasCartItems">
+         
+      </ul>
+  </div>
+  <div class="offcanvas-footer offcanvas-footer-custom p-3">
+      <div class="d-flex justify-content-between align-items-center">
+          <strong>Total: $<span id="totalOffcanvas">0.00</span></strong>
+          <button class="btn boton-personalizado btn-sm" onclick="procederAlPago()">Proceder al Pago</button>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Comienzo de la tarjeta del producto -->
+<section class="hero pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="row justify-content-center align-items-start gap-">
+        <!-- Columna para el carrusel (imágenes del producto) -->
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="row">
+            <!-- Imagen principal -->
+            <div class="col-12 mb-3">
+              <img id="imagenPrincipal" src="" alt="Main Image" class="img-fluid w-100" style="object-fit: cover;">
+            </div>
+            <!-- Thumbnails -->
+            <div class="col-12">
+              <div class="d-flex flex-wrap justify-content-center" id="thumbnailsList"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna para los detalles del producto -->
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 product-details">
+          <div class="row">
+            <h1 class="item-title" id="brand">Marca del Auto</h1>
+            <span class="item-brand" id="category">Sessión de Autos</span>
+            <p id="ventas">Cantidad de vendidos</p>
+            <span class="item-price" id="price">$0.00</span>
+            <aside class="descripcion-producto">
+              <p id="description">Descripción del producto</p>
+            </aside>
+            <a href="#!" id="btnComprar" class="btn btn-warning w-100" >COMPRAR</a>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+  </div>
+</section>
+<!--fin de la tarjeta del producto-->
+
+<div class="container">
+  <div class="row">
+    <!-- Sección de productos relacionados -->
+    <div class="col-md-6">
+      <div class="col-12">
+        <div style="color: rgb(255, 186, 122); margin: 25px;">
+          <h4>Productos Relacionados:</h4>
+        </div>
+        <div class="related-products" id="relatedProductss">
+          <!-- Aquí van los productos relacionados -->
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <!-- Sección de comentarios y calificación -->
+    <div class="col-md-6 justify-content-center align-items-center">
+      <div style="color: rgb(255, 186, 122); margin: 25px;">
+        <h4>Comentarios:</h4>
+      </div>
+      <div class="container-comment mt-4 w-100">
+        <section id="commentSection" class="comment-section-container">
+          <div class="overflow-auto" id="comentarios" style="max-height: 160px;">
+            <!-- Comentarios -->
+          </div>
+
+          <div class="post mt-3">
+            <div class="text">Gracias por calificarnos!</div>
+            <div class="edit">EDITAR</div>
+          </div>
+
+          <div class="star-widget mt-3">
+            <input type="radio" name="rate" id="rate-5" value="5">
+            <label for="rate-5" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-4" value="4">
+            <label for="rate-4" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-3" value="3">
+            <label for="rate-3" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-2" value="2">
+            <label for="rate-2" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-1" value="1">
+            <label for="rate-1" class="fas fa-star"></label>
+
+            <form action="#" class="mt-3">
+              <header></header>
+              <div class="textarea mb-3">
+                <textarea cols="30" placeholder="Escribe tu experiencia..." class="form-control"></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit" class="btn btn-primary w-100">Envíar</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="text-muted">
+  <div class="container-2">
+    <p class="float-end">
+      <a href="#" id="scrollToTop">
+        <!--Icono para Volver arriba-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16"> 
+          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+        </svg>
+      </a>
+    </p>
+    <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+  </div>
+</footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -59,9 +215,11 @@
       <div></div>
     </div>
   </div>
+  
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 
 </html>
