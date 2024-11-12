@@ -131,6 +131,48 @@
   </div>
 </div>
 
+
+<div class="container my-4">
+  <div class="row">
+    <div class="col-xl-8">
+      <!-- Sección de Tipo de Envío -->
+      <div class="section">
+        <h3 class="section-title" onclick="toggleSection(this)">Tipo de envío:</h3>
+        <div class="section-content">
+          <!-- Opciones de envío -->
+          <label><input type="radio" name="envio" value="15"> Premium 2 a 5 días (15%)</label><br>
+          <label><input type="radio" name="envio" value="7"> Express 5 a 8 días (7%)</label><br>
+          <label><input type="radio" name="envio" value="5"> Standard 12 a 15 días (5%)</label> 
+        </div>
+      </div>
+      
+      <!-- Sección de Dirección de Envío -->
+      <div class="section">
+        <h3 class="section-title" onclick="toggleSection(this)">Dirección de envío:</h3>
+        <div class="section-content">
+          <!-- Dirección -->
+          <label>Departamento:</label> <input type="text" name="departamento"><br>
+          <label>Localidad:</label> <input type="text" name="localidad"><br>
+          <label>Calle:</label> <input type="text" name="calle"><br>
+          <label>Número:</label> <input type="text" name="numero"><br>
+          <label>Esquina:</label> <input type="text" name="esquina"> 
+        </div>
+      </div>
+      
+      <!-- Sección de Formas de Pago -->
+      <div class="section">
+        <h3 class="section-title" onclick="toggleSection(this)">Forma de Pago:</h3>
+        <div class="section-content">
+          <!-- Opciones de pago -->
+          <label><input type="radio" name="pago" value="tarjeta"> Tarjeta de crédito</label><br>
+          <label><input type="radio" name="pago" value="transferencia"> Transferencia bancaria</label> 
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 <footer class="text-muted">
   <div class="container-2">
     <p class="float-end">

@@ -126,7 +126,7 @@ a {
 .cart-items-container {
     max-height: calc(100vh - 150px); /* Altura máxima basada en la altura de la ventana */
     overflow-y: auto; /* Permite el scroll vertical */
-  }
+}
   /* Estilos para el modo oscuro */
 .dark-mode .cart-item {
     background-color: #2c2c2c; /* Fondo oscuro */
@@ -137,6 +137,142 @@ a {
     background-color: #2c2c2c; /* Fondo oscuro */
     color: #ffffff; /* Texto blanco */
 }
+
+/*Agregado para entrega 7*/
+.container {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.form-section {
+    width: 60%; 
+}
+
+#costos-container {
+    width: 35%;
+    border: 1px solid #ff8c00;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff; 
+}
+
+/*Campos*/
+.form-section label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 18px; 
+}
+
+.form-section input[type="text"], .form-section input[type="number"], .form-section select {
+    width: 100%;
+    padding: 8px;
+    font-size: 18px;  
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    box-sizing: border-box; 
+}
+
+#costos-container h3 { color: #ff8c00;
+    font-weight: bold;
+    border-bottom: 1px solid #ff8c00;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 18px; 
+}
+
+#costos-container table {
+    width: 100%; 
+}
+
+#costos-container th, #costos-container td {
+    text-align: left;
+    padding: 5px 0; 
+}
+
+/*Sección campos*/
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 2px solid orange;
+    border-radius: 8px; 
+}
+
+.section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px; 
+}
+
+.section-content {
+    display: none;
+    margin-top: 10px;
+}
+
+    .section-title {
+    cursor: pointer;
+    color: #007bff;
+}
+
+    .section-title:hover {
+    text-decoration: underline;
+}
+
+
+/*Inputs*/
+input[type="text"], input[type="radio"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 18px;  
+    border-radius: 8px;
+    border: 1px solid rgb(255, 186, 122);
+    margin-bottom: 8px; 
+}
+
+/*Radio buttons*/
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px; 
+}
+
+/*Labels */
+label {
+    font-size: 18px;  
+    color: #333;
+    margin-bottom: 4px;
+    display: block; 
+}
+
+/*Sección de costos*/
+.table {
+    margin-bottom: 0; 
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: right; 
+}
+
+.table td {
+    font-size: 18px; 
+}
+
+.table th {
+    font-weight: bold; 
+}
+
+.bg-light {
+    background-color: #f8f9fa; 
+}
+
+.section p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px; 
+} /* Fin */
 
 /* Ajustar botones y badges para mejor visibilidad en modo oscuro */
 .dark-mode .btn-outline-secondary {

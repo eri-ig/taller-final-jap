@@ -226,3 +226,13 @@ function procederAlPago() {
 document.addEventListener('DOMContentLoaded', function () {
      cargarCarrito();
 });
+
+//Funcion para ocultar el contenido de los formularios
+function toggleSection(element) {
+    var content = element.nextElementSibling;
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+}
