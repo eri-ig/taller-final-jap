@@ -46,10 +46,6 @@ body {
     width: 5rem;
 }
 
-.font-size-18 {
-    font-size: 18px !important;
-}
-
 .align-self-center {
     margin-left: 70px; 
     padding: 0;
@@ -64,6 +60,17 @@ body {
 
 a {
     text-decoration: none;
+}
+
+.text-total {
+    background-color: rgb(255, 186, 122);
+    color: #333;
+}
+
+.text,
+.text-muted,
+.flex-grow-1 h5 {
+    color: #2c2c2c;
 }
 
 .w-xl {
@@ -139,15 +146,6 @@ a {
 }
 
 /*Agregado para entrega 7*/
-.container {
-    display: flex;
-    justify-content: space-between; 
-}
-
-.form-section {
-    width: 60%; 
-}
-
 #costos-container {
     width: 35%;
     border: 1px solid #ff8c00;
@@ -174,12 +172,13 @@ a {
     box-sizing: border-box; 
 }
 
-#costos-container h3 { color: #ff8c00;
+#costos-container h3 { 
+    color: #ff8c00;
     font-weight: bold;
     border-bottom: 1px solid #ff8c00;
     padding-bottom: 5px;
     margin-bottom: 10px;
-    font-size: 18px; 
+
 }
 
 #costos-container table {
@@ -201,7 +200,7 @@ a {
 }
 
 .section h3 {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
     color: #333;
     margin-bottom: 10px; 
@@ -264,10 +263,6 @@ label {
     font-weight: bold; 
 }
 
-.bg-light {
-    background-color: #f8f9fa; 
-}
-
 .section p {
     font-size: 18px;
     color: #333;
@@ -275,17 +270,78 @@ label {
 } /* Fin */
 
 /* Ajustar botones y badges para mejor visibilidad en modo oscuro */
-.dark-mode .btn-outline-secondary {
-    color: #ffffff;
-    border-color: #ffffff;
+.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
 }
 
-.dark-mode .badge-personalizado {
-    background-color: #555555;
-    color: #ffffff;
+.dark-mode .card,
+.dark-mode .buttons-container,
+.dark-mode .section,
+.dark-mode .form-section,
+.dark-mode #costos-container,
+.dark-mode .cart-items-container,
+.dark-mode .offcanvas-custom,
+.dark-mode .offcanvas-header-custom,
+.dark-mode .offcanvas-body-custom,
+.dark-mode .item-carrito,
+.dark-mode .cart-item,
+.dark-mode .offcanvas-item-carrito {
+    background-color: #333;
+    color: #fff;
 }
 
-/* Enlaces en modo oscuro */
+/* Botones y enlaces en modo oscuro */
+.dark-mode .btn,
+.dark-mode .btn-outline-secondary,
 .dark-mode a.text-dark {
+    background-color: rgb(255, 186, 122);
+    color: #2c2c2c;
+    border-color: orange;
+}
+
+.dark-mode .btn:hover {
+    background-color: orange;
+    color: #fff;
+}
+
+/* Bordes y sombreados en modo oscuro */
+.dark-mode .card,
+.dark-mode .buttons-container,
+.dark-mode .section,
+.dark-mode #costos-container,
+.dark-mode input[type="text"],
+.dark-mode input[type="number"],
+.dark-mode select,
+.dark-mode .form-select:focus {
+    background-color: #555;
+    border-color: orange;
+}
+
+/* Badges en modo oscuro */
+.dark-mode .badge-personalizado {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Tablas y textos en modo oscuro */
+.dark-mode .table th,
+.dark-mode .table td,
+.dark-mode label,
+.dark-mode .font-size-18,
+.dark-mode .section p,
+.dark-mode .section-title,
+.dark-mode #costos-container h3 {
+    color: #fff;
+}
+
+.dark-mode .flex-grow-1 .text,
+.dark-mode .flex-grow-1 .text-muted,
+.dark-mode .flex-grow-1 h5 {
+    color: #ffffff;
+}
+
+.dark-mode .text-total {
+    background-color: #333;
     color: #ffffff;
 }
