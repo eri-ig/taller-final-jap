@@ -28,8 +28,13 @@ function actualizarBadgeCarrito() {
     });
     //Actualizamos el badge con el total
     const badgeCarrito = document.getElementById("cart-count");
+    const badgeCarritoDropdown = document.getElementById("cart-count-dropdown");
+
     if (badgeCarrito) {
         badgeCarrito.textContent = totalProductos;
+    }
+    if (badgeCarritoDropdown) {
+        badgeCarritoDropdown.textContent = totalProductos;
     }
 }
 

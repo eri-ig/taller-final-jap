@@ -55,6 +55,7 @@
             <a class="dropdown-item" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
               <img src="./img/shoppingCart.png" width="20" height="20" alt="Carrito" style="margin-right: 8px;">
               MI CARRITO
+              <span id="cart-count-dropdown" class="badge bg-danger position-absolute translate-middle badge rounded-pill">0</span>
             </a>
           </div>
           <!--Las opcines que se muestran siempre-->
@@ -88,23 +89,23 @@
             <table class="table mb-0">
               <tbody>
                 <tr>
-                  <td>Sub Total :</td>
+                  <td class="text-start">Sub Total :</td>
                   <td class="text-end">$ <span id="subtotal">0</span></td>
                 </tr>
                 <tr>
-                  <td>Descuento :</td>
+                  <td class="text-start">Descuento :</td>
                   <td class="text-end">- $ <span id="discount">0</span></td>
                 </tr>
                 <tr>
-                  <td>Costo de envio :</td>
+                  <td class="text-start">Costo de envío :</td>
                   <td class="text-end">$ <span id="shipping">0</span></td>
                 </tr>
                 <tr>
-                  <td>Impuestos :</td>
+                  <td class="text-start">Impuestos :</td>
                   <td class="text-end">$ <span id="tax">0</span></td>
                 </tr>
                 <tr class="text-total">
-                  <th>Total :</th>
+                  <th class="text-start">Total :</th>
                   <td class="text-end">
                     <span class="fw-bold">$ <span id="total">0</span></span>
                   </td>
