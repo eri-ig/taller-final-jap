@@ -190,6 +190,7 @@ function cambiarCantidad(id, delta) {//para cambiar la cantidad de un producto u
         guardarCarrito();
         mostrarCarrito();
         actualizarBadgeCarrito(); //Actualizamos el badge
+        actualizarCostos(); //Actualizamos los costos segun la opcion de envio
     }
 }
 
@@ -209,6 +210,7 @@ function cambiarCantidadSelect(id, nuevaCantidad) {
         // Actualizamos la visualización del carrito
         mostrarCarrito();
         actualizarBadgeCarrito(); //Actualizamos el badge
+        actualizarCostos(); //Actualizamos los costos segun la opcion de envio
     }
 }
 
@@ -221,6 +223,7 @@ function removeItem(id) {//para eliminar un producto del carrito
         guardarCarrito();
         mostrarCarrito();
         actualizarBadgeCarrito(); //Actualizamos el badge
+        actualizarCostos(); //Actualizamos los costos segun la opcion de envio
     }
 }
 
@@ -229,7 +232,7 @@ function procederAlPago() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-     cargarCarrito();
+    cargarCarrito();
 });
 
 //Funcion para ocultar el contenido de los formularios
@@ -241,3 +244,48 @@ function toggleSection(element) {
         content.style.display = "block";
     }
 }
+
+//Variables para la seccion de "Costos" (agrego tambien descuentos e impuestos)
+let cartItemsPage = document.getElementById("cartItems");
+let subtotalElement = document.getElementById("subtotal");
+let discountElement = document.getElementById("discount");
+let shippingElement = document.getElementById("shipping");
+let taxElement = document.getElementById("tax");
+let totalElement = document.getElementById("total");
+
+const porcentajeDeDescuento = 10;
+const porcentajeDeImpuestos = 0.12;
+let costoDeEnvio = 0.15; //Opcion de envio "Premium" por defecto
+
+function actualizarCostos() {
+    let subtotal = 0;
+
+    ProductosCarrito.forEach(item => {
+        subtotal += item.price * item.quantity;
+    });
+
+    const descuento = subtotal * (porcentajeDeDescuento / 100);
+    const shippingCost = subtotal * costoDeEnvio;
+    const tax = subtotal * porcentajeDeImpuestos;
+    const total = subtotal - descuento + shippingCost + tax;
+
+    //Actualizamos el DOM
+    subtotalElement.textContent = subtotal.toFixed(2);
+    discountElement.textContent = descuento.toFixed(2);
+    shippingElement.textContent = shippingCost.toFixed(2);
+    taxElement.textContent = tax.toFixed(2);
+    totalElement.textContent = total.toFixed(2);
+}
+
+//Funcion para cambiar el tipo de envio
+document.querySelectorAll("input[name='envio']").forEach(radio => {
+    radio.addEventListener('change', (event) => {
+        costoDeEnvio = parseFloat(event.target.value) / 100;
+        actualizarCostos();
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    cargarCarrito();
+    actualizarCostos();
+});
