@@ -188,7 +188,7 @@ form input, textarea, select {
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
-  .jumbotron {
+  .jumbotron{
     min-height: 30vh;
     padding: 2em 1em;
     background-size: contain;
@@ -538,12 +538,23 @@ h1#productTitle {
 .dark-mode .card,
 .dark-mode .offcanvas-custom,
 .dark-mode .offcanvas-header-custom,
-.dark-mode .offcanvas-body-custom,
 .dark-mode .item-carrito,
 .dark-mode .cart-item,
 .dark-mode .offcanvas-item-carrito {
   background-color: #333;
   color: white;
+}
+
+.dark-mode .offcanvas-body-custom {
+  background-color: #121212;
+  color: white;
+}
+
+/*Estilo para las tarjetas del index*/
+.dark-mode .album .custom-card {
+  background-color: #333 !important;
+  color: #f1f1f1 !important;
+  border: 1px solid orange !important;
 }
 
 /* Estilos para botones, enlaces y elementos interactivos en modo oscuro */
@@ -600,6 +611,24 @@ h1#productTitle {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .dark-mode .jumbotron{
+    min-height: 30vh;
+    padding: 2em 1em;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .dark-mode .jumbotron {
+    min-height: 20vh;
+    padding: 1em 0.5em;
+    background-position: 91% center;
+    background-size: cover;
+  }
 }
 
 /*Dark mode para sell.html*/
