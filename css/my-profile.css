@@ -519,6 +519,7 @@ label:active .circle {
 .dark-mode .dropdown-item,
 .dark-mode .dropdown-menu {
   color: rgb(255, 186, 122);
+  background-color: #333;
 }
 
 .dark-mode .dropdown-item:hover,
