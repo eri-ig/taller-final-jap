@@ -139,7 +139,7 @@ function mostrarCarrito() {//para mostrar el carrito en el offcanvas y cart.html
                                 <img src="${producto.image}" alt="${producto.name}" class="avatar-lg rounded">
                             </div>
                             <div class="flex-grow-1 align-self-center overflow-hidden">
-                                <h5 class="text-truncate font-size-18"><a href="#" class="text-dark">${producto.name}</a></h5>
+                                <h5 class="text-truncate font-size-18"><a href="#" class="text">${producto.name}</a></h5>
                                 <p class="text-muted mb-2">Precio</p>
                                 <h5>$${producto.price.toFixed(2)}</h5>
                             </div>

@@ -495,11 +495,15 @@ label:active .circle {
 .dark-mode .card,
 .dark-mode .offcanvas-custom,
 .dark-mode .offcanvas-header-custom,
-.dark-mode .offcanvas-body-custom,
 .dark-mode .item-carrito,
 .dark-mode .cart-item,
 .dark-mode .offcanvas-item-carrito {
   background-color: #333;
+  color: white;
+}
+
+.dark-mode .offcanvas-body-custom {
+  background-color: #121212;
   color: white;
 }
 
@@ -519,6 +523,7 @@ label:active .circle {
 .dark-mode .dropdown-item,
 .dark-mode .dropdown-menu {
   color: rgb(255, 186, 122);
+  background-color: #333;
 }
 
 .dark-mode .dropdown-item:hover,

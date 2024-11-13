@@ -103,7 +103,7 @@
                   <td>Impuestos :</td>
                   <td class="text-end">$ <span id="tax">0</span></td>
                 </tr>
-                <tr class="bg-light">
+                <tr class="text-total">
                   <th>Total :</th>
                   <td class="text-end">
                     <span class="fw-bold">$ <span id="total">0</span></span>
@@ -124,7 +124,7 @@
         </a>
         </div>
         <div class="col-sm-6 text-sm-end mt-2 mt-sm-0">
-        <a href="ecommerce-checkout.html" class="btn btn-success">
+        <a href="#finalizarCompra" class="btn btn-success">
         <i class="mdi mdi-cart-outline me-1"></i> Pagar
       </a>
     </div>
@@ -136,7 +136,7 @@
   <div class="row">
     <div class="col-xl-8">
       <!-- Sección de Tipo de Envío -->
-      <div class="section">
+      <div class="section" id="finalizarCompra">
         <h3 class="section-title" onclick="toggleSection(this)">Tipo de envío:</h3>
         <div class="section-content">
           <!-- Opciones de envío -->

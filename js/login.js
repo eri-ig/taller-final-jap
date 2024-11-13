@@ -6,7 +6,7 @@ window.onload = function () {
       event.preventDefault();
   
       const username = emailInput.value;
-       const password = document.querySelector('input[type="password"]').value;
+      const password = document.querySelector('input[type="password"]').value;
   
       
       if (!emailInput.checkValidity()) {
