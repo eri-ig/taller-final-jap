@@ -269,6 +269,51 @@ label {
     margin-bottom: 10px; 
 } /* Fin */
 
+/*Estilos para el modal*/
+.modal {
+    display: none; /*Ocultar por defecto*/
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /*Fondo semi-transparente*/
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid orange;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #121212;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: orange;
+    text-decoration: none;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
 /* Ajustar botones y badges para mejor visibilidad en modo oscuro */
 .dark-mode {
     background-color: #121212;
@@ -344,4 +389,50 @@ label {
 .dark-mode .text-total {
     background-color: #333;
     color: #ffffff;
+}
+
+/* Estilos específicos para el modal en modo oscuro */
+.dark-mode .modal-content {
+    background-color: #333;
+    color: #f1f1f1;
+    border-color: orange;
+}
+
+.dark-mode .modal {
+    background-color: rgba(0, 0, 0, 0.8); /*Fondo oscuro que permite la transparencia*/
+}
+
+.dark-mode .close {
+    color: #f1f1f1;
+}
+
+.dark-mode .close:hover,
+.dark-mode .close:focus {
+    color: orange;
+}
+
+.dark-mode .btn-container button {
+    background-color: rgb(255, 186, 122);
+    color: #333;
+    border-color: orange;
+}
+
+.dark-mode .btn-container button:hover {
+    background-color: orange;
+    color: #fff;
+}
+
+/* Input y etiquetas dentro del modal */
+.dark-mode input[type="text"],
+.dark-mode input[type="month"],
+.dark-mode input[type="number"],
+.dark-mode input[type="email"] {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-mode input:focus {
+    outline: none;
+    border-color: #ffa500;
+    box-shadow: 0 0 5px orange;
 }

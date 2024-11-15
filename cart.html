@@ -161,15 +161,60 @@
       </div>
       
       <!-- Sección de Formas de Pago -->
-      <div class="section">
-        <h3 class="section-title" onclick="toggleSection(this)">Forma de Pago:</h3>
-        <div class="section-content">
-          <!-- Opciones de pago -->
-          <label><input type="radio" name="pago" value="tarjeta"> Tarjeta de crédito</label><br>
-          <label><input type="radio" name="pago" value="transferencia"> Transferencia bancaria</label> 
-        </div>
+<div class="section">
+  <h3 class="section-title" onclick="toggleSection(this)">Forma de Pago:</h3>
+  <div class="section-content">
+    <!-- Opciones de pago -->
+    <label>
+      <input type="radio" name="pago" value="tarjeta" onclick="abrirModal('modal-tarjeta')"> Tarjeta de crédito
+    </label><br>
+    <label>
+      <input type="radio" name="pago" value="transferencia" onclick="abrirModal('modal-transferencia')"> Transferencia bancaria
+    </label>
+  </div>
+</div>
+
+<!-- Modal de Tarjeta de Crédito -->
+<div id="modal-tarjeta" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal('modal-tarjeta')">&times;</span>
+    <h4>Tarjeta de crédito</h4>
+    <form>
+      <label>Número de tarjeta:</label>
+      <input type="text" name="numeroTarjeta" required><br>
+      <label>Nombre del titular:</label>
+      <input type="text" name="nombreTarjeta" required><br>
+      <label>Fecha de vencimiento:</label>
+      <input type="month" name="vencimiento" required><br>
+      <label>CVV:</label>
+      <input type="text" name="cvv" required>
+      <div class="btn-container">
+        <button type="button" onclick="procesarFormulario('modal-tarjeta', 'form-tarjeta')">OK</button>
       </div>
-      
+    </form>
+  </div>
+</div>
+
+<!-- Modal de Transferencia Bancaria -->
+<div id="modal-transferencia" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal('modal-transferencia')">&times;</span>
+    <h4>Transferencia bancaria</h4>
+    <form>
+      <label>Número de cuenta:</label>
+      <input type="text" name="numeroCuenta" required><br>
+      <label>Destinatario:</label>
+      <input type="text" name="banco" required><br>
+      <label>Referencia:</label>
+      <input type="text" name="referencia" required>
+      <div class="btn-container">
+        <button type="button" onclick="procesarFormulario('modal-transferencia', 'form-transferencia')">OK</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
     <!-- Botón de Finalizar compra -->
     <div class="mt-auto text-end">
       <a href="#finalizarCompra2" class="btn btn-success">

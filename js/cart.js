@@ -289,3 +289,21 @@ document.addEventListener('DOMContentLoaded', function () {
     cargarCarrito();
     actualizarCostos();
 });
+
+    //Funcion para mostrar y ocultar el modal de pagos
+function abrirModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+function cerrarModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+  // Cierra el modal al hacer clic fuera del contenido
+window.onclick = function (event) {
+    const modales = document.querySelectorAll(".modal");
+    modales.forEach((modal) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};
