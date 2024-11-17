@@ -308,17 +308,21 @@ window.onclick = function (event) {
     });
 };
 
-// función finalizar compra con validacion de colores (como el de myprofile)
+// ヽ(*⌒∇⌒*)ﾉ función finalizar compra con validacion 
+
 function finalizarCompra() {
     const camposDireccion = [
       { id: 'departamento', errorMensaje: 'Por favor, complete el campo Departamento' },
       { id: 'localidad', errorMensaje: 'Por favor, complete el campo Localidad' },
       { id: 'calle', errorMensaje: 'Por favor, complete el campo Calle' },
       { id: 'numero', errorMensaje: 'Por favor, complete el campo Número' },
-      { id: 'esquina', errorMensaje: 'Por favor, complete el campo Esquina' }
+      { id: 'esquina', errorMensaje: 'Por favor, complete el campo Esquina' },
+      { id: 'numeroTarjeta', errorMensaje: 'Por favor, ingrese solo números en el número de tarjeta' },
+      { id: 'cvv', errorMensaje: 'Por favor, ingrese solo el númeroCVV de su tarjeta' },
+      { id: 'numeroCuenta', errorMensaje: 'Por favor, ingrese solo el número de su cuenta' }
     ];
-  
-    let esValido = true;
+    
+      let esValido = true;
   
     // valida los campos de direccion
     camposDireccion.forEach(campo => {
@@ -342,11 +346,28 @@ function finalizarCompra() {
         esValido = false;
       } else {
         input.classList.remove('is-invalid2');
-        input.classList.add('is-valid');
+        input.classList.add('is-valid2');
         errorElement.style.display = 'none';
       }
-  
-      // validacion en tiempo real para que aparezca el verde 
+ // validacion numrica
+  if (['numero', 'numeroTarjeta', 'cvv', 'numeroCuenta'].includes(campo.id)) {
+    input.addEventListener('input', () => {
+        input.value = input.value.replace(/[^0-9]/g, ''); 
+        if (input.value.trim() === '') {
+            input.classList.add('is-invalid2');
+            input.classList.remove('is-valid2');
+            errorElement.textContent = campo.errorMensaje;
+            errorElement.style.display = 'block';
+        } else {
+            input.classList.remove('is-invalid2');
+            input.classList.add('is-valid2');
+            errorElement.style.display = 'none';
+        }
+    });
+   
+}
+      
+ // validacion en tiempo real para que aparezca el verde 
       input.addEventListener('input', () => {
         if (input.value.trim() === '') {
           input.classList.add('is-invalid2');
@@ -358,8 +379,9 @@ function finalizarCompra() {
           errorElement.style.display = 'none';
         }
       });
+      
     });
-  
+
     // validar el tipo de envio
     const tipoEnvioSeleccionado = document.querySelector("input[name='envio']:checked");
     const envioError = document.getElementById('envio-error');
@@ -387,8 +409,8 @@ function finalizarCompra() {
     }
    
     
-    //funcion modal
-     function mostrarModal() {
+    // <(｀^´)> funcion feedback
+     function mostrarFeedback() {
        const modalOverlay = document.createElement('div');
         modalOverlay.className = 'modal2-overlay';
     
@@ -402,12 +424,12 @@ function finalizarCompra() {
     
         document.body.appendChild(modalOverlay);
     
-        // funcion para cerrar el modal
+        // funcion para cerrar el feedback
         window.closeModal = function () {
             window.location.href = "index.html";
         };
       }
-    mostrarModal()
+    mostrarFeedback()
   }
   
   document.querySelector(".btn-success[href='#finalizarCompra2']").addEventListener('click', finalizarCompra);

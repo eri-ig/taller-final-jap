@@ -183,13 +183,13 @@
     <h4>Tarjeta de crédito</h4>
     <form>
       <label>Número de tarjeta:</label>
-      <input type="text" name="numeroTarjeta" required><br>
+      <input type="text" name="numeroTarjeta" required><small class="text-danger" style="display: none;"></small><br>
       <label>Nombre del titular:</label>
-      <input type="text" name="nombreTarjeta" required><br>
+      <input type="text" name="nombreTarjeta" required><small class="text-danger" style="display: none;"></small><br>
       <label>Fecha de vencimiento:</label>
-      <input type="month" name="vencimiento" required><br>
+      <input type="month" name="vencimiento" required><small class="text-danger" style="display: none;"></small><br>
       <label>CVV:</label>
-      <input type="text" name="cvv" required>
+      <input type="text" name="cvv" required><small class="text-danger" style="display: none;"></small>
       <div class="btn-container">
         <button type="button" onclick="procesarFormulario('modal-tarjeta', 'form-tarjeta')">OK</button>
       </div>
@@ -204,11 +204,11 @@
     <h4>Transferencia bancaria</h4>
     <form>
       <label>Número de cuenta:</label>
-      <input type="text" name="numeroCuenta" required><br>
+      <input type="text" name="numeroCuenta" required><small class="text-danger" style="display: none;"></small><br>
       <label>Destinatario:</label>
-      <input type="text" name="banco" required><br>
+      <input type="text" name="banco" required><small class="text-danger" style="display: none;"></small><br>
       <label>Referencia:</label>
-      <input type="text" name="referencia" required>
+      <input type="text" name="referencia" required><small class="text-danger" style="display: none;"></small>
       <div class="btn-container">
         <button type="button" onclick="procesarFormulario('modal-transferencia', 'form-transferencia')">OK</button>
       </div>
