@@ -307,3 +307,129 @@ window.onclick = function (event) {
         }
     });
 };
+
+// ヽ(*⌒∇⌒*)ﾉ función finalizar compra con validacion 
+
+function finalizarCompra() {
+    const camposDireccion = [
+      { id: 'departamento', errorMensaje: 'Por favor, complete el campo Departamento' },
+      { id: 'localidad', errorMensaje: 'Por favor, complete el campo Localidad' },
+      { id: 'calle', errorMensaje: 'Por favor, complete el campo Calle' },
+      { id: 'numero', errorMensaje: 'Por favor, complete el campo Número' },
+      { id: 'esquina', errorMensaje: 'Por favor, complete el campo Esquina' },
+      { id: 'numeroTarjeta', errorMensaje: 'Por favor, ingrese solo números en el número de tarjeta' },
+      { id: 'cvv', errorMensaje: 'Por favor, ingrese solo el númeroCVV de su tarjeta' },
+      { id: 'numeroCuenta', errorMensaje: 'Por favor, ingrese solo el número de su cuenta' }
+    ];
+    
+      let esValido = true;
+  
+    // valida los campos de direccion
+    camposDireccion.forEach(campo => {
+      const input = document.querySelector(`input[name="${campo.id}"]`);
+      let errorElement = input.nextElementSibling;
+  
+      // crea el error
+      if (!errorElement || !errorElement.classList.contains('text-danger')) {
+        errorElement = document.createElement('small');
+        errorElement.classList.add('text-danger');
+        errorElement.style.display = 'none';
+        input.parentNode.appendChild(errorElement);
+      }
+  
+      // validacion basado en el my profile 
+      if (input.value.trim() === '') {
+        input.classList.add('is-invalid2');
+        input.classList.remove('is-valid2');
+        errorElement.textContent = campo.errorMensaje;
+        errorElement.style.display = 'block';
+        esValido = false;
+      } else {
+        input.classList.remove('is-invalid2');
+        input.classList.add('is-valid2');
+        errorElement.style.display = 'none';
+      }
+ // validacion numrica
+  if (['numero', 'numeroTarjeta', 'cvv', 'numeroCuenta'].includes(campo.id)) {
+    input.addEventListener('input', () => {
+        input.value = input.value.replace(/[^0-9]/g, ''); 
+        if (input.value.trim() === '') {
+            input.classList.add('is-invalid2');
+            input.classList.remove('is-valid2');
+            errorElement.textContent = campo.errorMensaje;
+            errorElement.style.display = 'block';
+        } else {
+            input.classList.remove('is-invalid2');
+            input.classList.add('is-valid2');
+            errorElement.style.display = 'none';
+        }
+    });
+   
+}
+      
+ // validacion en tiempo real para que aparezca el verde 
+      input.addEventListener('input', () => {
+        if (input.value.trim() === '') {
+          input.classList.add('is-invalid2');
+          input.classList.remove('is-valid2');
+          errorElement.style.display = 'block';
+        } else {
+          input.classList.remove('is-invalid2');
+          input.classList.add('is-valid2'); 
+          errorElement.style.display = 'none';
+        }
+      });
+      
+    });
+
+    // validar el tipo de envio
+    const tipoEnvioSeleccionado = document.querySelector("input[name='envio']:checked");
+    const envioError = document.getElementById('envio-error');
+    if (!tipoEnvioSeleccionado) {
+      envioError.style.display = 'block';
+      esValido = false;
+    } else {
+      envioError.style.display = 'none';
+    }
+  
+    // validar la forma de pago
+    const formaPagoSeleccionada = document.querySelector("input[name='pago']:checked");
+    const pagoError = document.getElementById('pago-error');
+    if (!formaPagoSeleccionada) {
+      pagoError.style.display = 'block';
+      esValido = false;
+    } else {
+      pagoError.style.display = 'none';
+    }
+  
+    //  alerta si algo esta vacio
+    if (!esValido) {
+      alert('Por favor, complete todos los campos obligatorios antes de finalizar la compra.');
+      return;
+    }
+   
+    
+    // <(｀^´)> funcion feedback
+     function mostrarFeedback() {
+       const modalOverlay = document.createElement('div');
+        modalOverlay.className = 'modal2-overlay';
+    
+        modalOverlay.innerHTML = `
+            <div class="modal2">
+                <img src="img/logo.png" alt="Logo" class="modal2-logo">
+            <h2>¡Su compra ha finalizado con éxito!</h2>
+                <button onclick="closeModal()">Aceptar</button>
+            </div>
+        `;
+    
+        document.body.appendChild(modalOverlay);
+    
+        // funcion para cerrar el feedback
+        window.closeModal = function () {
+            window.location.href = "index.html";
+        };
+      }
+    mostrarFeedback()
+  }
+  
+  document.querySelector(".btn-success[href='#finalizarCompra2']").addEventListener('click', finalizarCompra);
