@@ -309,24 +309,62 @@ window.onclick = function (event) {
 };
 
 // ヽ(*⌒∇⌒*)ﾉ función finalizar compra con validacion 
-
-function finalizarCompra() {
+document.addEventListener('DOMContentLoaded', () => {
+    // Validación en tiempo real para campos de dirección
+    const camposDireccion = ['departamento', 'localidad', 'calle', 'numero', 'esquina'];
+    camposDireccion.forEach(nombreCampo => {
+      const input = document.querySelector(`input[name="${nombreCampo}"]`);
+      if (input) {
+        let errorElement = input.nextElementSibling;
+        if (!errorElement || !errorElement.classList.contains('text-danger')) {
+          errorElement = document.createElement('small');
+          errorElement.classList.add('text-danger');
+          errorElement.style.display = 'none';
+          input.parentNode.appendChild(errorElement);
+        }
+        input.addEventListener('input', () => {
+          if (input.value.trim() === '') {
+            input.classList.add('is-invalid2');
+            input.classList.remove('is-valid2');
+            errorElement.style.display = 'block';
+          } else {
+            input.classList.remove('is-invalid2');
+            input.classList.add('is-valid2'); 
+            errorElement.style.display = 'none';
+          }
+        });
+      }
+    });
+  
+    // validacion para campos numericos
+    const camposNumericos = ['numero', 'numeroTarjeta', 'cvv', 'numeroCuenta'];
+    camposNumericos.forEach(nombreCampo => {
+      const input = document.querySelector(`input[name="${nombreCampo}"]`);
+      if (input) {
+        input.addEventListener('input', () => {
+          input.value = input.value.replace(/[^0-9]/g, '');
+        });
+      }
+    });
+  });
+  
+  // Función finalizar compra con validación
+  function finalizarCompra() {
     const camposDireccion = [
       { id: 'departamento', errorMensaje: 'Por favor, complete el campo Departamento' },
       { id: 'localidad', errorMensaje: 'Por favor, complete el campo Localidad' },
       { id: 'calle', errorMensaje: 'Por favor, complete el campo Calle' },
       { id: 'numero', errorMensaje: 'Por favor, complete el campo Número' },
-      { id: 'esquina', errorMensaje: 'Por favor, complete el campo Esquina' },
-      { id: 'numeroTarjeta', errorMensaje: 'Por favor, ingrese solo números en el número de tarjeta' },
-      { id: 'cvv', errorMensaje: 'Por favor, ingrese solo el númeroCVV de su tarjeta' },
-      { id: 'numeroCuenta', errorMensaje: 'Por favor, ingrese solo el número de su cuenta' }
+      { id: 'esquina', errorMensaje: 'Por favor, complete el campo Esquina' }
     ];
-    
-      let esValido = true;
+  
+    let esValido = true;
   
     // valida los campos de direccion
     camposDireccion.forEach(campo => {
       const input = document.querySelector(`input[name="${campo.id}"]`);
+      if (!input) return;
+  
       let errorElement = input.nextElementSibling;
   
       // crea el error
@@ -349,40 +387,9 @@ function finalizarCompra() {
         input.classList.add('is-valid2');
         errorElement.style.display = 'none';
       }
- // validacion numrica
-  if (['numero', 'numeroTarjeta', 'cvv', 'numeroCuenta'].includes(campo.id)) {
-    input.addEventListener('input', () => {
-        input.value = input.value.replace(/[^0-9]/g, ''); 
-        if (input.value.trim() === '') {
-            input.classList.add('is-invalid2');
-            input.classList.remove('is-valid2');
-            errorElement.textContent = campo.errorMensaje;
-            errorElement.style.display = 'block';
-        } else {
-            input.classList.remove('is-invalid2');
-            input.classList.add('is-valid2');
-            errorElement.style.display = 'none';
-        }
     });
-   
-}
-      
- // validacion en tiempo real para que aparezca el verde 
-      input.addEventListener('input', () => {
-        if (input.value.trim() === '') {
-          input.classList.add('is-invalid2');
-          input.classList.remove('is-valid2');
-          errorElement.style.display = 'block';
-        } else {
-          input.classList.remove('is-invalid2');
-          input.classList.add('is-valid2'); 
-          errorElement.style.display = 'none';
-        }
-      });
-      
-    });
-
-    // validar el tipo de envio
+  
+    // Validar el tipo de envío
     const tipoEnvioSeleccionado = document.querySelector("input[name='envio']:checked");
     const envioError = document.getElementById('envio-error');
     if (!tipoEnvioSeleccionado) {
@@ -400,9 +407,81 @@ function finalizarCompra() {
       esValido = false;
     } else {
       pagoError.style.display = 'none';
+  
+      
+      if (formaPagoSeleccionada.value === 'tarjeta') {
+        const camposTarjeta = [
+          { id: 'numeroTarjeta', errorMensaje: 'Por favor, ingrese el número de tarjeta' },
+          { id: 'nombreTarjeta', errorMensaje: 'Por favor, ingrese el nombre del titular' },
+          { id: 'vencimiento', errorMensaje: 'Por favor, ingrese la fecha de vencimiento' },
+          { id: 'cvv', errorMensaje: 'Por favor, ingrese el CVV' }
+        ];
+  
+        camposTarjeta.forEach(campo => {
+          const input = document.querySelector(`input[name="${campo.id}"]`);
+          if (!input) return;
+  
+          let errorElement = input.nextElementSibling;
+  
+          // Crear el error si no existe
+          if (!errorElement || !errorElement.classList.contains('text-danger')) {
+            errorElement = document.createElement('small');
+            errorElement.classList.add('text-danger');
+            errorElement.style.display = 'none';
+            input.parentNode.appendChild(errorElement);
+          }
+  
+          // Validación del campo
+          if (input.value.trim() === '') {
+            input.classList.add('is-invalid2');
+            input.classList.remove('is-valid2');
+            errorElement.textContent = campo.errorMensaje;
+            errorElement.style.display = 'block';
+            esValido = false;
+          } else {
+            input.classList.remove('is-invalid2');
+            input.classList.add('is-valid2');
+            errorElement.style.display = 'none';
+          }
+        });
+      } else if (formaPagoSeleccionada.value === 'transferencia') {
+        const camposTransferencia = [
+          { id: 'numeroCuenta', errorMensaje: 'Por favor, ingrese el número de su cuenta' },
+          { id: 'banco', errorMensaje: 'Por favor, ingrese el nombre del banco' },
+          { id: 'referencia', errorMensaje: 'Por favor, ingrese la referencia' }
+        ];
+  
+        camposTransferencia.forEach(campo => {
+          const input = document.querySelector(`input[name="${campo.id}"]`);
+          if (!input) return;
+  
+          let errorElement = input.nextElementSibling;
+  
+          // Crear el error 
+          if (!errorElement || !errorElement.classList.contains('text-danger')) {
+            errorElement = document.createElement('small');
+            errorElement.classList.add('text-danger');
+            errorElement.style.display = 'none';
+            input.parentNode.appendChild(errorElement);
+          }
+  
+          // Validación del campo
+          if (input.value.trim() === '') {
+            input.classList.add('is-invalid2');
+            input.classList.remove('is-valid2');
+            errorElement.textContent = campo.errorMensaje;
+            errorElement.style.display = 'block';
+            esValido = false;
+          } else {
+            input.classList.remove('is-invalid2');
+            input.classList.add('is-valid2');
+            errorElement.style.display = 'none';
+          }
+        });
+      }
     }
   
-    //  alerta si algo esta vacio
+    // Alerta si algo esta vacio
     if (!esValido) {
       alert('Por favor, complete todos los campos obligatorios antes de finalizar la compra.');
       return;
