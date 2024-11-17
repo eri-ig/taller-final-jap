@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function abrirModal(modalId) {
     document.getElementById(modalId).style.display = "block";
 }
-function cerrarModal(modalId) {
+function procesarFormulario(modalId) { //cierra el modal
     document.getElementById(modalId).style.display = "none";
 }
 
@@ -307,6 +307,7 @@ window.onclick = function (event) {
         }
     });
 };
+
 
 // ヽ(*⌒∇⌒*)ﾉ función finalizar compra con validacion 
 document.addEventListener('DOMContentLoaded', () => {

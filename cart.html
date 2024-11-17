@@ -153,11 +153,26 @@
         <h3 class="section-title" onclick="toggleSection(this)">Dirección de envío:</h3>
         <div class="section-content">
           <!-- Dirección -->
-          <label>Departamento:</label> <input type="text" name="departamento"><small class="text-danger" style="display: none;"></small><br>
-          <label>Localidad:</label> <input type="text" name="localidad"><small class="text-danger" style="display: none;"></small><br>
-          <label>Calle:</label> <input type="text" name="calle"><small class="text-danger" style="display: none;"></small><br>
-          <label>Número:</label> <input type="text" name="numero"><small class="text-danger" style="display: none;"></small><br>
-          <label>Esquina:</label> <input type="text" name="esquina"><small class="text-danger" style="display: none;"></small> 
+          <label>Departamento:</label> 
+            <input type="text" name="departamento" placeholder="Ej: Montevideo" class="input-field">
+            <small class="text-danger" style="display: none;"></small><br>
+          <label>Localidad:</label> 
+            <input type="text" name="localidad" placeholder="Ej: Centro" class="input-field">
+            <small class="text-danger" style="display: none;"></small><br>
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+            <div style="flex: 1;">
+              <label for="calle">Calle:</label>
+              <input type="text" name="calle" placeholder="Ej: Ejido" id="calle" class="input-field">
+            </div>
+            <div style="flex: 1;">
+              <label for="numero">Número:</label>
+              <input type="text" name="numero" placeholder="Ej: 1234" id="numero" class="input-field">
+            </div>
+          </div>
+              <small class="text-danger" style="display: none;"></small>
+          <label>Esquina:</label> 
+          <input type="text" name="esquina" placeholder="Ej: 18 de Julio" class="input-field">
+            <small class="text-danger" style="display: none;"></small> 
         </div>
       </div>
       
@@ -179,17 +194,20 @@
 <!-- Modal de Tarjeta de Crédito -->
 <div id="modal-tarjeta" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="cerrarModal('modal-tarjeta')">&times;</span>
     <h4>Tarjeta de crédito</h4>
     <form>
       <label>Número de tarjeta:</label>
-      <input type="text" name="numeroTarjeta" id="numeroTarjeta" required><small class="text-danger" style="display: none;"></small><br>
+        <input type="text" name="numeroTarjeta" placeholder="Ej: 1234 5678 9012 3456" required>
+        <small class="text-danger" style="display: none;"></small><br>
       <label>Nombre del titular:</label>
-      <input type="text" name="nombreTarjeta" id="nombreTarjeta" required><small class="text-danger" style="display: none;"></small><br>
+        <input type="text" name="nombreTarjeta" placeholder="Ej: Rigoberto Pérez" required>
+        <small class="text-danger" style="display: none;"></small><br>
       <label>Fecha de vencimiento:</label>
-      <input type="month" name="vencimiento" id="vencimiento" required><small class="text-danger" style="display: none;"></small><br>
+        <input type="month" name="vencimiento" required>
+        <small class="text-danger" style="display: none;"></small><br>
       <label>CVV:</label>
-      <input type="text" name="cvv" id="cvv" required><small class="text-danger" style="display: none;"></small>
+        <input type="text" name="cvv" placeholder="Ej: 123" required>
+        <small class="text-danger" style="display: none;"></small>
       <div class="btn-container">
         <button type="button" onclick="procesarFormulario('modal-tarjeta', 'form-tarjeta')">OK</button>
       </div>
@@ -200,22 +218,23 @@
 <!-- Modal de Transferencia Bancaria -->
 <div id="modal-transferencia" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="cerrarModal('modal-transferencia')">&times;</span>
     <h4>Transferencia bancaria</h4>
     <form>
       <label>Número de cuenta:</label>
-      <input type="text" name="numeroCuenta" id="numeroCuenta" required><small class="text-danger" style="display: none;"></small><br>
+        <input type="text" name="numeroCuenta" id="numeroCuenta" placeholder="Ej: 1234567890123456" required>
+        <small class="text-danger" style="display: none;"></small><br>
       <label>Destinatario:</label>
-      <input type="text" name="banco" id="banco"  required><small class="text-danger" style="display: none;"></small><br>
+        <input type="text" name="banco" id="banco" placeholder="Ej: Banco Ejemplo S.A." required>
+        <small class="text-danger" style="display: none;"></small><br>
       <label>Referencia:</label>
-      <input type="text" name="referencia" id="referencia" required><small class="text-danger" style="display: none;"></small>
+        <input type="text" name="referencia" id="referencia" placeholder="Ej: Pago de factura 00123" required>
+        <small class="text-danger" style="display: none;"></small>
       <div class="btn-container">
         <button type="button" onclick="procesarFormulario('modal-transferencia', 'form-transferencia')">OK</button>
       </div>
     </form>
   </div>
 </div>
-
 
     <!-- Botón de Finalizar compra -->
     <div class="mt-auto text-end">
@@ -227,7 +246,7 @@
 </div>
 </div>
 
-<footer class="text-muted">
+<footer class="text-muted" id="footer">
   <div class="container-2">
     <p class="float-end">
       <a href="#" id="scrollToTop">
