@@ -18,30 +18,38 @@ let hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-let getJSONData = function(url){
-    let result = {};
-    showSpinner();
-    return fetch(url)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }else{
-        throw Error(response.statusText);
+let getJSONData = function(url) {
+  let result = {};
+  const token = localStorage.getItem("token"); // Recupera el token almacenado
+  showSpinner(); // Mostrar spinner de carga
+  return fetch(url, {
+      method: "GET",
+      headers: {
+          "Authorization": `Bearer ${token}` // Incluye el token en el encabezado
       }
-    })
-    .then(function(response) {
-          result.status = 'ok';
-          result.data = response;
-          hideSpinner();
-          return result;
-    })
-    .catch(function(error) {
-        result.status = 'error';
-        result.data = error;
-        hideSpinner();
-        return result;
-    });
-}
+  })
+  .then(response => {
+      if (response.ok) {
+        let rsp = response.json();
+        console.log(rsp)
+          return rsp; // Si la respuesta es válida, parsea el JSON
+      } else {
+          throw Error(response.statusText); // Lanza un error si la respuesta no es válida
+      }
+  })
+  .then(function(response) {
+      result.status = 'ok';
+      result.data = response;
+      hideSpinner(); // Oculta el spinner después de una respuesta exitosa
+      return result;
+  })
+  .catch(function(error) {
+      result.status = 'error';
+      result.data = error;
+      hideSpinner(); // Oculta el spinner si ocurre un error
+      return result;
+  });
+};
 
 function cargarImagenDePerfil() {
   const img = document.getElementById("imagenPerfil");

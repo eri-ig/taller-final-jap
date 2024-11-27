@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const categoriaActual = localStorage.getItem("catID");/* se guarda el id actual */
   const PRODUCTOS_URL = `https://japceibal.github.io/emercado-api/cats_products/${categoriaActual}.json`/* se busca el json con el id actual */
 
-  fetch(PRODUCTOS_URL)
+  getJSONData(PRODUCTS_URL/categoriaActual)
     .then(response => {
       if (!response.ok) {
         throw Error(response.statusText);

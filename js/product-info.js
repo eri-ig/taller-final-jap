@@ -5,37 +5,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const products_commentUrl = `https://japceibal.github.io/emercado-api/products_comments/${productoActual}.json`
     let box_comments = document.getElementById("comentarios")
 
-    fetch(PRODUCTO_URL)
-        .then(response => {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            } return response.json();
-        })
-        .then(producto => {
-            infoCard(producto);
-
-            console.log(producto);//sigo con mi paranoia del fetch XD
-        })
-        .catch(error => {
-            console.error(error)
-        });
+    getJSONData(`${PRODUCT_INFO_URL}/${productoActual}`)
+    .then(producto => {
+        console.log(producto); // Verifica los datos recibidos
+        infoCard(producto);
+        
+    })
+    .catch(error => {
+        console.error("Error en el fetch:", error);
+    });
 
     function infoCard(producto) { //Se le cambia los parametros a la tarjeta de informacion 
-        document.getElementById("category").innerHTML = producto.category;
-        document.getElementById("brand").innerHTML = producto.name;
-        document.getElementById("price").innerHTML = producto.cost + " " + producto.currency;
-        document.getElementById("description").innerHTML = producto.description;
+        document.getElementById("category").innerHTML = producto.data.category;
+        document.getElementById("brand").innerHTML = producto.data.name;
+        document.getElementById("price").innerHTML = producto.data.cost + " " + producto.data.currency;
+        document.getElementById("description").innerHTML = producto.data.description;
         document.getElementById("ventas").innerHTML = "Cantidad vendida " + producto.soldCount;
 
         const thumbnails = document.getElementById("thumbnailsList") // se añade los thumbnails
-        producto.images.forEach(imagen => {
+        producto.data.images.forEach(imagen => {
             thumbnails.innerHTML += `
     <img src="${imagen}" alt="Thumbnail 1" class="img-fluid thumbnail mx-2 " style="width: 80px;">
     `
         });
-        document.getElementById("imagenPrincipal").src = producto.images[0];// se le pone una imagen principal predeterminada 
+        document.getElementById("imagenPrincipal").src = producto.data.images[0];// se le pone una imagen principal predeterminada 
         showPrincipalImage();
-        relatedProducts(producto.relatedProducts);
+        relatedProducts(producto.data.relatedProducts);
         funcionalidadBotonComprar(producto)
     };
 
