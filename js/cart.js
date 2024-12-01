@@ -513,3 +513,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   document.querySelector(".btn-success[href='#finalizarCompra2']").addEventListener('click', finalizarCompra);
+
+document.addEventListener('DOMContentLoaded', () => { 
+//Carrito de compras en local sotrage, si no hay, se inicializa
+  const cart = JSON.parse(localStorage.getItem('cart')) || []; 
+  const enviarCarrito = () => { 
+
+//Objeto con datos a enviar al backend 
+const data = { 
+  items: cart, 
+  subtotal: document.getElementById('subtotal').textContent,  
+  discount: document.getElementById('discount').textContent, 
+  shipping: document.getElementById('shipping').textContent, 
+  tax: document.getElementById('tax').textContent, 
+  total: document.getElementById('total').textContent, 
+  envio: document.querySelector('input[name="envio"]:checked')?.value, 
+  direccion: {  
+    document.querySelector('input[name="departamento"]').value,  
+    localidad: document.querySelector('input[name="localidad"]').value,  
+    calle: document.querySelector('input[name="calle"]').value, 
+    numero: document.querySelector('input[name="numero"]').value, 
+    esquina: document.querySelector('input[name="esquina"]').value,  
+    }, pago: document.querySelector('input[name="pago"]:checked')?.value,  }; 
+
+fetch('http://localhost:3000/cart', { 
+method: 'POST', 
+  headers: { 'Content-Type': 'application/json', }, 
+    
+  body: JSON.stringify(data),  }) 
+    .then(response => response.json())  
+    .then(data => { 
+    alert('Compra realizada con éxito'); }) 
+    .catch(error => { 
+    console.error('Error al enviar el carrito:', error); 
+    alert('Hubo un error al procesar tu compra. Por favor, inténtalo de nuevo.'); 
+  }); }; 
+
+//Para finalizar la compra 
+const finalizarCompraBtn = document.querySelector('a[href="#finalizarCompra"]'); 
+  finalizarCompraBtn.addEventListener('click', (e) => { 
+    e.preventDefault();  
+    enviarCarrito(); 
+    }); });
+    
